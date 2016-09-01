@@ -9,14 +9,29 @@
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="styles/state.css">
   </head>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/">HowToCar</a></li>
+        <li><a href="/garage">Garage</a></li>
+        <li><a href="/search">Add-a-Car</a></li>
+        <li><a href="/login">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
   <body>
-    <section id="login" class="tab-content">login</section>
-    <section id="garage" class="tab-content">garage</section>
-    <section id="search" class="tab-content">search</section>
+    <section id="login" class="tab-content">login content</section>
+    <section id="garage" class="tab-content">garage content</section>
+    <section id="search" class="tab-content">search content</section>
+    <div id="loginButton">
+      <button onclick="lock.show();">Login</button>
+    </div>
   </body>
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+  <script src="https://sdk.auth0.com/auth0.js#client=YOUR_CLIENT_ID"></script>
+  <script src="https://cdn.auth0.com/js/lock/10.0/lock.min.js"></script>
   <script src="scripts/models/garageModel.js"></script>
   <script src="scripts/models/loginModel.js"></script>
   <script src="scripts/models/searchModel.js"></script>

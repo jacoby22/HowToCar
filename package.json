@@ -15,10 +15,5 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jacoby22/HowToCar/issues"
-  },
-  "homepage": "https://github.com/jacoby22/HowToCar#readme",
-  "dependencies": {
-    "express": "^4.14.0",
-    "express-request-proxy": "^2.0.0"
   }
 }
