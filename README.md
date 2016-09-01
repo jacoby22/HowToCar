@@ -38,12 +38,12 @@ Developer Stories (Stretch Goals):
 
 WORKFLOW:
 
-When you start a new feature...
+When you start a new feature:
 
-*Start from an up-to-date master branch
- *git checkout master
- *git pull origin master
- *Create a new feature branch with git checkout -b <branchname>
+-Start from an up-to-date master branch
+ -git checkout master
+ -git pull origin master
+ -Create a new feature branch with git checkout -b <branchname>
 -Do work on your feature branch and add, commit, and push
  -git add <file>
  -git commit -m <useful message>
