@@ -36,7 +36,7 @@ Developer Stories (Stretch Goals):
 - As a developer, I want to implement the Google Calender API, so that I can make the maintenance requests more visually appealing and help remind the user when upcoming service requests are required.
 - As a developer, I want to implement the Google Maps API, so that I can show nearby automotive resources to the user.
 
-WORKFLOW:
+WORKFLOW
 
 When you start a new feature:
 
