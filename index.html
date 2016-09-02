@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>HowToCar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+    <link rel="stylesheet" href="styles/fontello.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
@@ -25,12 +26,13 @@
   <body>
 
     <header>
-      <nav>
+      <nav class="main-nav">
+        <div class="icon-menu"></div>
         <ul>
-          <li><a href="/">HowToCar</a></li>
-          <li><a href="/garage">Garage</a></li>
-          <li><a href="/search">Add-a-Car</a></li>
-          <li><a href="/login">Logout</a></li>
+          <li class="tab"><a href="/" class="icon-home">HowToCar</a></li>
+          <li class="tab"><a href="/garage" class="icon-warehouse">Garage</a></li>
+          <li class="tab"><a href="/search" class="icon-wrench">Add-a-Car</a></li>
+          <li class="tab"><a href="/login" class="icon-user">Logout</a></li>
         </ul>
       </nav>
     </header>
@@ -68,4 +70,5 @@
 
     <script src="scripts/routes.js"></script>
   </body>
+
 </html>
