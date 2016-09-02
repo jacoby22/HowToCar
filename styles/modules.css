@@ -1,0 +1,28 @@
+.icon-menu {
+  font-size: 2em;
+  /*float: right;*/
+  background-color: red;
+}
+
+/*--------------------------MEDIA QUERIES*/
+@media and screen and (min-dev-width: 680px) {
+  .main-nav ul {
+    display:none;
+  }
+
+  .main-nav ul {
+      display: flex;
+      justify-content: space-around;
+      columns: 5;
+      width: 100%;
+    }
+
+    /*.main-nav ul li {
+      display: inline;
+      border-bottom: none;
+    }
+
+    .main-nav ul li:hover a {
+      color: #29506D;
+    }*/
+}
