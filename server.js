@@ -4,6 +4,7 @@ var requestProxy = require('express-request-proxy'),
   port = process.env.PORT || 3000,
   app = express();
 
+
 app.use(express.static('./'));
 
 app.get('*', function(request, response) {
@@ -11,6 +12,7 @@ app.get('*', function(request, response) {
   response.sendFile('index.html', {root: '.' });
 });
 
+// pg.defaults.ssl = true;
 app.get('/db', function(response, request) {
   console.log('started');
   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
@@ -20,7 +22,7 @@ app.get('/db', function(response, request) {
         console.error(err);
         response.send('Error ' + err);
       } else {
-        console.log('something');
+        console.log('Success');
         response.render('pages/db', {results: result.rows});
       }
     });
