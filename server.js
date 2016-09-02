@@ -6,6 +6,18 @@ var requestProxy = require('express-request-proxy'),
 
 app.use(express.static('./'));
 
+app.get('/vehicle/*', function(request, response) {
+  console.log('Routing Edmunds API request');
+  var url = 'https://api.edmunds.com/api' + request.originalUrl;
+  (requestProxy({
+    url: url,
+    query: {
+      fmt: 'json',
+      api_key: process.env.EDMUNDS_KEY
+    }
+  }))(request, response);
+});
+
 app.get('*', function(request, response) {
   console.log('New Request: ', request.url);
   response.sendFile('index.html', {root: '.' });
