@@ -37,6 +37,25 @@
 
     <main>
       <section id="login" class="tab-content">login content</section>
+        <div>
+          <ul id="filters">
+            <li>
+              <select id="make-filter">
+                <option value="">Make</option>
+              </select>
+            </li>
+            <li>
+              <select id="model-filter">
+                <option value="">Model</option>
+              </select>
+            </li>
+            <li>
+              <select id="year-filter">
+                <option value="">Year</option>
+              </select>
+            </li>
+          </ul>
+        </div>
       <section id="garage" class="tab-content">garage content</section>
       <section id="search" class="tab-content">search content</section>
       <div id="loginButton">
@@ -68,19 +87,4 @@
 
     <script src="scripts/routes.js"></script>
   </body>
-  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
-  <script src="https://sdk.auth0.com/auth0.js#client=YOUR_CLIENT_ID"></script>
-  <script src="https://cdn.auth0.com/js/lock/10.0/lock.min.js"></script>
-  <script src="scripts/models/garageModel.js"></script>
-  <script src="scripts/models/loginModel.js"></script>
-  <script src="scripts/models/searchModel.js"></script>
-  <script src="scripts/views/garageView.js"></script>
-  <script src="scripts/views/loginView.js"></script>
-  <script src="scripts/views/searchView.js"></script>
-  <script src="scripts/controllers/garageController.js"></script>
-  <script src="scripts/controllers/loginController.js"></script>
-  <script src="scripts/controllers/searchController.js"></script>
-  <script src="scripts/routes.js"></script>
 </html>

@@ -8,11 +8,7 @@ app.use(express.static('./'));
 
 app.get('/vehicle/*', function(request, response) {
   console.log('Routing Edmunds API request');
-  // console.log(request.params[0]);
-  // console.log(request.originalUrl);
-  // console.log(process.env.EDMUNDS_KEY);
-  var url = 'https://api.edmunds.com/api' + request.originalUrl
-  console.log(url);
+  var url = 'https://api.edmunds.com/api' + request.originalUrl;
   (requestProxy({
     url: url,
     query: {
