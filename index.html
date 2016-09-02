@@ -8,6 +8,19 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="styles/state.css">
+    <script id="car-template" type="text/x-handlebars-template">
+      <article data-title="{{title}}" data-category="{{category}}">
+        <header>
+          <h3>Your Garage</h3>
+        </header>
+        <section id="car-description">
+          <li>
+            <p>Make: {{make}}</p>
+            <p>Model: {{model}}</p>
+            <p>Year: {{year}}</p>
+          </li>
+        </section>
+    </script>
   </head>
   <header>
     <nav>
