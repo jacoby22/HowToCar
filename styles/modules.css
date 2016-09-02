@@ -1,8 +1,15 @@
+/*LINK STYLES
+=========================================*/
+
 .icon-menu-outline {
   font-size: 1.5em;
   float: right;
   /*background-color: red;*/
+}
 
+.main-nav {
+  padding: 0.1em;
+  /*display: block;*/
 }
 .main-nav ul {
   display: none;
@@ -10,10 +17,11 @@
   list-style: none;
   clear: both;
   width: 80%;
+  /*margin-bottom: -4em -2em 1em -3em;*/
 }
 
 .main-nav li {
-  margin-right: .4em;
+  margin-right: .6em;
   /*font-size: 1.5em;*/
   padding: .5em .2em;
   border-bottom: 1px solid #ccc;
@@ -27,22 +35,26 @@
   .icon-menu-outline {
   display: none;
 }
-
 .main-nav {
-  padding: .2em .2em .2em 2em;
- }
+  padding: 0.1em;
+  /*display: block;*/
+}
 
 .main-nav ul {
-  display: block
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  columns: 4;
  }
 
 .main-nav ul li {
-  display: inline;
-  border-bottom: none;
+  display: flex;
+  justify-content: space-around;
+  columns: 4;
+  /*width: 100%;*/
  }
 
 .main-nav ul li:hover a {
   color: #29506D;
  }
-
 }

@@ -49,8 +49,16 @@
       }
     });
   };
-  $('.icon-menu').on('click',function() {
+
+  $('.icon-menu-outline').on('click',function() {
     $('.main-nav ul').toggle('slow');
+  });
+  $(window).on('resize', function() {
+    if ($(window).width() >= 641) {
+      $('.main-nav ul').show();
+    } else {
+      $('.main-nav ul').hide();
+    }
   });
 
   module.searchView = searchView;
