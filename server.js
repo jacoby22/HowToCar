@@ -3,17 +3,23 @@ var requestProxy = require('express-request-proxy'),
   port = process.env.PORT || 3000,
   app = express();
 
-// var proxyGithub = function(request, response) {
-//   console.log('Routing GitHub request for: ', request.params[0]);
-//   (requestProxy({
-//     url: 'https://api.github.com/' + request.params[0],
-//     headers: { Authorization: 'token ' + process.env.GITHUB_TOKEN }
-//   }))(request, response);
-// };
-
-// app.get('/github/*', );
-
 app.use(express.static('./'));
+
+app.get('/vehicle/*', function(request, response) {
+  console.log('Routing Edmunds API request');
+  // console.log(request.params[0]);
+  // console.log(request.originalUrl);
+  // console.log(process.env.EDMUNDS_KEY);
+  var url = 'https://api.edmunds.com/api' + request.originalUrl
+  console.log(url);
+  (requestProxy({
+    url: url,
+    query: {
+      fmt: 'json',
+      api_key: process.env.EDMUNDS_KEY
+    }
+  }))(request, response);
+});
 
 app.get('*', function(request, response) {
   console.log('New Request: ', request.url);
