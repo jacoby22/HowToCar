@@ -1,3 +1,64 @@
+<<<<<<< HEAD
+/*LINK STYLES
+=========================================*/
+
+.icon-menu-outline {
+  font-size: 1.5em;
+  float: right;
+  /*background-color: red;*/
+}
+
+.main-nav {
+  padding: 0.1em;
+  /*display: block;*/
+}
+.main-nav ul {
+  display: none;
+  padding: 0;
+  list-style: none;
+  clear: both;
+  width: 80%;
+  /*margin-bottom: -4em -2em 1em -3em;*/
+}
+
+.main-nav li {
+  margin-right: .6em;
+  /*font-size: 1.5em;*/
+  padding: .5em .2em;
+  border-bottom: 1px solid #ccc;
+}
+
+/*--------------------------MEDIA QUERIES*/
+
+
+
+@media only screen and (min-width: 641px) {
+  .icon-menu-outline {
+  display: none;
+}
+.main-nav {
+  padding: 0.1em;
+  /*display: block;*/
+}
+
+.main-nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  columns: 4;
+ }
+
+.main-nav ul li {
+  display: flex;
+  justify-content: space-around;
+  columns: 4;
+  /*width: 100%;*/
+ }
+
+.main-nav ul li:hover a {
+  color: #29506D;
+ }
+=======
 .icon-menu {
   float: right;
   font-size: 2em;
@@ -15,4 +76,5 @@
   z-index: 1;
   list-style-type: none;
   padding-right: 15px;
+>>>>>>> c559b7886071802ca2b3b4c65e7720d84f5a61a4
 }
