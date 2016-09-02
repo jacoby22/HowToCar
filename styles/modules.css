@@ -14,9 +14,6 @@
   }
 }
 @media and screen and (min-dev-width: 680px) {
-  .main-nav ul {
-    display:none;
-  }
 
   .main-nav ul {
       display: flex;
@@ -25,12 +22,12 @@
       width: 100%;
     }
 
-    /*.main-nav ul li {
+    .main-nav ul li {
       display: inline;
       border-bottom: none;
     }
 
     .main-nav ul li:hover a {
       color: #29506D;
-    }*/
+    }
 }
