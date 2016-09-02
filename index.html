@@ -10,6 +10,19 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="styles/state.css">
+    <script id="car-template" type="text/x-handlebars-template">
+      <article data-title="{{title}}" data-category="{{category}}">
+        <header>
+          <h3>Your Garage</h3>
+        </header>
+        <section id="car-description">
+          <li>
+            <p>Make: {{make}}</p>
+            <p>Model: {{model}}</p>
+            <p>Year: {{year}}</p>
+          </li>
+        </section>
+    </script>
   </head>
   <body>
 
@@ -27,6 +40,25 @@
 
     <main>
       <section id="login" class="tab-content">login content</section>
+        <div>
+          <ul id="filters">
+            <li>
+              <select id="make-filter">
+                <option value="">Make</option>
+              </select>
+            </li>
+            <li>
+              <select id="model-filter">
+                <option value="">Model</option>
+              </select>
+            </li>
+            <li>
+              <select id="year-filter">
+                <option value="">Year</option>
+              </select>
+            </li>
+          </ul>
+        </div>
       <section id="garage" class="tab-content">garage content</section>
       <section id="search" class="tab-content">search content</section>
       <div id="loginButton">
@@ -58,5 +90,4 @@
 
     <script src="scripts/routes.js"></script>
   </body>
-
 </html>
