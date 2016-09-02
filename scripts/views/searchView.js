@@ -11,7 +11,8 @@
   searchView.handleMakeFilter = function() {
     $('#make-filter').on('change', function(e) {
       if($(this).val()) {
-        var trueIndex = searchView.createModelFilter($(this).val());
+        searchView.handleModelFilter();
+        searchView.createModelFilter($(this).val());
       }
     });
   };
@@ -19,31 +20,44 @@
   searchView.handleModelFilter = function() {
     $('#model-filter').on('change', function(e) {
       if($(this).val()) {
+        searchView.handleYearFilter();
         searchView.createYearFilter($(this).val());
       }
     });
   };
 
+  searchView.handleYearFilter = function() {
+    $('#year-filter').on('change', function(e) {
+      if($(this).val()) {
+        var yearVal = $(this).val();
+        searchTool.AllCars[0].makes[searchView.index].models[searchView.modelIndex].years.map(function(year) {
+          if (year.year.toString() === yearVal.toString()) {
+            searchView.searchedCar = year.id;
+          }
+        });
+      }
+      console.log(searchView.searchedCar);
+    });
+  };
+
   searchView.createModelFilter = function(makeVal) {
-    var trueIndex;
     searchTool.AllCars[0].makes.filter(function(make, indx) {
       if (make.name === makeVal) {
-        trueIndex = indx;
+        searchView.index = indx;
         searchTool.AllCars[0].makes[indx].models.map(function(model) {
           var optionTag = '<option value="' + model.name + '">' + model.name + '</option>';
           $('#model-filter').append(optionTag);
         });
       }
     });
-    return trueIndex;
   };
 
   searchView.createYearFilter = function(modelVal) {
-    searchTool.AllCars[0].makes.filter(function(make, indx) {
-      if (make.name === makeVal) {
-        console.log(indx);
-        searchTool.AllCars[0].makes[indx].models.map(function(model) {
-          var optionTag = '<option value="' + model.name + '">' + model.name + '</option>';
+    searchTool.AllCars[0].makes[searchView.index].models.filter(function(model, indx) {
+      if (model.name === modelVal) {
+        searchView.modelIndex = indx;
+        searchTool.AllCars[0].makes[searchView.index].models[searchView.modelIndex].years.map(function(year) {
+          var optionTag = '<option value="' + year.year + '">' + year.year + '</option>';
           $('#year-filter').append(optionTag);
         });
       }
@@ -63,3 +77,19 @@
 
   module.searchView = searchView;
 })(window);
+<<<<<<< HEAD
+=======
+
+// $('.icon-menu').on('click',function() {
+//   $('.main-nav ul').toggle('slow');
+//
+// });
+// $(window).on('resize', function() {
+//   if ($(window).width() >= 680) {
+//     $('.main-nav ul').show();
+//   } else {
+//     $('.main-nav ul').hide();
+//     $('.icon-menu').show();
+//   }
+// });
+>>>>>>> c559b7886071802ca2b3b4c65e7720d84f5a61a4

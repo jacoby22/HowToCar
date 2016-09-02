@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*LINK STYLES
 =========================================*/
 
@@ -57,4 +58,23 @@
 .main-nav ul li:hover a {
   color: #29506D;
  }
+=======
+.icon-menu {
+  float: right;
+  font-size: 2em;
+  color: red;
+}
+
+.navContent {
+  display:inline-block;
+  vertical-align: top;
+  font-size: 12px;
+  width: 170px;
+  position: fixed;
+  left: 36px;
+  top: 36px;
+  z-index: 1;
+  list-style-type: none;
+  padding-right: 15px;
+>>>>>>> c559b7886071802ca2b3b4c65e7720d84f5a61a4
 }
