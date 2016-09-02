@@ -17,7 +17,8 @@ app.get('/db', function(response, request) {
     client.query('Select * FROM test_table', function(err, result) {
       done();
       if (err) {
-        console.error(err); response.send('Error ' + err);
+        console.error(err);
+        response.send('Error ' + err);
       } else {
         console.log('something');
         response.render('pages/db', {results: result.rows});
