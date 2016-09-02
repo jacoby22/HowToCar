@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 (function(module) {
   var searchView = new Object();
 
@@ -12,7 +11,8 @@
   searchView.handleMakeFilter = function() {
     $('#make-filter').on('change', function(e) {
       if($(this).val()) {
-        var trueIndex = searchView.createModelFilter($(this).val());
+        searchView.handleModelFilter();
+        searchView.createModelFilter($(this).val());
       }
     });
   };
@@ -26,25 +26,25 @@
   };
 
   searchView.createModelFilter = function(makeVal) {
-    var trueIndex;
     searchTool.AllCars[0].makes.filter(function(make, indx) {
       if (make.name === makeVal) {
-        trueIndex = indx;
+        searchView.index = indx;
         searchTool.AllCars[0].makes[indx].models.map(function(model) {
           var optionTag = '<option value="' + model.name + '">' + model.name + '</option>';
           $('#model-filter').append(optionTag);
         });
       }
     });
-    return trueIndex;
   };
 
   searchView.createYearFilter = function(modelVal) {
-    searchTool.AllCars[0].makes.filter(function(make, indx) {
-      if (make.name === makeVal) {
-        console.log(indx);
-        searchTool.AllCars[0].makes[indx].models.map(function(model) {
-          var optionTag = '<option value="' + model.name + '">' + model.name + '</option>';
+    console.log(searchTool.AllCars[0].makes[searchView.index].models);
+    searchTool.AllCars[0].makes[searchView.index].models.filter(function(model, indx) {
+      searchView.modelIndex = indx;
+      if (model.name === modelVal) {
+        searchTool.AllCars[0].makes[searchView.index].models[searchView.modelIndex].years.map(function(year) {
+          console.log(year);
+          var optionTag = '<option value="' + year.year + '">' + year.year + '</option>';
           $('#year-filter').append(optionTag);
         });
       }
@@ -53,23 +53,16 @@
 
   module.searchView = searchView;
 })(window);
-=======
-$('.icon-menu').on('click',function() {
-  $('.main-nav ul').toggle('slow');
 
-});
-$(window).on('resize', function() {
-  if ($(window).width() >= 680) {
-    $('.main-nav ul').show();
-  } else {
-    $('.main-nav ul').hide();
-    $('.icon-menu').show();
-  }
-});
-// $('.main-nav').on('click', '.tab', function(e) {
-//   $('.tab-content').hide();
-//   $('#' + $(this).data('content')).fadeIn();
-// });
+// $('.icon-menu').on('click',function() {
+//   $('.main-nav ul').toggle('slow');
 //
-// $('.main-nav .tab:first').click(); // Let's now trigger a click on the first .tab element, to set up the page.
->>>>>>> master
+// });
+// $(window).on('resize', function() {
+//   if ($(window).width() >= 680) {
+//     $('.main-nav ul').show();
+//   } else {
+//     $('.main-nav ul').hide();
+//     $('.icon-menu').show();
+//   }
+// });
