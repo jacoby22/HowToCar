@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>HowToCar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+    <link rel="stylesheet" href="styles/fontello.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
@@ -25,12 +26,13 @@
   <body>
 
     <header>
-      <nav>
+      <nav class="main-nav">
+        <div class="icon-menu"></div>
         <ul>
-          <li><a href="/">HowToCar</a></li>
-          <li><a href="/garage">Garage</a></li>
-          <li><a href="/search">Add-a-Car</a></li>
-          <li><a href="/login">Logout</a></li>
+          <li class="tab"><a href="/" class="icon-home">HowToCar</a></li>
+          <li class="tab"><a href="/garage" class="icon-warehouse">Garage</a></li>
+          <li class="tab"><a href="/search" class="icon-wrench">Add-a-Car</a></li>
+          <li class="tab"><a href="/login" class="icon-user">Logout</a></li>
         </ul>
       </nav>
     </header>
@@ -68,19 +70,4 @@
 
     <script src="scripts/routes.js"></script>
   </body>
-  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
-  <script src="https://sdk.auth0.com/auth0.js#client=YOUR_CLIENT_ID"></script>
-  <script src="https://cdn.auth0.com/js/lock/10.0/lock.min.js"></script>
-  <script src="scripts/models/garageModel.js"></script>
-  <script src="scripts/models/loginModel.js"></script>
-  <script src="scripts/models/searchModel.js"></script>
-  <script src="scripts/views/garageView.js"></script>
-  <script src="scripts/views/loginView.js"></script>
-  <script src="scripts/views/searchView.js"></script>
-  <script src="scripts/controllers/garageController.js"></script>
-  <script src="scripts/controllers/loginController.js"></script>
-  <script src="scripts/controllers/searchController.js"></script>
-  <script src="scripts/routes.js"></script>
 </html>
