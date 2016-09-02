@@ -18,11 +18,7 @@
   },
   "dependencies": {
     "express": "^4.14.0",
-<<<<<<< HEAD
-    "express-request-proxy": "^2.0.0"
-=======
     "express-request-proxy": "^2.0.0",
     "pg": "^6.1.0"
->>>>>>> da0238559ef4aa0729b22345b1ba575dd40e0e70
   }
 }
