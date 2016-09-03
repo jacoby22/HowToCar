@@ -11,18 +11,35 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="styles/state.css">
+
     <script id="car-template" type="text/x-handlebars-template">
-      <article data-title="{{title}}" data-category="{{category}}">
-        <header>
-          <h3>Your Garage</h3>
-        </header>
+      <article class="clearfix">
         <section id="car-description">
           <li>
-            <p>Make: {{make}}</p>
-            <p>Model: {{model}}</p>
-            <p>Year: {{year}}</p>
+            <h4>Your Car</h4>
+            <p>Make: {{makes}}</p>
+            <p>Model: {{models}}</p>
+            <p>Year: {{years}}</p>
           </li>
         </section>
+      </article>
+    </script>
+
+    <script id="maintenance-template" type="text/x-handlebars-template">
+      <article class="clearfix" data-title="{{title}}" data-category="{{category}}">
+        <header>
+          <h3>Maintenance</h3>
+        </header>
+        <section id="car-maintenance">
+          <li>
+            <h4>Engine: {{engineCode}}</h4>
+            <p>Item: {{item}}</p>
+            <p>Action: {{action}}</p>
+            <p>Interval Milage: {{intervalMileage}}</p>
+            <p>Item Description: {{itemDescription}}</p>
+          </li>
+        </section>
+      </article>
     </script>
   </head>
   <body>
@@ -34,7 +51,7 @@
           <li class="tab"><a href="/" class="icon-home">HowToCar</a></li>
           <li class="tab"><a href="/garage" class="icon-warehouse">Garage</a></li>
           <li class="tab"><a href="/search" class="icon-wrench">Add-a-car</a></li>
-          <li class="tab"><a href="/login" class="icon-user">Logout</a></li>
+          <li class="tab"><a href="/" class="icon-user">Logout</a></li>
         </ul>
       </nav>
     </header>
@@ -44,6 +61,8 @@
       <section id="login" class="tab-content">
         login content
       </section>
+      <section id="garage" class="tab-content">garage content</section>
+      <section id="search" class="tab-content">search content
         <div>
           <ul id="filters">
             <li>
@@ -65,8 +84,6 @@
             </li>
           </ul>
         </div>
-      <section id="garage" class="tab-content">garage content</section>
-      <section id="search" class="tab-content">search content
         <ol id="maintenance"></ol>
         <button id="push-to-garage">Store In Garage</button>
       </section>
