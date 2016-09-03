@@ -4,8 +4,27 @@ var requestProxy = require('express-request-proxy'),
   port = process.env.PORT || 3000,
   app = express();
 
+pg.defaults.ssl = true;
 
-app.use(express.static('./'));
+app.get('/db', function(res, req) {
+  var db_url = process.env.DATABASE_URL;
+
+  var client = new pg.Client(db_url);
+
+  client.connect(function (err) {
+    if (err) throw err;
+
+    client.query('Select * FROM text_table', function(err, result) {
+      if (err) throw err;
+
+      console.log(result);
+      // res.send(result);
+      client.end(function(err) {
+        if (err) throw err;
+      });
+    });
+  });
+});
 
 app.get('/vehicle/*', function(request, response) {
   console.log('Routing Edmunds API request');
@@ -32,29 +51,11 @@ app.get('/maintenance/actionrepository/findbymodelyearid/', function(request, re
   }))(request, response);
 });
 
+app.use(express.static('./'));
+
 app.get('*', function(request, response) {
   console.log('New Request: ', request.url);
   response.sendFile('index.html', {root: '.' });
-});
-
-
-app.get('*/db', function(response, request) {
-
-  var client = new Client(process.env.DATABASE_URL);
-
-  client.connect(function (err) {
-    if (err) throw err;
-
-    client.query('Select * FROM test_table', function(err, result) {
-      if (err) throw err;
-
-      console.log(result);
-
-      client.end(function(err) {
-        if (err) throw err;
-      });
-    });
-  });
 });
 
 app.listen(port, function() {
