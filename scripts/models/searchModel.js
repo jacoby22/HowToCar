@@ -1,6 +1,11 @@
 (function(module) {
   var searchTool = new Object();
   searchTool.AllCars = [];
+
+  searchTool.init = function(ctx, next) {
+    next();
+  };
+
   searchTool.getAllCars = function(callback) {
     $.get('/vehicle/v2/makes').done(function(data) {
       callback(data);
@@ -20,6 +25,7 @@
     searchTool.AllCars.push(data);
     console.log(searchTool.AllCars);
   };
+
   searchTool.getAllCars(searchTool.printAllCars);
   module.searchTool = searchTool;
 })(window);
