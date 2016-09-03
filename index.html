@@ -54,17 +54,21 @@
             <li>
               <select id="model-filter">
                 <option value="">Model</option>
+                <option class="model-filter" value="placeholder"></option>
               </select>
             </li>
             <li>
               <select id="year-filter">
                 <option value="">Year</option>
+                <option class="year-filter" value="placeholder"></option>
               </select>
             </li>
           </ul>
         </div>
       <section id="garage" class="tab-content">garage content</section>
-      <section id="search" class="tab-content">search content</section>
+      <section id="search" class="tab-content">search content
+        <ol id="maintenance"></ol>
+      </section>
       <div id="loginButton">
         <button onclick="lock.show();">Login</button>
       </div>

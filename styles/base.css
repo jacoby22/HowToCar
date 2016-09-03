@@ -30,9 +30,6 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-li {
   list-style: none;
 }
 
@@ -62,11 +59,21 @@ a {
 }
 
 #search {
+  display: flex;
   background-color: lightgreen;
+  overflow-y: scroll;
+  padding: 1em;
 }
 
 #loginButton {
   display: flex;
   justify-content: center;
   padding-top: 2em;
+}
+
+#maintenance {
+  display: block;
+  list-style: circle;
+  font-size: 0.75em;
+  max-height: 100%;
 }
