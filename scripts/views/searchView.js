@@ -74,7 +74,7 @@
     data.actionHolder.map(function(maintenanceItem, index) {
       var listItem = '<li class="maintenance-Item"> <strong>Item</strong>: ' + maintenanceItem.item + ' <strong>Action:</strong> ' + maintenanceItem.action + ' <strong>Interval Mileage:</strong> ' + maintenanceItem.intervalMileage + ' <strong>Item Description:</strong> ' + maintenanceItem.itemDescription + '</li>';
       searchView.searchedCarMaintenance.push(maintenanceItem);
-      if (index % 10 === 0) {
+      if (index % 4 === 0) {
         $('#maintenance').append(listItem);
       };
     });

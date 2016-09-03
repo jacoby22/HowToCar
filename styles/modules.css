@@ -30,6 +30,11 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.carrot {
+  display: inline;
+  padding-left: 55px;
+}
+
 /*--------------------------MEDIA QUERIES*/
 
 
