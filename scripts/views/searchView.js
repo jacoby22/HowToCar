@@ -82,18 +82,16 @@
     });
   };
 
+  $('.icon-menu-outline').on('click',function() {
+    $('.main-nav ul').toggle('slow');
+  });
+  $(window).on('resize', function() {
+    if ($(window).width() >= 641) {
+      $('.main-nav ul').show();
+    } else {
+      $('.main-nav ul').hide();
+    }
+  });
+
   module.searchView = searchView;
 })(window);
-
-// $('.icon-menu').on('click',function() {
-//   $('.main-nav ul').toggle('slow');
-//
-// });
-// $(window).on('resize', function() {
-//   if ($(window).width() >= 680) {
-//     $('.main-nav ul').show();
-//   } else {
-//     $('.main-nav ul').hide();
-//     $('.icon-menu').show();
-//   }
-// });
