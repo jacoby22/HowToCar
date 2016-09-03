@@ -77,3 +77,10 @@ a {
   font-size: 0.75em;
   max-height: 100%;
 }
+
+#car {
+  display: block;
+  list-style: circle;
+  font-size: 0.75em
+  max-height: 100%;
+}

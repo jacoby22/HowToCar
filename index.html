@@ -13,13 +13,12 @@
     <link rel="stylesheet" href="styles/state.css">
 
     <script id="car-template" type="text/x-handlebars-template">
-      <article class="clearfix">
+      <article class="clearfix carType">
+        <header>
+          <h5>{{year}} {{make}} {{model}}</h5>
+        </header>
         <section id="car-description">
           <li>
-            <h4>Your Car</h4>
-            <p>Make: {{makes}}</p>
-            <p>Model: {{models}}</p>
-            <p>Year: {{years}}</p>
           </li>
         </section>
       </article>
@@ -84,6 +83,7 @@
             </li>
           </ul>
         </div>
+        <ol id="car"></ol>
         <ol id="maintenance"></ol>
         <button id="push-to-garage">Store In Garage</button>
       </section>
