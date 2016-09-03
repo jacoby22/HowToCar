@@ -4,7 +4,7 @@ var requestProxy = require('express-request-proxy'),
   port = process.env.PORT || 3000,
   app = express();
 
-// pg.defaults.ssl = true;
+pg.defaults.ssl = true;
 
 app.get('/db', function(response, request) {
   var db_url = process.env.DATABASE_URL;
@@ -14,7 +14,7 @@ app.get('/db', function(response, request) {
   client.connect(function (err) {
     if (err) throw err;
 
-    client.query('Select * FROM test_table', function(err, result) {
+    client.query('Select * FROM text_table', function(err, result) {
       if (err) throw err;
 
       console.log(result);
