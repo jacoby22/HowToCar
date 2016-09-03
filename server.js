@@ -6,7 +6,7 @@ var requestProxy = require('express-request-proxy'),
 
 pg.defaults.ssl = true;
 
-app.get('/db', function(res, req) {
+app.get('/db', function(req, res) {
   var db_url = process.env.DATABASE_URL;
 
   var client = new pg.Client(db_url);
@@ -17,11 +17,11 @@ app.get('/db', function(res, req) {
     client.query('Select * FROM text_table', function(err, result) {
       if (err) throw err;
 
-      console.log(result);
-      // res.send(result);
+      console.log(res);
       client.end(function(err) {
         if (err) throw err;
       });
+      res.send(result.rows);
     });
   });
 });
