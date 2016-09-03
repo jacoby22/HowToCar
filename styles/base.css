@@ -12,8 +12,15 @@ img {
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  background:
+  linear-gradient(
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.8)
+    ) no-repeat center center fixed, url('/images/LoginBackgroundImage.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 header {
@@ -36,6 +43,8 @@ ul {
 button {
   display: flex;
   justify-content: center;
+  position: absolute;
+  top: 50%;
 }
 
 a {
