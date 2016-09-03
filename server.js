@@ -25,9 +25,9 @@ app.get('*', function(request, response) {
 });
 
 
-app.get('/db', function(response, request) {
+app.get('*/db', function(response, request) {
 
-  var client = new Client(process.evn.DATABASE_URL);
+  var client = new Client(process.env.DATABASE_URL);
 
   client.connect(function (err) {
     if (err) throw err;
