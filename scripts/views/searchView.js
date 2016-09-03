@@ -48,6 +48,7 @@
       if($(this).val()) {
         searchView.currentCar.year = $(this).val();
         searchView.handlePushToGarage();
+        searchView.showCar();
         var yearVal = $(this).val();
         searchTool.AllCars[0].makes[searchView.index].models[searchView.modelIndex].years.map(function(year) {
           if (year.year.toString() === yearVal.toString()) {
@@ -66,18 +67,35 @@
   };
 
   searchView.handlePushToGarage = function() {
+    console.log('in');
     $('#push-to-garage').on('click', function() {
+      console.log('clicked');
       garage.savedCarMaintenance = searchView.searchedCarMaintenance;
-      if (garage.savedCars.indexOf(searchView.currentCar)) {
+      console.log(garage.savedCars.indexOf(searchView.currentCar));
+      if (garage.savedCars.indexOf(searchView.currentCar) < 0) {
+        console.log('success');
         garage.savedCars.push(searchView.currentCar);
       }
+      $('#push-to-garage').hide();
     });
   };
 
-  var render = function(carData) {
-    var garageTemplate = Handlebars.compile($('#maintenance-template').html());
+  var renderCar = function(carData) {
+    var garageTemplate = Handlebars.compile($('#car-template').html());
 
     return garageTemplate(carData);
+  };
+
+  searchView.showCar = function() {
+    var listItem = renderCar(searchView.currentCar);
+    console.log(searchView.CurrentCar);
+    $('#car').append(listItem);
+  };
+
+  var render = function(carData) {
+    var garageTemplate2 = Handlebars.compile($('#maintenance-template').html());
+
+    return garageTemplate2(carData);
   };
 
   searchView.showCarMaintenance = function(data) {
@@ -112,8 +130,10 @@
           var optionTag = '<option class="year-filter" value="' + year.year + '">' + year.year + '</option>';
           $('#year-filter').append(optionTag).show();
         });
+
       }
     });
+
   };
 
   $('.icon-menu-outline').on('click',function() {

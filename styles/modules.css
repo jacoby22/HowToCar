@@ -30,6 +30,11 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.carrot {
+  display: inline;
+  padding-left: 55px;
+}
+
 /*--------------------------MEDIA QUERIES*/
 
 
@@ -74,4 +79,8 @@
   z-index: 1;
   list-style-type: none;
   padding-right: 15px;
+}
+
+.carType header {
+  margin: 2em 0em 0em 3em;
 }
