@@ -61,11 +61,16 @@
   };
 
   searchView.handlePushToGarage = function() {
+    console.log('in');
     $('#push-to-garage').on('click', function() {
+      console.log('clicked');
       garage.savedCarMaintenance = searchView.searchedCarMaintenance;
-      if (garage.savedCars.indexOf(searchView.currentCar)) {
+      console.log(garage.savedCars.indexOf(searchView.currentCar));
+      if (garage.savedCars.indexOf(searchView.currentCar) < 0) {
+        console.log('success');
         garage.savedCars.push(searchView.currentCar);
       }
+      $('#push-to-garage').hide();
     });
   };
 
