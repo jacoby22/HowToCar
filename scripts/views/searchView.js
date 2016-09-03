@@ -1,10 +1,12 @@
 (function(module) {
   var searchView = new Object();
+  searchView.currentCar = {};
 
   searchView.createMakeFilter = function() {
     searchTool.AllCars[0].makes.map(function(make) {
       var optionTag = '<option value="' + make.name + '">' + make.name + '</option>';
       $('#make-filter').append(optionTag).show();
+      $('#push-to-garage').hide();
     });
   };
 
@@ -13,6 +15,7 @@
       $('.model-filter').remove();
       $('.year-filter').remove();
       if($(this).val()) {
+        searchView.currentCar.make = $(this).val();
         searchView.handleModelFilter();
         searchView.createModelFilter($(this).val());
       }
@@ -27,6 +30,7 @@
         $('.year-filter').remove();
       };
       if($(this).val()) {
+        searchView.currentCar.model = $(this).val();
         searchView.handleYearFilter();
         searchView.createYearFilter($(this).val());
       }
@@ -37,21 +41,39 @@
   searchView.handleYearFilter = function() {
     $('#year-filter').on('change', function(e) {
       if($(this).val()) {
+        searchView.currentCar.year = $(this).val();
+        searchView.handlePushToGarage();
         var yearVal = $(this).val();
         searchTool.AllCars[0].makes[searchView.index].models[searchView.modelIndex].years.map(function(year) {
           if (year.year.toString() === yearVal.toString()) {
-            searchView.searchedCar = year.id;
+            searchView.currentCar.id = year.id;
           }
         });
-        searchTool.getCarMaintenance(searchView.showCarMaintenance);
+        if (!$('#maintenance li')) {
+          searchTool.getCarMaintenance(searchView.showCarMaintenance);
+        } else {
+          $('.maintenance-Item').remove();
+          searchTool.getCarMaintenance(searchView.showCarMaintenance);
+        }
+        $('#push-to-garage').show();
+      }
+    });
+  };
+
+  searchView.handlePushToGarage = function() {
+    $('#push-to-garage').on('click', function() {
+      garage.savedCarMaintenance = searchView.searchedCarMaintenance;
+      if (garage.savedCars.indexOf(searchView.currentCar)) {
+        garage.savedCars.push(searchView.currentCar);
       }
     });
   };
 
   searchView.showCarMaintenance = function(data) {
-    console.log(data);
+    searchView.searchedCarMaintenance = [];
     data.actionHolder.map(function(maintenanceItem, index) {
-      var listItem = '<li> <strong>Item</strong>: ' + maintenanceItem.item + ' <strong>Action:</strong> ' + maintenanceItem.action + ' <strong>Interval Mileage:</strong> ' + maintenanceItem.intervalMileage + ' <strong>Item Description:</strong> ' + maintenanceItem.itemDescription + '</li><br>';
+      var listItem = '<li class="maintenance-Item"> <strong>Item</strong>: ' + maintenanceItem.item + ' <strong>Action:</strong> ' + maintenanceItem.action + ' <strong>Interval Mileage:</strong> ' + maintenanceItem.intervalMileage + ' <strong>Item Description:</strong> ' + maintenanceItem.itemDescription + '</li>';
+      searchView.searchedCarMaintenance.push(maintenanceItem);
       if (index % 10 === 0) {
         $('#maintenance').append(listItem);
       };

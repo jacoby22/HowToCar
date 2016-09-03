@@ -11,6 +11,7 @@
 
   searchTool.getCarMaintenance = function(callback) {
     $.get('/maintenance/actionrepository/findbymodelyearid').done(function(data) {
+      console.log(data);
       callback(data);
     });
   };
