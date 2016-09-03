@@ -2,6 +2,11 @@
   var searchView = new Object();
   searchView.currentCar = {};
 
+  searchView.show = function() {
+    $('.tab-content').hide();
+    $('#search').show();
+  };
+
   searchView.createMakeFilter = function() {
     searchTool.AllCars[0].makes.map(function(make) {
       var optionTag = '<option value="' + make.name + '">' + make.name + '</option>';

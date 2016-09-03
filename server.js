@@ -4,6 +4,7 @@ var requestProxy = require('express-request-proxy'),
   port = process.env.PORT || 3000,
   app = express();
 
+
 app.use(express.static('./'));
 
 app.get('/vehicle/*', function(request, response) {
@@ -36,17 +37,22 @@ app.get('*', function(request, response) {
   response.sendFile('index.html', {root: '.' });
 });
 
-app.get('/db', function(response, request) {
-  console.log('started');
-  pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+
+app.get('*/db', function(response, request) {
+
+  var client = new Client(process.env.DATABASE_URL);
+
+  client.connect(function (err) {
+    if (err) throw err;
+
     client.query('Select * FROM test_table', function(err, result) {
-      done();
-      if (err) {
-        console.error(err); response.send('Error ' + err);
-      } else {
-        console.log('something');
-        response.render('pages/db', {results: result.rows});
-      }
+      if (err) throw err;
+
+      console.log(result);
+
+      client.end(function(err) {
+        if (err) throw err;
+      });
     });
   });
 });
