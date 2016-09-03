@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>HowToCar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
     <link rel="stylesheet" href="styles/fontello.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
@@ -25,20 +27,23 @@
   </head>
   <body>
 
-    <header>
-      <nav class="main-nav">
-        <div class="icon-menu"></div>
+    <header class="clearfix">
+      <nav class="main-nav" id="display">
+        <div class="icon-menu-outline"></div>
         <ul>
           <li class="tab"><a href="/" class="icon-home">HowToCar</a></li>
           <li class="tab"><a href="/garage" class="icon-warehouse">Garage</a></li>
-          <li class="tab"><a href="/search" class="icon-wrench">Add-a-Car</a></li>
+          <li class="tab"><a href="/search" class="icon-wrench">Add-a-car</a></li>
           <li class="tab"><a href="/login" class="icon-user">Logout</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <section id="login" class="tab-content">login content</section>
+      <img src="images/LoginBackgroundImage.jpg">
+      <section id="login" class="tab-content">
+        login content
+      </section>
         <div>
           <ul id="filters">
             <li>
@@ -49,17 +54,22 @@
             <li>
               <select id="model-filter">
                 <option value="">Model</option>
+                <option class="model-filter" value="placeholder"></option>
               </select>
             </li>
             <li>
               <select id="year-filter">
                 <option value="">Year</option>
+                <option class="year-filter" value="placeholder"></option>
               </select>
             </li>
           </ul>
         </div>
       <section id="garage" class="tab-content">garage content</section>
-      <section id="search" class="tab-content">search content</section>
+      <section id="search" class="tab-content">search content
+        <ol id="maintenance"></ol>
+        <button id="push-to-garage">Store In Garage</button>
+      </section>
       <div id="loginButton">
         <button onclick="lock.show();">Login</button>
       </div>

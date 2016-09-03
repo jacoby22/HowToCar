@@ -1,33 +1,77 @@
-.icon-menu {
-  font-size: 2em;
-  /*float: right;*/
-  background-color: red;
+/*LINK STYLES
+=========================================*/
+
+.icon-menu-outline {
+  font-size: 1.5em;
+  float: right;
+  /*background-color: red;*/
+}
+
+.main-nav {
+  padding: 0.1em;
+  /*display: block;*/
+}
+.main-nav ul {
+  display: none;
+  padding: 0;
+  list-style: none;
+  clear: both;
+  width: 80%;
+  font-size: .75em;
+
+  /*margin-bottom: -4em -2em 1em -3em;*/
+}
+
+.main-nav li {
+  margin-right: .6em;
+  /*font-size: 1.5em;*/
+  padding: .5em .2em;
+  border-bottom: 1px solid #ccc;
+  font-family: 'Roboto', sans-serif;
 }
 
 /*--------------------------MEDIA QUERIES*/
-@media only screen and (min-device-width : 318px) and (max-device-width : 482px) { /* Mobile*/
-  .main-nav ul {
-    display:none;
-  }
-  .icon-menu {
-    display: inline;
-  }
+
+
+
+@media only screen and (min-width: 641px) {
+  .icon-menu-outline {
+  display: none;
 }
-@media and screen and (min-dev-width: 680px) {
+.main-nav {
+  padding: 0.1em;
+  /*display: block;*/
+}
 
-  .main-nav ul {
-      display: flex;
-      justify-content: space-around;
-      columns: 5;
-      width: 100%;
-    }
+.main-nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  columns: 4;
+  font-size: .75em;
+ }
 
-    .main-nav ul li {
-      display: inline;
-      border-bottom: none;
-    }
+.main-nav ul li {
+  display: flex;
+  justify-content: space-around;
+  columns: 4;
+  font-family: 'Roboto', sans-serif;
+  /*width: 100%;*/
+ }
 
-    .main-nav ul li:hover a {
-      color: #29506D;
-    }
+.main-nav ul li:hover a {
+  color: #29506D;
+ }
+
+.navContent {
+  display:inline-block;
+  vertical-align: top;
+  font-size: 12px;
+  width: 170px;
+  position: fixed;
+  left: 36px;
+  top: 36px;
+  z-index: 1;
+  list-style-type: none;
+  padding-right: 15px;
 }
