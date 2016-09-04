@@ -65,6 +65,8 @@ a {
 
 #garage {
   background-color: lightyellow;
+  display: flex;
+  justify-content: center;
 }
 
 #search {
@@ -89,7 +91,11 @@ a {
 
 #car {
   display: block;
-  list-style: circle;
+  list-style: square;
   font-size: 0.75em
-  max-height: 100%;
 }
+#maintenance-list {
+  display: block;
+  list-style: circle;
+  font-size: 0.75em;
+  max-height: 100%;
