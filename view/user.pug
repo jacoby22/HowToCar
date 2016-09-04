@@ -2,9 +2,9 @@ html
   head
     body
 
-    
+
     script.
-      console.log(JSON.parse('#{user}'))
+      console.log(JSON.parse('#{user._raw}'))
       localStorage.setItem('currentUser', '#{user._json.email}')
 
       window.location.replace('https://how2car.herokuapp.com/garage')
