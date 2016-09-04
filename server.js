@@ -37,7 +37,8 @@ function(req, res) {
 
 app.get('/user', function (req, res) {
   console.log('clogged');
-  res.sendFile('./index.html', {
+  res.sendFile('index.html', {
+    root: '.',
     user: req.user
   });
 });
