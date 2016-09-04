@@ -90,6 +90,20 @@
         <ol id="maintenance"></ol>
         <button id="push-to-garage">Store In Garage</button>
       </section>
+      <div id="root" style="width: 320px; margin: 40px auto; padding: 10px"></div>
+      <script src="https://cdn.auth0.com/js/lock/10.0/lock.min.js"></script>
+      <script>
+         var lock = new Auth0Lock('SRdhH0HiDy8RsMiGkuHTAbFmAWPYO1ZV', 'app55939845.auth0.com', {
+           container: 'root',
+           auth: {
+             redirectUrl: 'https://how2car.herokuapp.com/callback',
+             responseType: 'code',
+             params: {
+               scope: 'openid email' // Learn about scopes: https://auth0.com/docs/scopes
+             }
+           }
+         });
+      </script>
       <div id="loginButton">
         <button onclick="lock.show();">Login</button>
       </div>
@@ -102,8 +116,6 @@
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
-    <!-- <script src="https://sdk.auth0.com/auth0.js#client=YOUR_CLIENT_ID"></script> -->
-    <!-- <script src="https://cdn.auth0.com/js/lock/10.0/lock.min.js"></script> -->
     <!-- Model -->
     <script src="scripts/models/garageModel.js"></script>
     <script src="scripts/models/loginModel.js"></script>
