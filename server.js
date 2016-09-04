@@ -37,7 +37,7 @@ function(req, res) {
 
 app.get('/user', function (req, res) {
   console.log('clogged');
-  res.render('user', {
+  res.send('user', {
     user: req.user
   });
 });
