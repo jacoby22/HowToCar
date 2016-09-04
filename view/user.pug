@@ -10,4 +10,4 @@ html
     script.
       localStorage.setItem('currentUser', '#{user._json.email}')
 
-      $.ajax('/garage')
+      $.get('/garage')
