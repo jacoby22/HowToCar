@@ -66,6 +66,9 @@ a {
 
 #garage {
   background-color: lightyellow;
+  display: flex;
+  justify-content: center;
+  height: 100%;
 }
 
 #search {
@@ -78,7 +81,7 @@ a {
 #loginButton {
   display: flex;
   justify-content: center;
-  padding-top: 2em;
+  top: 50%;
 }
 
 #maintenance {
@@ -90,7 +93,11 @@ a {
 
 #car {
   display: block;
-  list-style: circle;
+  list-style: square;
   font-size: 0.75em
-  max-height: 100%;
 }
+#maintenance-list {
+  display: block;
+  list-style: circle;
+  font-size: 0.75em;
+  max-height: 100%;
