@@ -1,6 +1,7 @@
 var requestProxy = require('express-request-proxy'),
   express = require('express'),
   pg = require('pg'),
+  pug = require('pug'),
   port = process.env.PORT || 3000,
   app = express();
 
@@ -24,6 +25,8 @@ app.use(session({ secret: 'ab1FaBisHks9YbbHPhDV3iYfgMZ412Kw-87hQVsiYsqHIG_8gONEz
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.set('views', './view');
+app.set('view engine', 'pug');
 
 app.get('/callback',
 passport.authenticate('auth0', { failureRedirect: '/url-if-something-fails' }),
@@ -31,13 +34,12 @@ function(req, res) {
   if (!req.user) {
     throw new Error('user null');
   }
-  console.log(res.user);
   res.redirect('/user');
 });
 
 app.get('/user', function (req, res) {
-  console.log('clogged');
-  res.render('index', {
+  console.log(req.user);
+  res.render('user', {
     user: req.user
   });
 });
@@ -67,7 +69,6 @@ app.get('/maintenance/actionrepository/findbymodelyearid/', function(request, re
     }
   }))(request, response);
 });
-
 
 
 app.get('*', function(request, response) {

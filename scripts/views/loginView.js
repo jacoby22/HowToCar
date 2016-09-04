@@ -3,7 +3,7 @@
 
   loginView.show = function() {
     $('.tab-content').hide();
-    $('#login').show();
+    $('#loginButton').show();
   };
 
   module.loginView = loginView;
