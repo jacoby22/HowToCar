@@ -42,12 +42,7 @@ app.get('/user', function (req, res) {
   res.render('user', {
     user: req.user
   });
-  // res.send(req.user);
-  // res.sendFile('index.html', {
-  //   root: '.',
-  //   user: req.user
-  // });
-  // res.redirect('/');
+  res.redirect('/garage');
 });
 ////////////////////////////////////////////////////////////////////////////
 

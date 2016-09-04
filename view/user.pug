@@ -4,7 +4,7 @@ html
   body
     h1= message
 
-    p#email User #{user._json.email}
+    p User #{user._json.email}
 
     script.
       localStorage.setItem('currentUser', '#{user._json.email}')
