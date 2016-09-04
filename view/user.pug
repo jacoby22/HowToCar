@@ -1,13 +1,7 @@
 html
   head
-    title= title
   body
-    h1= message
-
-    p User #{user._json.email}
-
-    script( src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous")
     script.
-      localStorage.setItem('currentUser', '#{user._json.email}')
+      localStorage.setItem('currentUser', '#{user}')
 
       window.location.replace('https://how2car.herokuapp.com/garage')
