@@ -18,8 +18,9 @@
   };
 //TODO
   garage.showCar = function() {
-    console.log(garage.savedCars);
-    // console.log(garage.savedCarMaintenance[]);
+    console.log(garage.savedCars[0]);
+    console.log(garage.savedCarMaintenance[0]);
+
     var listMaintenance = renderMaintenace(garage.savedCarMaintenance[0]);
     var listItem = renderCar(garage.savedCars[0]);
     $('#car').append(listItem);
