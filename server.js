@@ -17,6 +17,7 @@ var strategy = require('./setup-passport');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 
+app.use(express.static('./'));
 app.use(cookieParser());
 // See express session docs for information on the options: https://github.com/expressjs/session
 app.use(session({ secret: 'ab1FaBisHks9YbbHPhDV3iYfgMZ412Kw-87hQVsiYsqHIG_8gONEzNE4GYY-ZX6A', resave: false, saveUninitialized: false }));
@@ -67,7 +68,6 @@ app.get('/maintenance/actionrepository/findbymodelyearid/', function(request, re
 });
 
 
-app.use(express.static('./'));
 
 app.get('*', function(request, response) {
   console.log('New Request: ', request.url);
