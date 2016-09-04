@@ -2,7 +2,7 @@ html
   head
     body
 
-    p User #{user._json.email}
+    
     script.
       console.log(JSON.parse('#{user}'))
       localStorage.setItem('currentUser', '#{user._json.email}')
