@@ -2,7 +2,7 @@ html
   head
     body
 
-
+      p
     script.
       console.log(JSON.parse('#{user._raw}').replace(/&quot;/g,'"'))
       localStorage.setItem('currentUser', '#{user._json.email}')
