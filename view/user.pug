@@ -8,3 +8,7 @@ html
 
     script.
       localStorage.setItem('currentUser', '#{user._json.email}')
+
+      $(document).ready(function() {
+       $.get('/garage');
+      })

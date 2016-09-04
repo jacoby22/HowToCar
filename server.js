@@ -42,7 +42,6 @@ app.get('/user', function (req, res) {
   res.render('user', {
     user: req.user
   });
-  res.redirect('/garage');
 });
 ////////////////////////////////////////////////////////////////////////////
 
