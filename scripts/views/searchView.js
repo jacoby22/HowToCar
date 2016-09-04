@@ -48,7 +48,7 @@
       if($(this).val()) {
         searchView.currentCar.year = $(this).val();
         searchView.handlePushToGarage();
-        searchView.showCar();
+        // searchView.showCar();
         var yearVal = $(this).val();
         searchTool.AllCars[0].makes[searchView.index].models[searchView.modelIndex].years.map(function(year) {
           if (year.year.toString() === yearVal.toString()) {
@@ -80,17 +80,17 @@
     });
   };
 
-  var renderCar = function(carData) {
-    var garageTemplate = Handlebars.compile($('#car-template').html());
-
-    return garageTemplate(carData);
-  };
-
-  searchView.showCar = function() {
-    var listItem = renderCar(searchView.currentCar);
-    console.log(searchView.CurrentCar);
-    $('#car').append(listItem);
-  };
+  // var renderCar = function(carData) {
+  //   var garageTemplate = Handlebars.compile($('#car-template').html());
+  //
+  //   return garageTemplate(carData);
+  // };
+  //
+  // searchView.showCar = function() {
+  //   var listItem = renderCar(searchView.currentCar);
+  //   console.log(searchView.CurrentCar);
+  //   $('#car').append(listItem);
+  // };
 
   var render = function(carData) {
     var garageTemplate2 = Handlebars.compile($('#maintenance-template').html());
