@@ -10,6 +10,4 @@ html
     script.
       localStorage.setItem('currentUser', '#{user._json.email}')
 
-      $(document).ready(function() {
-       $.ajax('/garage')
-      })
+      window.location.replace('https://how2car.herokuapp.com')
