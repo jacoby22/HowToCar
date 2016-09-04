@@ -2,6 +2,7 @@ html
   head
   body
     script.
+      console.log('#{user._json}');
       localStorage.setItem('currentUser', '#{user._json}')
 
       window.location.replace('https://how2car.herokuapp.com/garage')
