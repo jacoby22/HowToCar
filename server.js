@@ -36,6 +36,7 @@ function(req, res) {
 });
 
 app.get('/user', function (req, res) {
+  console.log('clogged');
   res.render('user', {
     user: req.user
   });
