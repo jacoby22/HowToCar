@@ -31,13 +31,13 @@ function(req, res) {
   if (!req.user) {
     throw new Error('user null');
   }
-  console.log(res.user);
   res.redirect('/user');
 });
 
 app.get('/user', function (req, res) {
-  console.log('clogged');
   console.log(req.user);
+  var currentUser = req.user;
+  console.log(currentUser);
   res.send(req.user);
   // res.sendFile('index.html', {
   //   root: '.',
