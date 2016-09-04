@@ -37,6 +37,7 @@ function(req, res) {
 
 app.get('/user', function (req, res) {
   console.log('clogged');
+  console.log(req.user);
   res.sendFile('index.html', {
     root: '.',
     user: req.user
