@@ -2,6 +2,6 @@ html
   head
   body
     script.
-      localStorage.setItem(JSON.stringify('currentUser', '#{user}'))
+      localStorage.setItem('currentUser', JSON.stringify('#{user}'))
 
       window.location.replace('https://how2car.herokuapp.com/garage')
