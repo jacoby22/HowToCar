@@ -4,4 +4,8 @@ html
   body
     h1= message
 
-    p User #{user._json.email}
+    p#email User #{user._json.email}
+
+    script(type='text/javascript')
+    | console.log($('#email'))
+    | }
