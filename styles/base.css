@@ -68,6 +68,7 @@ a {
   background-color: lightyellow;
   display: flex;
   justify-content: center;
+  height: 100%;
 }
 
 #search {
@@ -80,7 +81,7 @@ a {
 #loginButton {
   display: flex;
   justify-content: center;
-  padding-top: 2em;
+  top: 50%;
 }
 
 #maintenance {

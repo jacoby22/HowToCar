@@ -4,6 +4,7 @@
 
   searchView.show = function() {
     $('.tab-content').hide();
+    $('#loginButton').hide();
     $('#search').show();
   };
 
@@ -104,7 +105,7 @@
       searchView.searchedCarMaintenance.push(maintenanceItem);
       if (index % 10 === 0) {
         var listItem = render(searchView.searchedCarMaintenance[index]);
-        console.log(searchView.searchedCarMaintenance[index]);
+        // console.log(searchView.searchedCarMaintenance[index]);
         $('#maintenance').append(listItem);
       };
     });
