@@ -1,6 +1,7 @@
 var requestProxy = require('express-request-proxy'),
   express = require('express'),
   pg = require('pg'),
+  pug = require('pug'),
   port = process.env.PORT || 3000,
   app = express();
 
@@ -24,6 +25,8 @@ app.use(session({ secret: 'ab1FaBisHks9YbbHPhDV3iYfgMZ412Kw-87hQVsiYsqHIG_8gONEz
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.set('views', './view');
+app.set('view engine', 'pug');
 
 app.get('/callback',
 passport.authenticate('auth0', { failureRedirect: '/url-if-something-fails' }),
@@ -35,15 +38,15 @@ function(req, res) {
 });
 
 app.get('/user', function (req, res) {
-  console.log(req.user);
-  var currentUser = req.user;
-  console.log(currentUser);
-  res.send(req.user);
+  res.render('user', {
+    user: req.user
+  });
+  // res.send(req.user);
   // res.sendFile('index.html', {
   //   root: '.',
   //   user: req.user
   // });
-  res.redirect('/');
+  // res.redirect('/');
 });
 ////////////////////////////////////////////////////////////////////////////
 
@@ -71,7 +74,6 @@ app.get('/maintenance/actionrepository/findbymodelyearid/', function(request, re
     }
   }))(request, response);
 });
-
 
 
 app.get('*', function(request, response) {
