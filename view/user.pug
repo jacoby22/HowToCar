@@ -1,8 +1,10 @@
 html
   head
-  body
+    body
+
+    p User #{user._json.email}
     script.
-      console.log({user._json});
-      localStorage.setItem('currentUser', '#{user._json}')
+      console.log('#{user._json}')
+      localStorage.setItem('currentUser', '#{user._json.email}')
 
       window.location.replace('https://how2car.herokuapp.com/garage')
