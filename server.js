@@ -38,6 +38,7 @@ function(req, res) {
 });
 
 app.get('/user', function (req, res) {
+  console.log(req.user);
   res.render('user', {
     user: req.user
   });
