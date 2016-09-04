@@ -6,6 +6,41 @@ var requestProxy = require('express-request-proxy'),
 
 pg.defaults.ssl = true;
 
+///////////////////////////////////////////////////////////////////////
+
+var passport = require('passport');
+
+// This will configure Passport to use Auth0
+var strategy = require('./setup-passport');
+
+// Session and cookies middlewares to keep user logged in
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
+
+app.use(cookieParser());
+// See express session docs for information on the options: https://github.com/expressjs/session
+app.use(session({ secret: 'ab1FaBisHks9YbbHPhDV3iYfgMZ412Kw-87hQVsiYsqHIG_8gONEzNE4GYY-ZX6A', resave: false, saveUninitialized: false }));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.get('/callback',
+passport.authenticate('auth0', { failureRedirect: '/url-if-something-fails' }),
+function(req, res) {
+  if (!req.user) {
+    throw new Error('user null');
+  }
+  console.log(res.user);
+  res.redirect('/user');
+});
+
+app.get('/user', function (req, res) {
+  res.render('user', {
+    user: req.user
+  });
+});
+////////////////////////////////////////////////////////////////////////////
+
 app.get('/vehicle/*', function(request, response) {
   console.log('Routing Edmunds API request');
   var url = 'https://api.edmunds.com/api' + request.originalUrl;
@@ -31,14 +66,6 @@ app.get('/maintenance/actionrepository/findbymodelyearid/', function(request, re
   }))(request, response);
 });
 
-// $.ajax({
-//   url: 'https://app55939845.auth0.com/api/v2/users',
-//   type: 'GET',
-//   headers: {'Authorization': "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJuTGxGRzE3RmZ1cmZiWEhkQVRMazAxVnFHUUt1S0g5TiIsInNjb3BlcyI6eyJ1c2VycyI6eyJhY3Rpb25zIjpbInJlYWQiXX19LCJpYXQiOjE0NzI5NDQwODUsImp0aSI6ImUzZDRkZTBjZjNhNjlkMDQzMWQ4ZjI0NDY1N2ZjYjIwIn0.qDhaZprCScbugsJofUrDI6KajgQqYBx671wpCZT8CwU"},
-//   success: function(data) {
-//     console.log(data);
-//   }
-// });
 
 app.use(express.static('./'));
 
