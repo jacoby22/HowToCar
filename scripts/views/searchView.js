@@ -1,9 +1,12 @@
 (function(module) {
   var searchView = new Object();
   searchView.currentCar = {};
+  var array1 = [];
+  var array2 = [];
 
   searchView.show = function() {
     $('.tab-content').hide();
+    $('#loginButton').hide();
     $('#search').show();
   };
 
@@ -21,7 +24,6 @@
       $('.year-filter').remove();
       if($(this).val()) {
         searchView.currentCar.make = $(this).val();
-        searchView.handleModelFilter();
         searchView.createModelFilter($(this).val());
       }
       $('#year-filter').val('');
@@ -36,7 +38,6 @@
       };
       if($(this).val()) {
         searchView.currentCar.model = $(this).val();
-        searchView.handleYearFilter();
         searchView.createYearFilter($(this).val());
       }
       $('#year-filter').val('');
@@ -47,18 +48,19 @@
     $('#year-filter').on('change', function(e) {
       if($(this).val()) {
         searchView.currentCar.year = $(this).val();
-        searchView.handlePushToGarage();
         var yearVal = $(this).val();
         searchTool.AllCars[0].makes[searchView.index].models[searchView.modelIndex].years.map(function(year) {
           if (year.year.toString() === yearVal.toString()) {
             searchView.currentCar.id = year.id;
           }
         });
-        if (!$('#maintenance li')) {
+        if (!$('.maintenance-Item')) {
           searchTool.getCarMaintenance(searchView.showCarMaintenance);
+          searchTool.getCarPhoto(searchView.showCarPhoto);
         } else {
           $('.maintenance-Item').remove();
           searchTool.getCarMaintenance(searchView.showCarMaintenance);
+          searchTool.getCarPhoto(searchView.showCarPhoto);
         }
         $('#push-to-garage').show();
       }
@@ -66,23 +68,43 @@
   };
 
   searchView.handlePushToGarage = function() {
-    console.log('in');
+    var counter = 0;
     $('#push-to-garage').on('click', function() {
-      console.log('clicked');
-      garage.savedCarMaintenance = searchView.searchedCarMaintenance;
-      console.log(garage.savedCars.indexOf(searchView.currentCar));
-      if (garage.savedCars.indexOf(searchView.currentCar) < 0) {
-        console.log('success');
-        garage.savedCars.push(searchView.currentCar);
+      if (garage.savedCars.length === 0) {
+        array1 = [searchView.currentCar.id, searchView.currentCar.make, searchView.currentCar.model, searchView.currentCar.year, searchView.searchedCarMaintenance];
+        garage.savedCars.push(array1);
+      } else {
+        array2 = [searchView.currentCar.id, searchView.currentCar.make, searchView.currentCar.model, searchView.currentCar.year, searchView.searchedCarMaintenance];
+        garage.savedCars.forEach(function(index) {
+          if(index[0] === searchView.currentCar.id) {
+            counter = 1;
+          }
+        });
+        if (counter === 0) {
+          garage.savedCars.push(array2);
+        }
+        counter = 0;
       }
       $('#push-to-garage').hide();
     });
   };
 
-  var render = function(carData) {
-    var garageTemplate = Handlebars.compile($('#maintenance-template').html());
+  // var renderCar = function(carData) {
+  //   var garageTemplate = Handlebars.compile($('#car-template').html());
+  //
+  //   return garageTemplate(carData);
+  // };
+  //
+  // searchView.showCar = function() {
+  //   var listItem = renderCar(searchView.currentCar);
+  //   console.log(searchView.CurrentCar);
+  //   $('#car').append(listItem);
+  // };
 
-    return garageTemplate(carData);
+  var render = function(carData) {
+    var garageTemplate2 = Handlebars.compile($('#maintenance-template').html());
+
+    return garageTemplate2(carData);
   };
 
   searchView.showCarMaintenance = function(data) {
@@ -90,11 +112,16 @@
     data.actionHolder.map(function(maintenanceItem, index) {
       searchView.searchedCarMaintenance.push(maintenanceItem);
       if (index % 10 === 0) {
-        var listItem = render(searchView.searchedCarMaintenance[index]);
-        console.log(searchView.searchedCarMaintenance[index]);
+        var listItem = '<li class="maintenance-Item"> ITEM: ' + searchView.searchedCarMaintenance[index].item + ' ACTION: ' + searchView.searchedCarMaintenance[index].action + ' DESCRIPTION: ' + searchView.searchedCarMaintenance[index].itemDescription + ' INTERVAL MILEAGE: ' + searchView.searchedCarMaintenance[index].intervalMileage + '</li>';
+        // console.log(searchView.searchedCarMaintenance[index]);
         $('#maintenance').append(listItem);
       };
     });
+  };
+
+  searchView.showCarPhoto = function(data) {
+    // var carPhoto = '<div> <img src="https://api.edmunds.com' + data + '">';
+    console.log(data);
   };
 
   searchView.createModelFilter = function(makeVal) {
@@ -117,8 +144,10 @@
           var optionTag = '<option class="year-filter" value="' + year.year + '">' + year.year + '</option>';
           $('#year-filter').append(optionTag).show();
         });
+
       }
     });
+
   };
 
   $('.icon-menu-outline').on('click',function() {
