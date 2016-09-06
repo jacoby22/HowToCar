@@ -32,12 +32,11 @@ header {
 }
 
 ul {
-  padding-left: 5%;
-  padding-right: 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   list-style: none;
+  min-width: 100%;
 }
 
 
@@ -47,17 +46,13 @@ a {
 }
 
 .tab-content {
-  height: 10em;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 #push-to-garage {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  top: 50%;
+  display: none;
 }
 
 #login {
@@ -72,8 +67,9 @@ a {
 }
 
 #search {
-  display: flex;
-  background-color: lightgreen;
+  height: 100%;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.7);
   overflow-y: scroll;
   padding: 1em;
 }
@@ -86,9 +82,13 @@ a {
 
 #maintenance {
   display: block;
-  list-style: circle;
   font-size: 0.75em;
-  max-height: 100%;
+  max-width: 100%;
+  color: white;
+  justify-content: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 0;
 }
 
 #car {
@@ -96,8 +96,22 @@ a {
   list-style: square;
   font-size: 0.75em
 }
+
 #maintenance-list {
   display: block;
   list-style: circle;
   font-size: 0.75em;
   max-height: 100%;
+}
+
+#filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+#button-container {
+  display: flex;
+  justify-content: center;
+}

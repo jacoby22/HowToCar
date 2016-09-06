@@ -14,16 +14,20 @@
     });
   };
 
+  searchTool.getCarPhoto = function(callback) {
+    $.get('/media/v2/' + searchView.currentCar.make.toLowerCase() + '/' + searchView.currentCar.model.toLowerCase() + '/' + searchView.currentCar.year + '/photos').done(function(data){
+      callback(data);
+    });
+  };
+
   searchTool.getCarMaintenance = function(callback) {
     $.get('/maintenance/actionrepository/findbymodelyearid').done(function(data) {
-      console.log(data);
       callback(data);
     });
   };
 
   searchTool.printAllCars = function(data) {
     searchTool.AllCars.push(data);
-    console.log(searchTool.AllCars);
   };
 
   // $.ajax({
