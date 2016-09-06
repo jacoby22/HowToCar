@@ -42,7 +42,7 @@ app.get('/user', function (req, res) {
   var client = new pg.Client(process.env.DATABASE_URL);
   client.connect(function(err) {
     if (err) throw err;
-    client.query('INSERT INTO cars (email) values ($1)', [req.user._json.email], function(err, result) {
+    client.query('INSERT INTO garage (email) values ($1)', [req.user._json.email], function(err, result) {
       if (err) throw err;
       console.log(result);
       client.end(function(err) {
