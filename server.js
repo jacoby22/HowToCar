@@ -39,11 +39,18 @@ function(req, res) {
 
 app.get('/user', function (req, res) {
   console.log(req.user._json.email);
-  // var client = new pg.Client(process.env.DATABASE_URL);
-  // client.connect(function(err) {
-  //   if (err) throw err;
-  //   client.query('Insert')
-  // })
+  var client = new pg.Client(process.env.DATABASE_URL);
+  client.connect(function(err) {
+    if (err) throw err;
+    client.query('INSERT INTO cars (email) values ($1)', [req.user._json.email], function(err, result) {
+      if (err) throw err;
+      console.log(result);
+      client.end(function(err) {
+        if (err) throw err;
+      });
+    });
+  });
+
   res.render('user', {
     user: req.user
   });
