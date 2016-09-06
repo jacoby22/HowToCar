@@ -94,6 +94,19 @@ app.get('/maintenance/actionrepository/findbymodelyearid/', function(request, re
   }))(request, response);
 });
 
+app.get('/media/v2/*', function(request, response) {
+  console.log('Routing Edmunds API photo request');
+  console.log(request.originalUrl);
+  var url = 'https://api.edmunds.com/api' + request.originalUrl;
+  (requestProxy({
+    url: url,
+    query: {
+      api_key: process.env.EDMUNDS_KEY,
+      fmt: 'json'
+    }
+  }))(request, response);
+});
+
 app.get('*', function(request, response) {
   console.log('New Request: ', request.url);
   response.sendFile('index.html', {root: '.' });
