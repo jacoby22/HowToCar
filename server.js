@@ -38,13 +38,37 @@ function(req, res) {
 });
 
 app.get('/user', function (req, res) {
-  console.log(req.user);
+  console.log(req.user._json.email);
+  var client = new pg.Client(process.env.DATABASE_URL);
+  client.connect(function(err) {
+    if (err) throw err;
+    client.query('INSERT INTO cars (email) values ($1)', [req.user._json.email], function(err, result) {
+      if (err) throw err;
+      console.log(result);
+      client.end(function(err) {
+        if (err) throw err;
+      });
+    });
+  });
+
   res.render('user', {
     user: req.user
   });
 });
 ////////////////////////////////////////////////////////////////////////////
 
+// app.get('/addUserToCarDatabase', function(req, res) {
+//   console.log(currentUser);
+  // var client = new pg.Client(process.env.DATABASE_URL);
+  //
+  // client.connect(function(err) {
+  //   if (err) throw err;
+  //
+  //   client.query('INSERT INTO cars (email, )')
+  // })
+// });
+
+////////////////////////////////////////////////////////////////////////////
 app.get('/vehicle/*', function(request, response) {
   console.log('Routing Edmunds API request');
   var url = 'https://api.edmunds.com/api' + request.originalUrl;
@@ -69,7 +93,6 @@ app.get('/maintenance/actionrepository/findbymodelyearid/', function(request, re
     }
   }))(request, response);
 });
-
 
 app.get('*', function(request, response) {
   console.log('New Request: ', request.url);
