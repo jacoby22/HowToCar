@@ -55,13 +55,13 @@ app.get('/user', function (req, res) {
   });
 });
 
-app.get('/addCar', function(req, res) {
-  var client = new pg.Client(process.env.DATABASE_URL);
-  client.connect(function(err) {
-    if (err) throw err;
-    client.query('UPDATE garage SET cars = cars || '{}' WHERE email=$1', )
-  });
-});
+// app.get('/addCar', function(req, res) {
+//   var client = new pg.Client(process.env.DATABASE_URL);
+//   client.connect(function(err) {
+//     if (err) throw err;
+//     client.query('UPDATE garage SET cars = cars || '{}' WHERE email=$1', )
+//   });
+// });
 ////////////////////////////////////////////////////////////////////////////
 
 app.get('/vehicle/*', function(request, response) {
