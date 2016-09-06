@@ -56,11 +56,11 @@
         });
         if (!$('.maintenance-Item')) {
           searchTool.getCarMaintenance(searchView.showCarMaintenance);
-          searchTool.getCarPhoto(searchView.showCarPhoto);
+          // searchTool.getCarPhoto(searchView.showCarPhoto);
         } else {
           $('.maintenance-Item').remove();
           searchTool.getCarMaintenance(searchView.showCarMaintenance);
-          searchTool.getCarPhoto(searchView.showCarPhoto);
+          // searchTool.getCarPhoto(searchView.showCarPhoto);
         }
         $('#push-to-garage').show();
       }
@@ -119,10 +119,11 @@
     });
   };
 
-  searchView.showCarPhoto = function(data) {
-    // var carPhoto = '<div> <img src="https://api.edmunds.com' + data + '">';
-    console.log(data);
-  };
+  // searchView.showCarPhoto = function(data) {
+  //   var carPhoto = '<div> <img src="https://api.edmunds.com' + data + '">';
+  //   console.log(carPhoto);
+  //   console.log(data[0].photos[0].sources[0].link[0].href);
+  // };
 
   searchView.createModelFilter = function(makeVal) {
     searchTool.AllCars[0].makes.filter(function(make, indx) {
