@@ -64,7 +64,7 @@ app.get('/addCar', function(req, res) {
   var client = new pg.Client(process.env.DATABASE_URL);
   client.connect(function(err) {
     if (err) throw err;
-    client.query('UPDATE garage SET cars = cars || test', [req.query.currentCar], function(err, result) {
+    client.query('UPDATE garage SET cars = cars || test', function(err, result) {
       if (err) throw err;
       console.log(result);
       client.end(function(err) {
