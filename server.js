@@ -44,7 +44,7 @@ app.get('/user', function (req, res) {
   var client = new pg.Client(process.env.DATABASE_URL);
   client.connect(function(err) {
     if (err) throw err;
-    client.query('INSERT INTO garage (email) values ($1) WHERE NOT EXISTS (SELECT email FROM garage WHERE email=$1)', [req.user._json.email], function(err, result) {
+    client.query('INSERT INTO garage (email) values ($1)', [req.user._json.email], function(err, result) {
       if (err) throw err;
       console.log(result);
       client.end(function(err) {
@@ -60,10 +60,11 @@ app.get('/user', function (req, res) {
 app.get('/addCar', function(req, res) {
   console.log(req.query.currentCar);
   console.log(req.query.email);
+  var data = {car: req.query.currentCar, email: req.query.email};
   var client = new pg.Client(process.env.DATABASE_URL);
   client.connect(function(err) {
     if (err) throw err;
-    client.query('UPDATE garage SET cars = cars_array(cars, {$1}) WHERE email=$2',[req.query.currentCar, req.query.email], function(err, result) {
+    client.query('UPDATE garage SET cars = cars || {1234} WHERE email=kyle.winckler@gmail.com', function(err, result) {
       if (err) throw err;
       client.end(function(err) {
         if (err) throw err;
