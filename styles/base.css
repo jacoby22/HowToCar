@@ -31,8 +31,14 @@ header {
   color: lightgrey;
 }
 
-.clearfix {
+/*.clearfix {
   width: auto;
+}*/
+
+iframe {
+  display: flex;
+  padding-top: 5%;
+}
 }
 
 ul {
