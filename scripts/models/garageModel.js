@@ -19,7 +19,7 @@
   garage.showCar = function() {
     console.log(garage.savedCars[0]);
 
-    var listMaintenance = renderMaintenace(garage.savedCars[4]);
+    var listMaintenance = renderMaintenace(garage.savedCars[0][4][0]);
     var listItem = renderCar(garage.savedCars[0]);
     $('#car').append(listItem);
     $('#maintenance-list').append(listMaintenance);
