@@ -54,6 +54,7 @@
           <li class="tab"><a href="/" class="icon-home">How2Car</a></li>
           <li class="tab"><a href="/garage" class="icon-warehouse">Garage</a></li>
           <li class="tab"><a href="/search" class="icon-wrench">Add-a-car</a></li>
+          <li class="tab"><a href="/calander" class="icon-calendar">Calender</a></li>
           <li class="tab"><a href="/" class="icon-user">Logout</a></li>
         </ul>
       </nav>
@@ -65,12 +66,15 @@
         login content
       </section> -->
       <section id="garage" class="tab-content">
-        <div>welcome to the garage content
-        </div>
-        <ul id="car"></ul>           <!-- Populates Car/Cars -->
-        <ul id="maintenance-list"></ul>   <!-- Populates Maint DATA -->
+        <div class="car-specs">
+        <ol id="car"></ol>           <!-- Populates Car/Cars -->
+
+        <ol id="maintenance-list"></ol>
+      </div>  <!-- Populates Maint DATA -->
       </section>
-      <section id="search" class="tab-content">search content
+      <section id="search" class="tab-content">
+        <div class="container">
+        <div class="dropdown">Pick your car from the drop-down</div>
         <div>
           <ul id="filters">
             <li>
@@ -78,12 +82,14 @@
                 <option value="">Make</option>
               </select>
             </li>
+              <div class="karet">></div>
             <li>
               <select id="model-filter">
                 <option value="">Model</option>
                 <option class="model-filter" value="placeholder"></option>
               </select>
             </li>
+            <div class="karet">></div>
             <li>
               <select id="year-filter">
                 <option value="">Year</option>
@@ -92,6 +98,7 @@
             </li>
           </ul>
         </div>
+      </div>
         <section id="results"></section>
         <ol id="maintenance"></ol>
         <div id="button-container">
