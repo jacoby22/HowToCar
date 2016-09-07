@@ -60,17 +60,17 @@ app.get('/user', function (req, res) {
 app.get('/addCar', function(req, res) {
   console.log(req.query.currentCar);
   console.log(req.query.email);
-  var data = {car: req.query.currentCar, email: req.query.email};
-  var client = new pg.Client(process.env.DATABASE_URL);
-  client.connect(function(err) {
-    if (err) throw err;
-    client.query('UPDATE garage SET cars = cars || ($1) WHERE email=($2)',[data.car, data.email] function(err, result) {
-      if (err) throw err;
-      client.end(function(err) {
-        if (err) throw err;
-      });
-    });
-  });
+  // var data = {car: req.query.currentCar, email: req.query.email};
+  // var client = new pg.Client(process.env.DATABASE_URL);
+  // client.connect(function(err) {
+  //   if (err) throw err;
+  //   client.query('UPDATE garage SET cars = cars || ($1) WHERE email=($2)',[data.car, data.email] function(err, result) {
+  //     if (err) throw err;
+  //     client.end(function(err) {
+  //       if (err) throw err;
+  //     });
+  //   });
+  // });
 });
 
 /////////////////////////////////////////////////////////////////////////////////////////////
