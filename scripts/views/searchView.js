@@ -69,7 +69,7 @@
   };
 
   searchView.addCar = function() {
-    var userEmail = localStorage.getItem(JSON.parse(currentUser));
+    var userEmail = localStorage.getItem('currentUser');
     console.log(userEmail);
     $.get('/addCar', {currentCar: searchView.currentCar.id, email: userEmail});
   };
