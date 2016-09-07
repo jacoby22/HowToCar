@@ -1,8 +1,8 @@
 (function(module) {
   var searchView = new Object();
   searchView.currentCar = {};
-  var array1 = [];
-  var array2 = [];
+  // var array1 = [];
+  // var array2 = [];
 
   searchView.show = function() {
     $('.tab-content').hide();
@@ -19,7 +19,7 @@
   };
 
   searchView.handleMakeFilter = function() {
-    $('#make-filter').on('change', function(e) {
+    $('#make-filter').on('change', function() {
       $('.model-filter').remove();
       $('.year-filter').remove();
       if($(this).val()) {
@@ -32,7 +32,7 @@
   };
 
   searchView.handleModelFilter = function() {
-    $('#model-filter').on('change', function(e) {
+    $('#model-filter').on('change', function() {
       if('.year-filter') {
         $('.year-filter').remove();
       };
@@ -45,7 +45,7 @@
   };
 
   searchView.handleYearFilter = function() {
-    $('#year-filter').on('change', function(e) {
+    $('#year-filter').on('change', function() {
       if($(this).val()) {
         searchView.currentCar.year = $(this).val();
         var yearVal = $(this).val();
@@ -63,31 +63,37 @@
           // searchTool.getCarPhoto(searchView.showCarPhoto);
         }
         $('#push-to-garage').show();
+        console.log(searchView.currentCar);
       }
     });
   };
 
-  searchView.handlePushToGarage = function() {
-    var counter = 0;
-    $('#push-to-garage').on('click', function() {
-      if (garage.savedCars.length === 0) {
-        array1 = [searchView.currentCar.id, searchView.currentCar.make, searchView.currentCar.model, searchView.currentCar.year, searchView.searchedCarMaintenance];
-        garage.savedCars.push(array1);
-      } else {
-        array2 = [searchView.currentCar.id, searchView.currentCar.make, searchView.currentCar.model, searchView.currentCar.year, searchView.searchedCarMaintenance];
-        garage.savedCars.forEach(function(index) {
-          if(index[0] === searchView.currentCar.id) {
-            counter = 1;
-          }
-        });
-        if (counter === 0) {
-          garage.savedCars.push(array2);
-        }
-        counter = 0;
-      }
-      $('#push-to-garage').hide();
-    });
+  searchView.addCar = function() {
+    var userEmail = localStorage.getItem(JSON.parse(currentUser));
+    console.log(userEmail);
+    $.get('/addCar', {currentCar: searchView.currentCar.id, email: userEmail});
   };
+  // searchView.handlePushToGarage = function() {
+  //   var counter = 0;
+  //   $('#push-to-garage').on('click', function() {
+  //     if (garage.savedCars.length === 0) {
+  //       array1 = [searchView.currentCar.id, searchView.currentCar.make, searchView.currentCar.model, searchView.currentCar.year, searchView.searchedCarMaintenance];
+  //       garage.savedCars.push(array1);
+  //     } else {
+  //       array2 = [searchView.currentCar.id, searchView.currentCar.make, searchView.currentCar.model, searchView.currentCar.year, searchView.searchedCarMaintenance];
+  //       garage.savedCars.forEach(function(index) {
+  //         if(index[0] === searchView.currentCar.id) {
+  //           counter = 1;
+  //         }
+  //       });
+  //       if (counter === 0) {
+  //         garage.savedCars.push(array2);
+  //       }
+  //       counter = 0;
+  //     }
+  //     $('#push-to-garage').hide();
+  //   });
+  // };
 
   // var renderCar = function(carData) {
   //   var garageTemplate = Handlebars.compile($('#car-template').html());

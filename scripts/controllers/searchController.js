@@ -1,7 +1,7 @@
 (function(module) {
   var searchController = {};
 
-  searchView.handlePushToGarage();
+  // searchView.handlePushToGarage();
   searchView.handleModelFilter();
   searchView.handleYearFilter();
 

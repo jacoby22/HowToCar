@@ -42,7 +42,7 @@ app.get('/user', function (req, res) {
   var client = new pg.Client(process.env.DATABASE_URL);
   client.connect(function(err) {
     if (err) throw err;
-    client.query('INSERT INTO cars (email) values ($1)', [req.user._json.email], function(err, result) {
+    client.query('INSERT INTO garage (email) values ($1) WHERE NOT EXISTS', [req.user._json.email], function(err, result) {
       if (err) throw err;
       console.log(result);
       client.end(function(err) {
@@ -50,25 +50,22 @@ app.get('/user', function (req, res) {
       });
     });
   });
-
   res.render('user', {
     user: req.user
   });
 });
-////////////////////////////////////////////////////////////////////////////
 
-// app.get('/addUserToCarDatabase', function(req, res) {
-//   console.log(currentUser);
+app.get('/addCar', function(req, res) {
+  console.log(req.query.currentCar);
+  console.log(req.query.email);
   // var client = new pg.Client(process.env.DATABASE_URL);
-  //
   // client.connect(function(err) {
   //   if (err) throw err;
-  //
-  //   client.query('INSERT INTO cars (email, )')
-  // })
-// });
-
+  //   client.query('UPDATE garage SET cars = cars_array(cars, $1)',[] )
+  // });
+});
 ////////////////////////////////////////////////////////////////////////////
+
 app.get('/vehicle/*', function(request, response) {
   console.log('Routing Edmunds API request');
   var url = 'https://api.edmunds.com/api' + request.originalUrl;
