@@ -112,7 +112,7 @@
     data.actionHolder.map(function(maintenanceItem, index) {
       searchView.searchedCarMaintenance.push(maintenanceItem);
       if (index % 10 === 0) {
-        var listItem = '<li class="maintenance-Item"> ITEM: ' + searchView.searchedCarMaintenance[index].item + ' ACTION: ' + searchView.searchedCarMaintenance[index].action + ' DESCRIPTION: ' + searchView.searchedCarMaintenance[index].itemDescription + ' INTERVAL MILEAGE: ' + searchView.searchedCarMaintenance[index].intervalMileage + '</li>';
+        var listItem = '<li class="maintenance-Item"><strong> ITEM: </strong> ' + searchView.searchedCarMaintenance[index].item + '<br><strong> ACTION: </strong> ' + searchView.searchedCarMaintenance[index].action + '<br><strong> DESCRIPTION:</strong> ' + searchView.searchedCarMaintenance[index].itemDescription + '<br><strong> INTERVAL MILEAGE: </strong> ' + searchView.searchedCarMaintenance[index].intervalMileage + '<br></li><p>';
         // console.log(searchView.searchedCarMaintenance[index]);
         $('#maintenance').append(listItem);
       };
