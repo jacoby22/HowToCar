@@ -69,8 +69,8 @@
   };
 
   searchView.addCar = function() {
-    // var userEmail = localStorage.getItem('currentUser');
-    // $.get('/addCar', {currentCar: searchView.currentCar.id, email: userEmail});
+    var userEmail = localStorage.getItem('currentUser');
+    $.get('/addCar', {currentCar: searchView.currentCar.id, email: userEmail});
   };
   // searchView.handlePushToGarage = function() {
   //   var counter = 0;
