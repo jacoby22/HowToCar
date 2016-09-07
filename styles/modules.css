@@ -48,14 +48,14 @@
   display: flex;
   justify-content: space-between;
   align-content: center;
-  columns: 4;
+  columns: 5;
   font-size: .75em;
  }
 
 .main-nav ul li {
   display: flex;
   justify-content: space-around;
-  columns: 4;
+  columns: 5;
   font-family: 'Roboto', sans-serif;
   /*width: 100%;*/
  }
@@ -75,4 +75,5 @@
   z-index: 1;
   list-style-type: none;
   padding-right: 15px;
+ }
 }
