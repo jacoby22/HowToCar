@@ -64,7 +64,7 @@ app.get('/addCar', function(req, res) {
   var client = new pg.Client(process.env.DATABASE_URL);
   client.connect(function(err) {
     if (err) throw err;
-    client.query('SELECT * from garage', function(err, result) {
+    client.query('SELECT cars from garage', function(err, result) {
       if (err) throw err;
       console.log(result);
       client.end(function(err) {
