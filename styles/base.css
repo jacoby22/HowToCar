@@ -6,11 +6,6 @@ html {
   font-family: 'Roboto', sans-serif;
 }
 
-/*img {
-  width: 100%;
-  height: 100%;
-}*/
-
 body {
   background:
   linear-gradient(
@@ -39,7 +34,6 @@ iframe {
   display: flex;
   padding-top: 5%;
 }
-}
 
 ul {
   display: flex;
@@ -49,6 +43,9 @@ ul {
   min-width: 100%;
 }
 
+img {
+  max-width: 100%;
+}
 
 a {
   color: white;
@@ -61,7 +58,7 @@ a {
   align-items: center;
 }
 
-#push-to-garage {
+.push-to-garage {
   display: none;
 }
 
@@ -79,7 +76,6 @@ a {
 }
 
 #search {
-  height: 100%;
   display: block;
   justify-content: space-between;
   font-weight: bold;
@@ -173,4 +169,22 @@ a {
 
 #results {
   background-color: rgba(0, 0, 0, 0.8);
+}
+
+#car-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 25em;
+  align-items: center;
+}
+
+#car-photo {
+  position: relative;
+  max-width: 60%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+#results-text {
+  display: block;
 }
