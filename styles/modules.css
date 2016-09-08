@@ -12,7 +12,7 @@
   /*display: block;*/
 }
 .main-nav ul {
-  display: none;
+  display: flex;
   padding: 0;
   list-style: none;
   clear: both;
@@ -40,6 +40,8 @@
   display: none;
 }
 .main-nav {
+  /*display: flex;
+  justify-content: space-between;*/
   padding: 0.1em;
   /*display: block;*/
 }
