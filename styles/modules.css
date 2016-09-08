@@ -1,5 +1,15 @@
 /*LINK STYLES
 =========================================*/
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.header-navi {
+  display: flex;
+  justify-content: space-between;
+}
 
 .icon-menu-outline {
   font-size: 1.5em;
