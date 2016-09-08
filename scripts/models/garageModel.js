@@ -29,7 +29,7 @@
     // var listItem = renderCar(garage.savedCars[0]);
     // $('#car').append(listItem);
     // $('#maintenance-list').append(listMaintenance);
-  };
+  });
 
   // garage.showGarage = function() {
   //   var listMaintenance = render(garage.savedCarMaintenance[0][1][2][3][4][6][0][0]);
