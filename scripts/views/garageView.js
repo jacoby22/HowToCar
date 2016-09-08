@@ -5,6 +5,7 @@
   garageView.show = function() {
     $('.tab-content').hide();
     $('#loginButton').hide();
+    $('#addToCalendar').show();
     $('#garage').show();
   };
 

@@ -166,5 +166,14 @@
     }
   });
 
+  searchView.addeventasync = function() {
+    addeventatc.register.on('button-click', function(obj){
+      $('#addToCalendar').show();
+        // Console log example
+        console.log('button-click -> ' + obj.id);
+    });
+};
+
+
   module.searchView = searchView;
 })(window);
