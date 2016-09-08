@@ -40,11 +40,13 @@ function(req, res) {
 ////////////////////////////////////////////////////////////////////////////////////////
 
 app.get('/user', function (req, res) {
+  console.log(req.user._json.email);
   var client = new pg.Client(process.env.DATABASE_URL);
   client.connect(function(err) {
     if (err) throw err;
     client.query('INSERT INTO garage (email) values ($1)', [req.user._json.email], function(err, result) {
       if (err) throw err;
+      console.log(result);
       client.end(function(err) {
         if (err) throw err;
       });
@@ -75,6 +77,7 @@ app.get('/getCars', function(req, res) {
     if (err) throw err;
     client.query('SELECT cars FROM garage WHERE email=$1', [req.query.email], function(err, result) {
       if (err) throw err;
+      console.log(result.rows.cars);
       client.end(function(err) {
         if (err) throw err;
       });
