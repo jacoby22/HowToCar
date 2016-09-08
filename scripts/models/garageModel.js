@@ -21,7 +21,8 @@
     var userEmail = localStorage.getItem('currentUser');
     $.get('/getCars', {email: userEmail})
     .done(function(data) {
-      console.log(data);
+      data.forEach(function(element, data) {
+        console.log(element);
     });
 
     // var listMaintenance = renderMaintenace(garage.savedCars[0][4][0]);
