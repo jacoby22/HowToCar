@@ -40,6 +40,7 @@ function(req, res) {
 ////////////////////////////////////////////////////////////////////////////////////////
 
 app.get('/user', function (req, res) {
+  console.log(req.user._json.email);
   var client = new pg.Client(process.env.DATABASE_URL);
   client.connect(function(err) {
     if (err) throw err;
