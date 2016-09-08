@@ -77,7 +77,7 @@ app.get('/getCars', function(req, res) {
     if (err) throw err;
     client.query('SELECT cars FROM garage WHERE email=$1', [req.query.email], function(err, result) {
       if (err) throw err;
-      console.log(result);
+      console.log(result.rows.cars);
       client.end(function(err) {
         if (err) throw err;
       });

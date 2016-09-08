@@ -19,7 +19,10 @@
 
   garage.showCar = function() {
     var userEmail = localStorage.getItem('currentUser');
-    $.get('/getCars', {email: userEmail});
+    $.get('/getCars', {email: userEmail})
+    .done(function(data) {
+      console.log(data);
+    });
 
     // var listMaintenance = renderMaintenace(garage.savedCars[0][4][0]);
     // var listItem = renderCar(garage.savedCars[0]);
