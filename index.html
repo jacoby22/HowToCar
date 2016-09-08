@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="styles/state.css">
+    <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+
 
     <script id="car-template" type="text/x-handlebars-template">
       <article class="clearfix">
@@ -47,7 +49,6 @@
     </script>
   </head>
   <body>
-
     <header class="site-header clearfix">
       <div id="title">
         <h1 class="animated bounceInRight">How 2 Car</h1>
@@ -75,45 +76,56 @@
 
         <ol id="maintenance-list"></ol>
       </div>  <!-- Populates Maint DATA -->
+      <div id="addToCalendar" class="addeventatc">
+        Set a Reminder!
+        <p class="start">09/30/2016 08:00 AM</p>
+        <p class="end">09/30/2016 10:00 AM</p>
+        <p class="timezone">America/Los_Angeles</p>
+        <p class="title">Time to </p>
+        <p class="description">It's the end of the month! Does your car need maintenance?</p>
+        <p class="location">Location of the event</p>
+        <p class="date_format">MM/DD/YYYY</p>
+        <p class="recurring">FREQ=MONTHLY;COUNT=10</p>
+      </div>
       </section>
       <section id="search" class="tab-content">
         <div class="container">
-        <div class="dropdown">Pick your car from the drop-down</div>
-        <div>
-          <ul id="filters">
-            <li>
-              <select id="make-filter">
-                <option value="">Make</option>
-              </select>
-            </li>
+          <div class="dropdown">Pick your car from the drop-down</div>
+          <div>
+            <ul id="filters">
+              <li>
+                <select id="make-filter">
+                  <option value="">Make</option>
+                </select>
+              </li>
+                <div class="karet">></div>
+              <li>
+                <select id="model-filter">
+                  <option value="">Model</option>
+                  <option class="model-filter" value="placeholder"></option>
+                </select>
+              </li>
               <div class="karet">></div>
-            <li>
-              <select id="model-filter">
-                <option value="">Model</option>
-                <option class="model-filter" value="placeholder"></option>
-              </select>
-            </li>
-            <div class="karet">></div>
-            <li>
-              <select id="year-filter">
-                <option value="">Year</option>
-                <option class="year-filter" value="placeholder"></option>
-              </select>
-            </li>
-          </ul>
+              <li>
+                <select id="year-filter">
+                  <option value="">Year</option>
+                  <option class="year-filter" value="placeholder"></option>
+                </select>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-        </section>
-        <section id="calendar" class="tab-content">
-          <iframe src="https://calendar.google.com/calendar/embed?src=codydavidhulsey%40gmail.com&ctz=America/Los_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-        </section>
-        <section id="results"></section>
+      </section>
+      <section class="results">
         <div class="maintenance">
-        <ol id="maintenance"></ol>
-       </div>
-        <div id="button-container">
-          <button id="push-to-garage"><a href="/addCar">Store In Garage</a></button>
+          <ol id="maintenance"></ol>
         </div>
+      </section>
+      <div id="button-container">
+        <button class="push-to-garage">Park In Garage</button>
+      </div>
+      <section id="calendar" class="tab-content">
+        <iframe src="https://calendar.google.com/calendar/embed?src=codydavidhulsey%40gmail.com&ctz=America/Los_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
       </section>
       <div id="root" style="width: 320px; margin: 40px auto; padding: 10px"></div>
       <script src="https://cdn.auth0.com/js/lock/10.0/lock.min.js"></script>
@@ -145,6 +157,7 @@
     <script src="scripts/models/garageModel.js"></script>
     <script src="scripts/models/loginModel.js"></script>
     <script src="scripts/models/searchModel.js"></script>
+    <script src="scripts/models/calendarModel.js"></script>
     <!-- View -->
     <script src="scripts/views/garageView.js"></script>
     <script src="scripts/views/loginView.js"></script>
