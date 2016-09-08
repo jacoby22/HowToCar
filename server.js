@@ -103,7 +103,7 @@ app.get('/maintenance/actionrepository/findbymodelyearid/', function(request, re
   (requestProxy({
     url: url,
     query: {
-      modelyearid: '3269',
+      modelyearid: '305',
       fmt: 'json',
       api_key: process.env.EDMUNDS_KEY
     }
