@@ -96,7 +96,6 @@
 
   // var renderCar = function(carData) {
   //   var garageTemplate = Handlebars.compile($('#car-template').html());
-  //
   //   return garageTemplate(carData);
   // };
   //
