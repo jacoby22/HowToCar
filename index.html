@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="styles/state.css">
+    <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+
 
     <script id="car-template" type="text/x-handlebars-template">
       <article class="clearfix">
@@ -83,6 +85,17 @@
 
         <ol id="maintenance-list"></ol>
       </div>  <!-- Populates Maint DATA -->
+      <div id="addToCalendar" class="addeventatc">
+        Set a Reminder!
+        <p class="start">09/30/2016 08:00 AM</p>
+        <p class="end">09/30/2016 10:00 AM</p>
+        <p class="timezone">America/Los_Angeles</p>
+        <p class="title">Time to </p>
+        <p class="description">It's the end of the month! Does your car need maintenance?</p>
+        <p class="location">Location of the event</p>
+        <p class="date_format">MM/DD/YYYY</p>
+        <p class="recurring">FREQ=MONTHLY;COUNT=10</p>
+      </div>
       </section>
       <section id="search" class="tab-content">
         <div class="container">
@@ -153,6 +166,7 @@
     <script src="scripts/models/garageModel.js"></script>
     <script src="scripts/models/loginModel.js"></script>
     <script src="scripts/models/searchModel.js"></script>
+    <script src="scripts/models/calendarModel.js"></script>
     <!-- View -->
     <script src="scripts/views/garageView.js"></script>
     <script src="scripts/views/loginView.js"></script>
