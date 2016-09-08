@@ -26,8 +26,13 @@
   margin-right: .6em;
   /*font-size: 1.5em;*/
   padding: .5em .2em;
-  border-bottom: 1px solid #ccc;
+  /*border-bottom: 1px solid #ccc;*/
   font-family: 'Roboto', sans-serif;
+}
+
+ul#filters {
+  display: block;
+  /*max-width: 50%;*/
 }
 
 
@@ -77,5 +82,16 @@
   z-index: 1;
   list-style-type: none;
   padding-right: 15px;
+ }
+
+ ul#filters {
+   display: flex;
+   justify-content: space-between;
+ }
+
+ #filters select {
+   display: block;
+   width: 90%;
+   margin: .2em 5%;
  }
 }

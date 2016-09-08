@@ -48,16 +48,16 @@
   </head>
   <body>
 
-    <header class="clearfix">
+    <header class="site-header clearfix">
       <div id="title">
-        <h4 class="animated lightSpeedIn">How 2 Car</h4>
+        <h1 class="animated bounceInRight">How 2 Car</h1>
       </div>
       <nav class="main-nav" id="display">
         <div class="icon-menu-outline"></div>
         <ul>
-          <li class="tab"><a href="/" class="icon-home">How2Car</a></li>
+          <li class="tab"><a href="/" class="icon-home">Home</a></li>
           <li class="tab"><a href="/garage" class="icon-warehouse">Garage</a></li>
-          <li class="tab"><a href="/search" class="icon-wrench">Add Car</a></li>
+          <li class="tab"><a href="/search" class="icon-wrench">AddCar</a></li>
           <li class="tab"><a href="/calendar" class="icon-calendar">Calendar</a></li>
           <li class="tab"><a href="/" class="icon-user">Logout</a></li>
         </ul>
@@ -102,12 +102,15 @@
             </li>
           </ul>
         </div>
+      </div>
         </section>
         <section id="calendar" class="tab-content">
           <iframe src="https://calendar.google.com/calendar/embed?src=codydavidhulsey%40gmail.com&ctz=America/Los_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
         </section>
         <section id="results"></section>
+        <div class="maintenance">
         <ol id="maintenance"></ol>
+       </div>
         <div id="button-container">
           <button id="push-to-garage"><a href="/addCar">Store In Garage</a></button>
         </div>
@@ -146,13 +149,13 @@
     <script src="scripts/views/garageView.js"></script>
     <script src="scripts/views/loginView.js"></script>
     <script src="scripts/views/searchView.js"></script>
-    <script src="scripts/views/calendarView.js"></script>
+    <!-- <script src="scripts/views/calendarView.js"></script> -->
 
     <!-- Controller -->
     <script src="scripts/controllers/garageController.js"></script>
     <script src="scripts/controllers/loginController.js"></script>
     <script src="scripts/controllers/searchController.js"></script>
-    <script src="scripts/controllers/calendarController.js"></script>
+    <!-- <script src="scripts/controllers/calendarController.js"></script> -->
 
 
     <script src="scripts/routes.js"></script>
