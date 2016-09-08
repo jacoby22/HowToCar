@@ -59,7 +59,6 @@ app.get('/user', function (req, res) {
 
 app.get('/addCar', function(req, res) {
   var formattedId = '{' + req.query.currentCar + '}';
-  // var data = {car: req.query.currentCar, email: req.query.email};
   var client = new pg.Client(process.env.DATABASE_URL);
   client.connect(function(err) {
     if (err) throw err;
@@ -72,7 +71,7 @@ app.get('/addCar', function(req, res) {
   });
 });
 
-app.get('/getCar', function(req, res) {
+app.get('/getCars', function(req, res) {
   var client = new pg.Client(process.env.DATABASE_URL);
   client.connect(function(err) {
     if (err) throw err;
