@@ -55,14 +55,14 @@
           }
         });
         if (!$('.maintenance-Item')) {
-          searchTool.getCarMaintenance(searchView.showCarMaintenance);
-          // searchTool.getCarPhoto(searchView.showCarPhoto);
+          // searchTool.getCarMaintenance(searchView.showCarMaintenance);
+          searchView.showCarPhoto();
         } else {
           $('.maintenance-Item').remove();
-          searchTool.getCarMaintenance(searchView.showCarMaintenance);
-          // searchTool.getCarPhoto(searchView.showCarPhoto);
+          // searchTool.getCarMaintenance(searchView.showCarMaintenance);
+          searchView.showCarPhoto();
         }
-        $('#push-to-garage').show();
+        $('.push-to-garage').show();
         console.log(searchView.currentCar);
       }
     });
@@ -123,11 +123,13 @@
     });
   };
 
-  // searchView.showCarPhoto = function(data) {
-  //   var carPhoto = '<div> <img src="https://api.edmunds.com' + data + '">';
-  //   console.log(carPhoto);
-  //   console.log(data[0].photos[0].sources[0].link[0].href);
-  // };
+  searchView.showCarPhoto = function() {
+    if ($('#car-container')) {
+      $('#car-container').remove();
+    }
+    var carPhoto = '<div id="car-container"><p>Search Results:<div id="car-photo"> <img src="http://media.ed.edmunds-media.com/audi/s7/2013/oem/2013_audi_s7_sedan_prestige_fq_oem_6_1600.jpg"></div><p id="results-text">' + searchView.currentCar.make + ' ' + searchView.currentCar.model + ' - ' + searchView.currentCar.year + '</p></div>';
+    $('#search').append(carPhoto);
+  };
 
   searchView.createModelFilter = function(makeVal) {
     searchTool.AllCars[0].makes.filter(function(make, indx) {
@@ -170,9 +172,9 @@
     addeventatc.register.on('button-click', function(obj){
       $('#addToCalendar').show();
         // Console log example
-        console.log('button-click -> ' + obj.id);
+      console.log('button-click -> ' + obj.id);
     });
-};
+  };
 
 
   module.searchView = searchView;
