@@ -100,13 +100,13 @@ app.get('/vehicle/*', function(request, response) {
 app.get('/maintenance/actionrepository/findbymodelyearid/', function(request, response) {
   console.log('Routing Edmunds API request');
   var shit = JSON.stringify(request.query.modelyearid);
-  var url = 'https://api.edmunds.com/v1/api' + request.originalUrl;
+  var url = 'https://api.edmunds.com/v1/api' + request.originalUrl + '?fmt=json&api_key=' + process.env.EDMUNDS_KEY;
   (requestProxy({
     url: url,
     query: {
-      fmt: 'json',
-      modelyearid: shit,
-      api_key: process.env.EDMUNDS_KEY
+      // fmt: 'json',
+      modelyearid: shit
+      // api_key: process.env.EDMUNDS_KEY
     }
   }))(request, response);
 });
