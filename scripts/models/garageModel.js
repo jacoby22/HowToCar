@@ -44,7 +44,10 @@
         garage.getCarMaintenance(callback, splitCar);
       });
     }).done(function() {
-      console.log(garage.allParkedCars);
+      garage.allParkedCars.forEach(function(car) {
+        var listItem = renderCar(car);
+      });
+
     });
   };
 
