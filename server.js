@@ -97,15 +97,15 @@ app.get('/vehicle/*', function(request, response) {
   }))(request, response);
 });
 
-app.get('/maintenance/actionrepository/findbymodelyearid/', function(request, response) {
+app.get('https://api.edmunds.com/v1/api/maintenance/actionrepository/findbymodelyearid/', function(request, response) {
   console.log('Routing Edmunds API request');
-  var carId = request.query.modelyearid.toString();
-  var url = 'https://api.edmunds.com/v1/api' + request.originalUrl;
+  // var carId = request.query.modelyearid;
+  // var url = 'https://api.edmunds.com/v1/api' + request.originalUrl;
   (requestProxy({
     url: url,
     query: {
+      // modelyearid: carId,
       fmt: 'json',
-      modelyearid: carId,
       api_key: process.env.EDMUNDS_KEY
     }
   }))(request, response);

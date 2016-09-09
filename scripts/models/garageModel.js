@@ -17,7 +17,7 @@
   };
 
   garage.getCarMaintenance = function(callback, carId) {
-    $.get('/maintenance/actionrepository/findbymodelyearid', {modelyearid: carId});
+    $.get('https://api.edmunds.com/v1/api/maintenance/actionrepository/findbymodelyearid?modelyearid?=' + carId.toString();
     // .done(function(data) {
     //   callback(data);
     // });
