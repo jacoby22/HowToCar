@@ -105,8 +105,8 @@ app.get('/maintenance/actionrepository/findbymodelyearid/', function(request, re
     url: url,
     query: {
       modelyearid: carId,
-      fmt: 'json',
-      api_key: process.env.EDMUNDS_KEY
+      api_key: process.env.EDMUNDS_KEY,
+      fmt: 'json'
     }
   }))(request, response);
 });
