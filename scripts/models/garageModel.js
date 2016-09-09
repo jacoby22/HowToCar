@@ -32,8 +32,8 @@
     .done(function(data) {
       console.log(data);
       data.forEach(function(car) {
-        car.split('/');
-        console.log(car);
+        var splitCar = car.split('/');
+        console.log(splitCar);
         // garage.getCarMaintenance(callback, car);
       });
     });
