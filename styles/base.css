@@ -49,4 +49,8 @@ a {
   color: white;
   text-decoration: none;
 }
+
+footer {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 /*===================SPLIT=====*/
