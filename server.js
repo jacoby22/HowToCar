@@ -101,12 +101,13 @@ app.get('/maintenance/actionrepository/findbymodelyearid/', function(request, re
   console.log('Routing Edmunds API request');
   var url = 'https://api.edmunds.com/v1/api' + request.originalUrl;
   (requestProxy({
-    url: url,
-    query: {
-      modelyearid: 3269,
-      fmt: 'json',
-      api_key: process.env.EDMUNDS_KEY
-    }
+    // url: url,
+    // query: {
+    //   modelyearid: 3269,
+    //   fmt: 'json',
+    //   api_key: process.env.EDMUNDS_KEY
+    // }
+    console.log(request.query.car);
   }))(request, response);
 });
 
