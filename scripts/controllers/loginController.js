@@ -2,7 +2,8 @@
   var loginController = {};
 
   loginController.init = function(ctx, next) {
-    $('.main-nav ul').hide();
+    $('.main-nav').hide();
+    // $('.heading-group-h1 p').hide();
 
     next();
   };
