@@ -30,6 +30,7 @@
     var userEmail = localStorage.getItem('currentUser');
     $.get('/getCars', {email: userEmail})
     .done(function(data) {
+      console.log(data);
       data.forEach(function(car) {
         string.split(car, '/');
         console.log(car);
