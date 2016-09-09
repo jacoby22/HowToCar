@@ -1,6 +1,26 @@
 /*LINK STYLES
 =========================================*/
 
+#edmundsLegal {
+  width: 100%;
+  position: absolute;
+  height: 80px;
+  clear:both;
+  top:100%;
+  justify-content: center;
+  display: flex;
+}
+
+#generalFooter {
+  width: 100%;
+  position: absolute;
+  height: 80px;
+  clear:both;
+  top:100%;
+  justify-content: center;
+  display: flex;
+}
+
 .icon-menu-outline {
   font-size: 1.5em;
   float: right;
