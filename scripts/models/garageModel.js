@@ -2,7 +2,15 @@
 
   var garage = {};
 
-  garage.savedCars = [];
+  function parkedCar(data, car) {
+    this.make = car[0];
+    this.model = car[1];
+    this.year = car[2];
+    this.id = car[3];
+    this.maintenance = data;
+  }
+
+  garage.allParkedCars = [];
 
   var renderMaintenace = function(carData) {
     // console.log(carData);
@@ -19,7 +27,7 @@
   garage.getCarMaintenance = function(callback, splitCar) {
     $.get('/maintenance/actionrepository/findbymodelyearid', {modelyearid: splitCar[3]})
     .done(function(data) {
-      console.log(data);
+      console.log(data, splitCar);
     //   var listMaintenance = renderMaintenace(data);
     //   var listItem = renderCar(garage.savedCars[0]);
     //   $('#car').append(listItem);
@@ -31,11 +39,8 @@
     var userEmail = localStorage.getItem('currentUser');
     $.get('/getCars', {email: userEmail})
     .done(function(data) {
-      console.log(data);
       data.forEach(function(car) {
         var splitCar = car.split('/');
-        console.log(splitCar);
-        console.log(splitCar[3]);
         garage.getCarMaintenance(callback, splitCar);
       });
     });
