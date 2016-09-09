@@ -64,7 +64,7 @@
           // searchTool.getCarMaintenance(searchView.showCarMaintenance);
           searchView.showCarPhoto();
         }
-        $('.push-to-garage').show();
+        $('#push-to-garage').show();
         console.log(searchView.currentCar);
       }
     });
