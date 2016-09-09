@@ -30,8 +30,10 @@
     var userEmail = localStorage.getItem('currentUser');
     $.get('/getCars', {email: userEmail})
     .done(function(data) {
-      data.forEach(function(carId) {
-        garage.getCarMaintenance(callback, carId);
+      data.forEach(function(car) {
+        string.split(car, '/');
+        console.log(car);
+        // garage.getCarMaintenance(callback, car);
       });
     });
   };
