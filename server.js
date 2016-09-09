@@ -100,7 +100,7 @@ app.get('/vehicle/*', function(request, response) {
 app.get('/maintenance/actionrepository/findbymodelyearid/', function(request, response) {
   console.log('Routing Edmunds API request');
   var shit = request.query['modelyearid'];
-  var url = 'https://api.edmunds.com/v1/api' + request.params;
+  var url = 'https://api.edmunds.com/v1/api/maintenance/actionrepository/findbymodelyearid';
   (requestProxy({
     url: url,
     query: {
