@@ -17,10 +17,11 @@
   };
 
   garage.getCarMaintenance = function(callback, carId) {
-    $.get('/maintenance/actionrepository/findbymodelyearid', {car: carId});
-    // .done(function(data) {
-    //   callback(data);
-    // });
+    $.get('/maintenance/actionrepository/findbymodelyearid')
+    .done(function(data) {
+      console.log(data);
+      console.log(carId);
+    });
   };
 
   garage.showCar = function(callback) {
