@@ -17,7 +17,7 @@
   };
 
   garage.getCarMaintenance = function(callback, carId) {
-    $.get('/maintenance/actionrepository/findbymodelyearid', {modelyearid: carId})
+    $.get('/maintenance/actionrepository/findbymodelyearid')
     .done(function(data) {
       console.log(data);
       console.log(carId);
