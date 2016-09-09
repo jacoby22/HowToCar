@@ -18,9 +18,11 @@
 
   garage.getCarMaintenance = function(callback, carId) {
     $.get('/maintenance/actionrepository/findbymodelyearid', {modelyearid: carId})
-    .done(function(data) {
-      console.log(data);
-      console.log(carId);
+    .done(function(data, carId) {
+    //   var listMaintenance = renderMaintenace(data);
+    //   var listItem = renderCar(garage.savedCars[0]);
+    //   $('#car').append(listItem);
+    //   $('#maintenance-list').append(listMaintenance);
     });
   };
 
@@ -32,11 +34,6 @@
         garage.getCarMaintenance(callback, carId);
       });
     });
-
-    // var listMaintenance = renderMaintenace(garage.savedCars[0][4][0]);
-    // var listItem = renderCar(garage.savedCars[0]);
-    // $('#car').append(listItem);
-    // $('#maintenance-list').append(listMaintenance);
   };
 
   // garage.showGarage = function() {
