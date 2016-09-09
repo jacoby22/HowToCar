@@ -45,8 +45,9 @@
       });
     }).done(function() {
       garage.allParkedCars.forEach(function(car) {
-        var listItem = renderCar(car);
-        $('#car').append(listItem);
+        console.log(car);
+        // var listItem = renderCar(car);
+        // $('#car').append(listItem);
         // $('#maintenance-list').append(listMaintenance);
       });
 
