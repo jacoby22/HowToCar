@@ -1,3 +1,64 @@
+<<<<<<< HEAD
+/*LINK STYLES
+=========================================*/
+
+#edmundsLegal {
+  width: 100%;
+  position: absolute;
+  height: 80px;
+  clear:both;
+  top:100%;
+  justify-content: center;
+  display: flex;
+}
+
+#generalFooter {
+  width: 100%;
+  position: absolute;
+  height: 80px;
+  clear:both;
+  top:100%;
+  justify-content: center;
+  display: flex;
+}
+
+.icon-menu-outline {
+  font-size: 1.5em;
+  float: right;
+  /*background-color: red;*/
+}
+
+.main-nav {
+  padding: 0.1em;
+  /*display: block;*/
+}
+.main-nav ul {
+  display: flex;
+  padding: 0;
+  list-style: none;
+  clear: both;
+  width: 80%;
+  font-size: .75em;
+
+  /*margin-bottom: -4em -2em 1em -3em;*/
+}
+
+.main-nav li {
+  margin-right: .6em;
+  /*font-size: 1.5em;*/
+  padding: .5em .2em;
+  /*border-bottom: 1px solid #ccc;*/
+  font-family: 'Roboto', sans-serif;
+}
+
+ul#filters {
+  display: block;
+  /*max-width: 50%;*/
+}
+
+
+=======
+>>>>>>> e6391f6d122b27d68d8882d7d13045b487760060
 /*--------------------------MEDIA QUERIES*/
 
 @media only screen and (min-width: 641px) {

@@ -7,7 +7,9 @@
   searchView.show = function() {
     $('.tab-content').hide();
     $('#loginButton').hide();
+    $('#generalFooter').hide();
     $('#search').show();
+    $('#edmundsLegal').show();
   };
 
   searchView.createMakeFilter = function() {
