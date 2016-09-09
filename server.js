@@ -103,7 +103,11 @@ app.get('/maintenance/actionrepository/findbymodelyearid/', function(request, re
   var url = 'https://api.edmunds.com/v1/api' + request.originalUrl;
   (requestProxy({
     url: url,
-    query: request.query
+    query: {
+      modelyearid: request.query.car,
+      fmt: 'json',
+      api_key: process.env.EDMUNDS_KEY
+    }
   }))(request, response);
 });
 
