@@ -32,7 +32,7 @@
     .done(function(data) {
       console.log(data);
       data.forEach(function(car) {
-        string.split(car, '/');
+        car.split('/');
         console.log(car);
         // garage.getCarMaintenance(callback, car);
       });
