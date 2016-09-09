@@ -34,7 +34,7 @@
       data.forEach(function(car) {
         var splitCar = car.split('/');
         console.log(splitCar);
-        // garage.getCarMaintenance(callback, car);
+        garage.getCarMaintenance(callback, car[3]);
       });
     });
   };
