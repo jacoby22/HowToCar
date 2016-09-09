@@ -196,10 +196,10 @@ ul#filters {
 
 #edmundsLegal {
   width: 100%;
-  position: absolute;
-  height: 80px;
+  /*position: absolute;*/
+  /*height: 80px;*/
   clear:both;
-  top:100%;
+  /*top:100%;*/
   justify-content: center;
   display: flex;
 }
