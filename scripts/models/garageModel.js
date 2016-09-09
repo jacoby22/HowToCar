@@ -46,6 +46,7 @@
     }).done(function() {
       console.log(garage.allParkedCars);
       garage.allParkedCars.forEach(function(parkedCar) {
+        console.log('inside');
         console.log(parkedCar);
         // var listItem = renderCar(car);
         // $('#car').append(listItem);
