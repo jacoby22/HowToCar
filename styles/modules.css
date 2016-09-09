@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*LINK STYLES
 =========================================*/
 
@@ -56,9 +57,9 @@ ul#filters {
 }
 
 
+=======
+>>>>>>> e6391f6d122b27d68d8882d7d13045b487760060
 /*--------------------------MEDIA QUERIES*/
-
-
 
 @media only screen and (min-width: 641px) {
   .icon-menu-outline {
@@ -85,23 +86,6 @@ ul#filters {
   columns: 5;
   font-family: 'Roboto', sans-serif;
   /*width: 100%;*/
- }
-
-.main-nav ul li:hover a {
-  color: #29506D;
- }
-
-.navContent {
-  display:inline-block;
-  vertical-align: top;
-  font-size: 12px;
-  width: 170px;
-  position: fixed;
-  left: 36px;
-  top: 36px;
-  z-index: 1;
-  list-style-type: none;
-  padding-right: 15px;
  }
 
  ul#filters {
