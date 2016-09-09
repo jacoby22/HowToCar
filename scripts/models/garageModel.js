@@ -21,7 +21,7 @@
     var userEmail = localStorage.getItem('currentUser');
     $.get('/getCars', {email: userEmail})
     .done(function(data) {
-      data.forEach(function(element, data) {
+      data.forEach(function(element) {
         console.log(element);
       });
     });
