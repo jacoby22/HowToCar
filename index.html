@@ -95,6 +95,7 @@
         <p class="recurring">FREQ=MONTHLY;COUNT=10</p>
       </div>
       </section>
+
       <section id="search" class="tab-content">
         <div class="container">
         <div class="dropdown">Pick your car from the drop-down</div>
@@ -121,16 +122,17 @@
             </li>
           </ul>
         </div>
-        </section>
+        <div id="button-container">
+          <button id="push-to-garage"><a href="/addCar">Store In Garage</a></button>
+        </div>
+      </section>
+
         <section id="calendar" class="tab-content">
           <iframe src="https://calendar.google.com/calendar/embed?src=codydavidhulsey%40gmail.com&ctz=America/Los_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
         </section>
         <section id="results"></section>
         <div id="wrapper">
         <ol id="maintenance"></ol>
-        </div>
-        <div id="button-container">
-          <button id="push-to-garage"><a href="/addCar">Store In Garage</a></button>
         </div>
       </section>
       <div id="root" style="width: 320px; margin: 40px auto; padding: 10px"></div>

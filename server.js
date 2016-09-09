@@ -56,11 +56,12 @@ app.get('/user', function (req, res) {
 });
 
 app.get('/addCar', function(req, res) {
-  var formattedId = '{' + req.query.currentCar + '}';
+  console.log(req.query.currentCar);
+  var formattedCar = '{' + req.query.currentCar + '}';
   var client = new pg.Client(process.env.DATABASE_URL);
   client.connect(function(err) {
     if (err) throw err;
-    client.query('UPDATE garage SET cars = cars || $1 WHERE email=$2', [formattedId, req.query.email],function(err, result) {
+    client.query('UPDATE garage SET cars = cars || $1 WHERE email=$2', [formattedCar, req.query.email],function(err, result) {
       if (err) throw err;
       client.end(function(err) {
         if (err) throw err;
