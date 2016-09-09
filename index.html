@@ -17,9 +17,6 @@
 
     <script id="car-template" type="text/x-handlebars-template">
       <article class="clearfix">
-        <header>
-          <h3>Your Vehicles:</h3>
-        </header>
         <section id="car-description">
           <li>
             <h4>{{year}} {{make}} {{model}}</h4>
@@ -48,6 +45,7 @@
       </article>
     </script>
   </head>
+
   <body>
     <header class="site-header clearfix">
       <div class="header-navi">
@@ -79,6 +77,9 @@
         login content
       </section> -->
       <section id="garage" class="tab-content">
+        <header>
+          <h3>Your Vehicles:</h3>
+        </header>
         <div class="car-specs">
         <ol id="car"></ol>           <!-- Populates Car/Cars -->
 
