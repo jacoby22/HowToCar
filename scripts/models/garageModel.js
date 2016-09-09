@@ -42,9 +42,9 @@
       data.forEach(function(car) {
         var splitCar = car.split('/');
         garage.getCarMaintenance(callback, splitCar);
-      }).done(function() {
-        console.log(garage.allParkedCars);
       });
+    }).done(function() {
+      console.log(garage.allParkedCars);
     });
   };
 
