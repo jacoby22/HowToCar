@@ -56,8 +56,7 @@ app.get('/user', function (req, res) {
 });
 
 app.get('/addCar', function(req, res) {
-  console.log(JSON.stringify(req.query.currentCar));
-  var formattedCar = '{' + req.query.currentCar + '}';
+  var formattedCar = '{' + req.query.currentCar.name + '/' + req.query.currentCar.id + '}';
   var client = new pg.Client(process.env.DATABASE_URL);
   client.connect(function(err) {
     if (err) throw err;
