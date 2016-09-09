@@ -99,12 +99,11 @@ app.get('/vehicle/*', function(request, response) {
 
 app.get('/maintenance/actionrepository/findbymodelyearid/', function(request, response) {
   console.log('Routing Edmunds API request');
-  console.log(request.query.anything);
-  var url = 'https://api.edmunds.com/v1/api' + request.originalUrl + request.query.anything;
+  var url = 'https://api.edmunds.com/v1/api' + request.originalUrl;
   (requestProxy({
     url: url,
     query: {
-      modelyearid: '3269',
+      modelyearid: 3269,
       fmt: 'json',
       api_key: process.env.EDMUNDS_KEY
     }
