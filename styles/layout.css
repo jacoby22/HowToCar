@@ -8,8 +8,18 @@
 
 .header-navi {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  text-align: center;
 }
+
+.heading-group-h1 {
+  line-height: .5em;
+}
+
+.heading-group-h1 p {
+  font-size: .75em;
+}
+
 
 .tab-content {
   display: flex;
@@ -182,4 +192,28 @@ ul#filters {
 
 #results-text {
   display: block;
+}
+
+#edmundsLegal {
+  width: 100%;
+  position: absolute;
+  height: 80px;
+  clear:both;
+  top:100%;
+  justify-content: center;
+  display: flex;
+}
+
+#generalFooter {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  font-size: .5em;
+  /*height: 80px;*/
+  clear:both;
+  color: white;
+  top:100%;
+  background-color: rgba(0, 0, 0, 0.6);
 }
