@@ -20,12 +20,6 @@
     });
   };
 
-  searchTool.getCarMaintenance = function(callback) {
-    $.get('/maintenance/actionrepository/findbymodelyearid').done(function(data) {
-      callback(data);
-    });
-  };
-
   searchTool.printAllCars = function(data) {
     searchTool.AllCars.push(data);
   };

@@ -15,13 +15,21 @@
     // console.log(carData);
     return garageTemplate(carData);
   };
-//TODO
 
-  garage.showCar = function() {
+  garage.getCarMaintenance = function(callback, carId) {
+    $.get('/maintenance/actionrepository/findbymodelyearid', {car: carId});
+    // .done(function(data) {
+    //   callback(data);
+    // });
+  };
+
+  garage.showCar = function(callback) {
     var userEmail = localStorage.getItem('currentUser');
     $.get('/getCars', {email: userEmail})
     .done(function(data) {
-      console.log(data);
+      data.forEach(function(carId) {
+        garage.getCarMaintenance(callback, carId);
+      });
     });
 
     // var listMaintenance = renderMaintenace(garage.savedCars[0][4][0]);

@@ -40,13 +40,11 @@ function(req, res) {
 ////////////////////////////////////////////////////////////////////////////////////////
 
 app.get('/user', function (req, res) {
-  console.log(req.user._json.email);
   var client = new pg.Client(process.env.DATABASE_URL);
   client.connect(function(err) {
     if (err) throw err;
     client.query('INSERT INTO garage (email) values ($1)', [req.user._json.email], function(err, result) {
       if (err) throw err;
-      console.log(result);
       client.end(function(err) {
         if (err) throw err;
       });
@@ -77,7 +75,6 @@ app.get('/getCars', function(req, res) {
     if (err) throw err;
     client.query('SELECT cars FROM garage WHERE email=$1', [req.query.email], function(err, result) {
       if (err) throw err;
-      console.log(result.rows[0].cars);
       res.send(result.rows[0].cars);
       client.end(function(err) {
         if (err) throw err;
@@ -102,11 +99,12 @@ app.get('/vehicle/*', function(request, response) {
 
 app.get('/maintenance/actionrepository/findbymodelyearid/', function(request, response) {
   console.log('Routing Edmunds API request');
+  console.log(request.car.carId);
   var url = 'https://api.edmunds.com/v1/api' + request.originalUrl;
   (requestProxy({
     url: url,
     query: {
-      modelyearid: '3269',
+      modelyearid: request.car.carId,
       fmt: 'json',
       api_key: process.env.EDMUNDS_KEY
     }

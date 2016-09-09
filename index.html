@@ -49,7 +49,6 @@
     </script>
   </head>
   <body>
-
     <header class="site-header clearfix">
       <div class="header-navi">
         <section class="heading-group-h1">
@@ -99,42 +98,42 @@
       </section>
       <section id="search" class="tab-content">
         <div class="container">
-        <div class="dropdown">Pick your car from the drop-down</div>
-        <div>
-          <ul id="filters">
-            <li>
-              <select id="make-filter">
-                <option value="">Make</option>
-              </select>
-            </li>
+          <div class="dropdown">Pick your car from the drop-down</div>
+          <div>
+            <ul id="filters">
+              <li>
+                <select id="make-filter">
+                  <option value="">Make</option>
+                </select>
+              </li>
+                <div class="karet">></div>
+              <li>
+                <select id="model-filter">
+                  <option value="">Model</option>
+                  <option class="model-filter" value="placeholder"></option>
+                </select>
+              </li>
               <div class="karet">></div>
-            <li>
-              <select id="model-filter">
-                <option value="">Model</option>
-                <option class="model-filter" value="placeholder"></option>
-              </select>
-            </li>
-            <div class="karet">></div>
-            <li>
-              <select id="year-filter">
-                <option value="">Year</option>
-                <option class="year-filter" value="placeholder"></option>
-              </select>
-            </li>
-          </ul>
+              <li>
+                <select id="year-filter">
+                  <option value="">Year</option>
+                  <option class="year-filter" value="placeholder"></option>
+                </select>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-        </section>
-        <section id="calendar" class="tab-content">
-          <iframe src="https://calendar.google.com/calendar/embed?src=codydavidhulsey%40gmail.com&ctz=America/Los_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-        </section>
-        <section id="results"></section>
+      </section>
+      <section class="results">
         <div class="maintenance">
-        <ol id="maintenance"></ol>
-       </div>
-        <div id="button-container">
-          <button id="push-to-garage"><a href="/addCar">Store In Garage</a></button>
+          <ol id="maintenance"></ol>
         </div>
+      </section>
+      <div id="button-container">
+        <button class="push-to-garage">Park In Garage</button>
+      </div>
+      <section id="calendar" class="tab-content">
+        <iframe src="https://calendar.google.com/calendar/embed?src=codydavidhulsey%40gmail.com&ctz=America/Los_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
       </section>
       <div id="root" style="width: 320px; margin: 40px auto; padding: 10px"></div>
       <script src="https://cdn.auth0.com/js/lock/10.0/lock.min.js"></script>
@@ -166,7 +165,7 @@
     <script src="scripts/models/garageModel.js"></script>
     <script src="scripts/models/loginModel.js"></script>
     <script src="scripts/models/searchModel.js"></script>
-    <script src="scripts/models/calendarModel.js"></script>
+    <!-- <script src="scripts/models/calendarModel.js"></script> -->
     <!-- View -->
     <script src="scripts/views/garageView.js"></script>
     <script src="scripts/views/loginView.js"></script>
