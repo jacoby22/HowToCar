@@ -104,7 +104,7 @@ app.get('/maintenance/actionrepository/findbymodelyearid/', function(request, re
   (requestProxy({
     url: url,
     query: {
-      modelyearid: request.query.car,
+      modelyearid: request.query.car.car,
       fmt: 'json',
       api_key: process.env.EDMUNDS_KEY
     }
