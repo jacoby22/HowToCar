@@ -23,7 +23,7 @@
     // });
   };
 
-  garage.showCar = function() {
+  garage.showCar = function(callback) {
     var userEmail = localStorage.getItem('currentUser');
     $.get('/getCars', {email: userEmail})
     .done(function(data) {
