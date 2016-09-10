@@ -137,7 +137,6 @@ ul#filters {
   margin-top: 3%;
   color: white;
   background-color: rgba(0, 0, 0, 0.7);
-  overflow-y: scroll;
   padding: 1em;
 }
 
@@ -230,7 +229,7 @@ ul#filters {
 #car-container {
   display: flex;
   flex-direction: column;
-  max-height: 25em;
+  max-height: 100em;
   align-items: center;
 }
 
