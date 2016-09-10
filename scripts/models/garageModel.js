@@ -44,7 +44,7 @@
         garage.getCarMaintenance(callback, splitCar);
       });
     }).done(function() {
-      // debugger;
+      debugger;
       console.log(garage.allParkedCars);
 
       console.log(garage['allParkedCars'][0]);
