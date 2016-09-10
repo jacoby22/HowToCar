@@ -32,7 +32,7 @@
     }).then(function() {
 
       var currentCar = garage.allParkedCars[(garage.allParkedCars.length) - 1];
-      if ($('#' + currentCar.content).length > 0) {
+      // if ($('#' + currentCar.content).length > 0) {
         var listItem = renderCar(currentCar);
         $('#car').append(listItem);
         currentCar.maintenance.forEach(function(maintItem) {
