@@ -8,7 +8,7 @@
   searchController.init = function() {
     $('.tab-content').hide();
     $('#search').show();
-    $('#push-to-garage').hide();
+    // $('button#push-to-garage').hide();
   };
 
   module.searchController = searchController;

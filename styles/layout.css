@@ -9,6 +9,7 @@
   flex-direction: column;
   color: white;
   margin-left: 9%;
+  padding-left: 5%;
   background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -30,12 +31,6 @@
     font-size: 1.1em;
   }
 
-  iframe {
-    padding: 0;
-    padding-bottom: 2%;
-    width: 65em;
-    height: 30em;
-  }
 
 .clearfix::after {
   content: "";
@@ -249,6 +244,7 @@ ul#filters {
   /*height: 80px;*/
   clear:both;
   color: white;
+  position: absolute;
   top:100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
 }
