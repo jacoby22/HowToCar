@@ -37,7 +37,7 @@
         var maintElem = renderMaintenace(maintItem);
         $('#' + currentCar.content + ' #car-maintenance').append(maintElem);
       });
-      garageView.setTeasers();
+      // garageView.setTeasers();
     });
   };
 
