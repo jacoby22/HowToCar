@@ -18,10 +18,13 @@
     <script id="car-template" type="text/x-handlebars-template">
       <article class="clearfix" data-content="{{dataContent}}" id="{{content}}">
         <section class="car-description">
+          <div class="hline">
           <li>
+            <div class="car-button-remove">
             <h2>{{year}} {{make}} {{model}}</h2>
             <button class="button" name={{dataContent}}>Remove Car</button>
             <!-- <p><h5>Car Picture Here ??</h5></p> -->
+            </div>
           </li>
         </section>
         <section class="car-maintenance"></section>
