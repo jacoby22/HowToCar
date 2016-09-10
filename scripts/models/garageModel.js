@@ -39,6 +39,7 @@
         $('#' + currentCar.content + ' .car-maintenance').append(maintElem);
       });
       garageView.setTeasers();
+      garage.removeCar();
     });
   };
 
@@ -53,7 +54,6 @@
         garage.getCarMaintenance(callback, splitCar, car);
       });
     });
-    garage.removeCar();
   };
 
   garage.removeCar = function() {
