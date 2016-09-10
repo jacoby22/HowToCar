@@ -35,8 +35,9 @@
       $('#car').append(listItem);
       currentCar.maintenance.forEach(function(maintItem) {
         var maintElem = renderMaintenace(maintItem);
-        $('#' + currentCar.content).append(maintElem);
+        $('#' + currentCar.content + ' .car-maintenance').append(maintElem);
       });
+      garageView.setTeasers();
     });
   };
 

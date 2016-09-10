@@ -17,27 +17,23 @@
 
     <script id="car-template" type="text/x-handlebars-template">
       <article class="clearfix" data-content="{{content}}" id="{{content}}">
-      <article class="clearfix">
         <section id="car-description">
           <li>
             <h4>{{year}} {{make}} {{model}}</h4>
             <!-- <p><h5>Car Picture Here ??</h5></p> -->
           </li>
         </section>
+        <section class="car-maintenance"></section>
       </article>
     </script>
 
     <script id="maintenance-template" type="text/x-handlebars-template">
-      <article class="clearfix">
-        <section id="car-maintenance">
-          <li>
-            <h4>Item: {{item}}</h4>
-            <p>Action: {{action}}</p>
-            <p>Interval Milage: {{intervalMileage}}</p>
-            <p>Item Description: {{itemDescription}}</p>
-          </li>
-        </section>
-      </article>
+      <li>
+        <h4>Item: {{item}}</h4>
+        <p>Action: {{action}}</p>
+        <p>Interval Milage: {{intervalMileage}}</p>
+        <p>Item Description: {{itemDescription}}</p>
+      </li>
     </script>
   </head>
   <body>

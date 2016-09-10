@@ -12,6 +12,12 @@
     $('button#push-to-garage').hide();
   };
 
+  garageView.setTeasers = function() {
+    $('.car-maintenance').each(function() {
+      $(this).children().slice(5).hide();
+    });
+  };
+
   module.garageView = garageView;
 
 })(window);
