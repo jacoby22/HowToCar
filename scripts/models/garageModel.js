@@ -56,7 +56,7 @@
   };
 
   garage.removeCar = function() {
-    $('#car-description button').on('click', function() {
+    $('.car-description button').on('click', function() {
       console.log($(this).attr('name'));
       console.log('clicked');
     });
