@@ -73,7 +73,6 @@ ul#filters {
 
  #filters select {
    display: block;
-   width: 90%;
    margin: .2em 5%;
  }
 }

@@ -10,6 +10,7 @@
     $('#generalFooter').hide();
     $('#search').show();
     $('#edmundsLegal').show();
+
   };
 
   searchView.createMakeFilter = function() {
