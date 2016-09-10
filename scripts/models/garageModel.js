@@ -41,6 +41,7 @@
       console.log(currentCar);
       var listItem = renderCar(currentCar);
       $('#car').append(listItem);
+      console.log($('#' + currentCar.content));
       currentCar.maintenance.forEach(function(maintItem) {
         var maintElem = renderMaintenace(maintItem);
         $('#' + currentCar.content).append(maintElem);
