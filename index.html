@@ -21,16 +21,15 @@
           <li>
             <h4>{{year}} {{make}} {{model}}</h4>
             <p><h5>Car Picture Here ??</h5></p>
-            <p><h5>Car Id: {{id}}</h5></p>
           </li>
         </section>
         <section id="car-maintenance">
-          <li>
-            <h4>Item: {{maintenance.actionHolder.[0].item}}</h4>
-            <p>Action: {{action}}</p>
-            <p>Interval Milage: {{intervalMileage}}</p>
-            <p>Item Description: {{itemDescription}}</p>
-          </li>
+          <ul>
+            <li><h4>Item: {{maintenance.actionHolder.[0].item}}</h4></li>
+            <li>Action: {{maintenance.actionHolder.[0].action}}</li>
+            <li>Change Every: {{maintenance.actionHolder.[0].intervalMileage}} miles</li>
+            <li>Description: {{maintenance.actionHolder.[0].itemDescription}}</li>
+          </ul>
         </section>
       </article>
     </script>
