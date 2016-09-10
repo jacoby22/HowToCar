@@ -58,10 +58,13 @@
 
   garage.removeCar = function() {
     var tempArray;
-    $('.button').on('click', function() {
+    $('.x').on('click', 'button', function() {
       tempArray = [];
-      tempArray.push($(this).attr('name'));
+      console.log($(this));
+      tempArray.push($(this).attr('data-content'));
+      console.log(tempArray);
       if ($(this)) {
+        console.log($(this));
         console.log('removing now');
         $(this).remove();
         // $(this).parents('*[data-content="' + tempArray[0] + '"]');
