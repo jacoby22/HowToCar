@@ -11,6 +11,8 @@
     $('#homeFooter').hide();
     $('#edmundsLegal').hide();
     $('#generalFooter').show();
+    $('#searchGarage').hide();
+    $('button#push-to-garage').hide();
   };
 
   module.resourceView = resourceView;
