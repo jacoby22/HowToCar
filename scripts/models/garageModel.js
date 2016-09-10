@@ -43,11 +43,11 @@
         var splitCar = car.split('/');
         garage.getCarMaintenance(callback, splitCar);
       });
-    }).done(function(garage['allParkedCars']) {
+    }).done(function() {
       console.log(garage.allParkedCars);
-      garage.allParkedCars.forEach(function(parkedCar) {
+      garage.allParkedCars.forEach(function(parkedCar, index, garage.allParkedCars) {
         console.log('inside');
-        console.log(parkedCar);
+        console.log(garage.allParkedCars[index]);
         // var listItem = renderCar(car);
         // $('#car').append(listItem);
         // $('#maintenance-list').append(listMaintenance);
