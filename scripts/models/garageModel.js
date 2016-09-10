@@ -26,8 +26,11 @@
 
   garage.getCarMaintenance = function(callback, splitCar) {
     $.get('/maintenance/actionrepository/findbymodelyearid', {modelyearid: splitCar[3]})
-    .then(function(data) {
+    .done(function(data) {
       garage.allParkedCars.push(new ParkedCar(data, splitCar));
+    }).done(function() {
+      console.log(garage.allParkedCars);
+      console.log(garage.allParkedCars[0]);
     });
     //   var listMaintenance = renderMaintenace(data);
     //   var listItem = renderCar(garage.savedCars[0]);
@@ -43,13 +46,7 @@
         var splitCar = car.split('/');
         garage.getCarMaintenance(callback, splitCar);
       });
-    }).done(function() {
-      debugger;
-      console.log(garage.allParkedCars);
-
-      console.log(garage['allParkedCars'][0]);
-      console.log(garage.allParkedCars[1]);
-      console.log(garage.allParkedCars[2]);
+    });
 
       // for (var i = 0; i < garage.allParkedCars.length; i++) {
       //   console.log(garage.allParkedCars[i]);
