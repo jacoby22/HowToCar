@@ -60,12 +60,8 @@
       console.log(event.target);
       var $article = ($(event.target).parents('article'));
       console.log($article);
-      if ($(this)) {
-        console.log($(this));
-        console.log('removing now');
-        $(this).remove();
-        // $(this).parents('*[data-content="' + tempArray[0] + '"]');
-      }
+      $article.remove();
+      console.log($article.attr('data-content'));
     });
   };
 
