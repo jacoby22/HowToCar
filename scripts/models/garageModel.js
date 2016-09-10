@@ -57,8 +57,6 @@
       // var listItem = renderCar(garage.allParkedCars[0]);
       // $('#car').append(listItem);
       // $('#maintenance-list').append(listMaintenance);
-
-    });
   };
 
   // garage.showGarage = function() {
