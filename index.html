@@ -26,7 +26,7 @@
         <section id="car-maintenance">
           {{#times 5}}
           <ul>
-            <li><h4>Item: {{maintenance.actionHolder.{{this}}.item}}</h4></li>
+            <li><h4>Item: {{maintenance.actionHolder.[{{this}}]}}</h4></li>
             <li>Action: {{maintenance.actionHolder.[{{this}}].action}}</li>
             <li>Change Every: {{maintenance.actionHolder.[{{this}}].intervalMileage}} miles</li>
             <li>Description: {{maintenance.actionHolder.[{{this}}].itemDescription}}</li>
