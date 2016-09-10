@@ -10,6 +10,7 @@
     this.maintenance = data;
   }
 
+  var testArray = [1,2,3];
   garage.allParkedCars = [];
 
   var renderMaintenace = function(carData) {
@@ -45,8 +46,8 @@
       });
     }).done(function() {
       console.log(garage.allParkedCars);
-      garage.allParkedCars.forEach(function(car) {
-        console.log('balls');
+      testArray.forEach(function(car) {
+        console.log(car);
       });
       // var listItem = renderCar(garage.allParkedCars[0]);
       // $('#car').append(listItem);
