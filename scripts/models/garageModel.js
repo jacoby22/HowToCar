@@ -43,7 +43,7 @@
         var splitCar = car.split('/');
         garage.getCarMaintenance(callback, splitCar);
       });
-    }).done(function() {
+    }).then(function() {
       console.log(garage.allParkedCars);
       for (var i = 0; i < garage.allParkedCars.length; i++) {
         console.log(garage.allParkedCars[i]);
