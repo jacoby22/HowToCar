@@ -67,7 +67,6 @@
           searchView.showCarPhoto();
         }
         $('#push-to-garage').show();
-        console.log(searchView.currentCar);
       }
     });
   };

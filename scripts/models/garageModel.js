@@ -38,10 +38,9 @@
       garage.allParkedCars.push(new ParkedCar(data, splitCar, car));
     }).then(function() {
       var currentCar = garage.allParkedCars[(garage.allParkedCars.length) - 1];
-      console.log(currentCar);
       var listItem = renderCar(currentCar);
       $('#car').append(listItem);
-      console.log($());
+      console.log(garage.allParkedCars);
       currentCar.maintenance.forEach(function(maintItem) {
         var maintElem = renderMaintenace(maintItem);
         $('#' + currentCar.content).append(maintElem);
