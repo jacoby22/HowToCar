@@ -15,7 +15,7 @@
     this.year = splitCar[2];
     this.id = splitCar[3];
     this.content = car;
-    this.maintenance = data;
+    this.maintenance = data.actionHolder;
   }
 
   garage.allParkedCars = [];

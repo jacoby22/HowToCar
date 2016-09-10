@@ -24,12 +24,11 @@
           </li>
         </section>
         <section id="car-maintenance">
-          {{#each maintenance.actionHolder}}
           <ul>
-            <li><h4>Item: {{@index}}: {{this}}.item</h4></li>
-            <!-- <li>Action: {{item.actionHolder.[{{this}}].action}}</li>
+            <li><h4>Item: {{item}}</h4></li>
+            <li>Action: {{item.actionHolder.[{{this}}].action}}</li>
             <li>Change Every: {{item.actionHolder.[{{this}}].intervalMileage}} miles</li>
-            <li>Description: {{item.actionHolder.[{{this}}].itemDescription}}</li> -->
+            <li>Description: {{item.actionHolder.[{{this}}].itemDescription}}</li>
           </ul>
           {{/each}}
         </section>
