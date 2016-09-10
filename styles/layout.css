@@ -30,9 +30,9 @@
 
   #videos p {
     font-size: 1.1em;
+    padding-bottom: 5%;
   }
 
-<<<<<<< HEAD
   .videoWrapper {
   	position: relative;
   	padding-bottom: 56.25%; /* 16:9 */
@@ -42,22 +42,12 @@
     margin-bottom: 10%;
     margin-top: -5%;
   }
+
   .videoWrapper iframe {
   	position: absolute;
-  	/*top: 0;
-  	left: 0;*/
   	width: 100%;
   	height: 100%;
   }
-
-  /*iframe {
-    padding: 0;
-    padding-bottom: 2%;
-    width: 65em;
-    height: 30em;
-  }*/
-=======
->>>>>>> f6f38649b44d03a6df40b163ca3df49694fe14cc
 
 .clearfix::after {
   content: "";
@@ -272,7 +262,6 @@ ul#filters {
   /*height: 80px;*/
   clear:both;
   color: white;
-  position: absolute;
   top:100%;
   background-color: rgba(0, 0, 0, 0.8);
 }
