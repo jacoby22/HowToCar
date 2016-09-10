@@ -43,7 +43,7 @@
       $('#car').append(listItem);
       currentCar.maintenance.forEach(function(maintItem) {
         var maintElem = renderMaintenace(maintItem);
-        $('#car-template').append(maintElem);
+        $('#' + currentCar.content).append(maintElem);
       });
     });
     //   var listMaintenance = renderMaintenace(data);
