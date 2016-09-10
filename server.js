@@ -86,6 +86,7 @@ app.get('/getCars', function(req, res) {
 app.get('/removeCar', function(req, res) {
   // formattedName = '{' + req.query.name + '}';
   console.log(req.query.name);
+  console.log(typeof req.query.name);
   var client = new pg.Client(process.env.DATABASE_URL);
   client.connect(function(err) {
     if (err) throw err;
