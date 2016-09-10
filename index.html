@@ -50,17 +50,20 @@
   </head>
   <body>
 
-    <header class="clearfix">
-      <div id="title">
-        <h4 class="animated lightSpeedIn">How 2 Car</h4>
+    <header class="site-header clearfix">
+      <div class="header-navi">
+        <section class="heading-group-h1">
+          <h1 class="animated bounceInRight">How 2 Car</h1>
+          <p>A place for your everyday car maintenance needs</p>
+        </section>
       </div>
       <nav class="main-nav" id="display">
         <div class="icon-menu-outline"></div>
         <ul>
           <li class="tab"><a href="/" class="icon-home">How2Car</a></li>
           <li class="tab"><a href="/garage" class="icon-warehouse">Garage</a></li>
-          <li class="tab"><a href="/search" class="icon-wrench">Add-a-car</a></li>
-          <li class="tab"><a href="/resources" class="icon-calendar">Resources</a></li>
+          <li class="tab"><a href="/search" class="icon-wrench">AddCar</a></li>
+          <li class="tab"><a href="resources" class="icon-calendar">Resources</a></li>
           <li class="tab"><a href="/" class="icon-user">Logout</a></li>
         </ul>
       </nav>
@@ -134,9 +137,13 @@
             <p>10 Commandments of Car Care: Car Maintenance Tips</p>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/s5HGWg-dhPM" frameborder="0" allowfullscreen></iframe>
         </section>
-        <section id="results"></section>
+        <div id="button-container">
+          <button id="push-to-garage"><a href="/addCar">Store In Garage</a></button>
+        </div>
+
+      <section id="results"></section>
         <div id="wrapper">
-        <ol id="maintenance"></ol>
+          <ol id="maintenance"></ol>
         </div>
         <div id="button-container">
           <button id="push-to-garage"><a href="/addCar">Store In Garage</a></button>
