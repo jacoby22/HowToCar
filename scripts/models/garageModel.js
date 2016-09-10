@@ -52,21 +52,14 @@
         var splitCar = car.split('/');
         garage.getCarMaintenance(callback, splitCar, car);
       });
-      console.log('first');
-    }).then(function() {
-      console.log('second?');
-      garage.removeCar();
     });
   };
 
   garage.removeCar = function() {
-    var tempArray;
-    console.log('third');
     $('#car').on('click', '.button', function(event) {
-      tempArray = [];
       tempArray.push(event.target.name);
-      console.log(tempArray);
-
+      console.log(event.target);
+      console.log(event.target.parents('li'));
       if ($(this)) {
         console.log($(this));
         console.log('removing now');
