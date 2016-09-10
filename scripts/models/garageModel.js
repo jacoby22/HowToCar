@@ -34,7 +34,7 @@
       var listItem = renderCar(currentCar);
       $('#car').append(listItem);
       currentCar.maintenance.forEach(function(maintItem, idx) {
-        while (idx < 5) {
+        if (idx < 5) {
           var maintElem = renderMaintenace(maintItem);
           $('#' + currentCar.content + ' .car-maintenance').append(maintElem);
         }
