@@ -50,25 +50,17 @@
   </head>
   <body>
 
-    <header class="site-header clearfix">
-      <div class="header-navi">
-        <section class="heading-group-h1">
-          <h1 class="animated bounceInRight">How 2 Car</h1>
-          <p>A place for your everyday car maintenance needs</p>
-        </section>
+    <header class="clearfix">
+      <div id="title">
+        <h4 class="animated lightSpeedIn">How 2 Car</h4>
       </div>
-      <!-- <div id="title">
-        <h1 class="animated bounceInRight">How 2 Car</h1>
-
-        <p>A place for your everyday car maintenance.</p>
-      </div> -->
       <nav class="main-nav" id="display">
         <div class="icon-menu-outline"></div>
         <ul>
           <li class="tab"><a href="/" class="icon-home">How2Car</a></li>
           <li class="tab"><a href="/garage" class="icon-warehouse">Garage</a></li>
           <li class="tab"><a href="/search" class="icon-wrench">Add-a-car</a></li>
-          <li class="tab"><a href="/calendar" class="icon-calendar">Calendar</a></li>
+          <li class="tab"><a href="/resources" class="icon-calendar">Resources</a></li>
           <li class="tab"><a href="/" class="icon-user">Logout</a></li>
         </ul>
       </nav>
@@ -123,8 +115,24 @@
           </ul>
         </div>
         </section>
-        <section id="calendar" class="tab-content">
-          <iframe src="https://calendar.google.com/calendar/embed?src=codydavidhulsey%40gmail.com&ctz=America/Los_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        <section id="resource" class="tab-content">
+          <div id="introCopy">
+            <h1>Helpful Resources</h1>
+            <p>Owning a car is an important responsibility. Sometimes cars never breakdown, and sometimes they have perpetual issues. We understand that you have a busy life and don't have time to do extensive research on your car's maintenance schedule. That is why we went to the liberty of providing you with a handful of useful resources that you can learn from. <strong>Invest time and research into your car now, so that you don't have to invest money into it later.</strong></p>
+          </div>
+          <h4>Articles</h4>
+            <ol>
+              <li><a href="http://lifelanes.progressive.com/five-things-to-know-about-your-car/">5 Things Everyone Should Know About Their Car</a></li>
+              <li><a href="http://eliteautorepairtempe.com/10-things-all-car-owners-should-know/">10 Things All Car Owners Should Know</a></li>
+              <li><a href="http://www.advantageautorepairofparker.com/10-things">10 Things You Need to Know About Car Maintenance</a></li>
+            </ol>
+          <h4>Videos</h4>
+          <p>How to Change Your Oil</p>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/O1hF25Cowv8" frameborder="0" allowfullscreen></iframe>
+          <p>Simple Car Maintenance Prevents Expensive Repairs</p>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/GaKKSFEsAdI" frameborder="0" allowfullscreen></iframe>
+          <p>10 Commandments of Car Care: Car Maintenance Tips</p>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/s5HGWg-dhPM" frameborder="0" allowfullscreen></iframe>
         </section>
         <section id="results"></section>
         <div id="wrapper">
@@ -149,7 +157,7 @@
          });
       </script>
       <div id="loginButton">
-        <button onclick="lock.show();$('button').hide();">Login</button>
+        <button onclick="lock.show();">Login</button>
       </div>
     </main>
 
@@ -167,18 +175,18 @@
     <script src="scripts/models/garageModel.js"></script>
     <script src="scripts/models/loginModel.js"></script>
     <script src="scripts/models/searchModel.js"></script>
-    <script src="scripts/models/calendarModel.js"></script>
+    <script src="scripts/models/resourceModel.js"></script>
     <!-- View -->
     <script src="scripts/views/garageView.js"></script>
     <script src="scripts/views/loginView.js"></script>
     <script src="scripts/views/searchView.js"></script>
-    <script src="scripts/views/calendarView.js"></script>
+    <script src="scripts/views/resourceView.js"></script>
 
     <!-- Controller -->
     <script src="scripts/controllers/garageController.js"></script>
     <script src="scripts/controllers/loginController.js"></script>
     <script src="scripts/controllers/searchController.js"></script>
-    <script src="scripts/controllers/calendarController.js"></script>
+    <script src="scripts/controllers/resourceController.js"></script>
 
 
     <script src="scripts/routes.js"></script>

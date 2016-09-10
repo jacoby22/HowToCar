@@ -1,5 +1,9 @@
 /*  NAVIGATION LAYOUT
 ======================================================= */
+#resource {
+  width: 300px;
+}
+
 .clearfix::after {
   content: "";
   display: table;
