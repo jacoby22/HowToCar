@@ -7,6 +7,8 @@
     $('#loginButton').hide();
     $('#addToCalendar').show();
     $('#garage').show();
+    $('#searchGarageFooter').show();
+    $('#generalFooter').hide
     $('button#push-to-garage').hide();
   };
 

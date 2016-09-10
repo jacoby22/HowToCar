@@ -7,12 +7,12 @@
   searchView.show = function() {
     $('.tab-content').hide();
     $('#loginButton').hide();
-    $('#generalFooter').show();
+    $('#generalFooter').hide();
     $('#search').show();
     $('#edmundsLegal').show();
     $('button#push-to-garage').hide();
-    $('#homeFooter').hide();
-
+    $('#homeFooter').hide()
+    $('#searchGarage').show();
   };
 
   searchView.createMakeFilter = function() {
