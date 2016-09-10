@@ -1,6 +1,11 @@
 /*  NAVIGATION LAYOUT
 ======================================================= */
 
+.hline {
+  width:100%;
+  height:1px;
+  background: white;
+}
   #resource {
     margin-top: 3%;
     width: 75%;
@@ -196,7 +201,7 @@ ul#filters {
 }
 #car {
   display: block;
-  list-style: square;
+  list-style: none;
   font-size: 0.75em;
   max-width: 100%;
   color: white;
