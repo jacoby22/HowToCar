@@ -14,7 +14,7 @@
     this.model = splitCar[1];
     this.year = splitCar[2];
     this.id = splitCar[3];
-    this.content = car.replaceAll('/', '_');
+    this.content = car.replaceAll(/\//g, '_');
     this.maintenance = data.actionHolder;
   }
 
