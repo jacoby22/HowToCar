@@ -58,7 +58,8 @@
   garage.removeCar = function() {
     $('#car').on('click', '.button', function(event) {
       console.log(event.target);
-      console.log($(event.target).parents('li'));
+      var $article = ($(event.target).parents('article'));
+      console.log($article);
       if ($(this)) {
         console.log($(this));
         console.log('removing now');
