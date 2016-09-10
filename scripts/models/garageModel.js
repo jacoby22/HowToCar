@@ -39,7 +39,7 @@
           $('#' + currentCar.content + ' .car-maintenance').append(maintElem);
         }
       });
-      // garageView.setTeasers();
+      garageView.setTeasers();
     });
   };
 
