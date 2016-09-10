@@ -46,7 +46,7 @@
       });
     }).done(function() {
       console.log(garage.allParkedCars);
-      allParkedCars.forEach(function(car) {
+      garage.allParkedCars.forEach(function(car) {
         console.log(car);
       });
       // var listItem = renderCar(garage.allParkedCars[0]);
