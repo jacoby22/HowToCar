@@ -238,7 +238,8 @@ ul#filters {
 }
 
 .car-button-remove {
-  display: inline;
+  display: flex;
+  justify-content: space-between;
 }
 
 .car-specs {
