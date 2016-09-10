@@ -63,7 +63,8 @@
       tempArray.push($(this).attr('name'));
       if ($(this)) {
         console.log('removing now');
-        $(this).parents('*[data-content="' + tempArray[0] + '"]');
+        $(this).remove();
+        // $(this).parents('*[data-content="' + tempArray[0] + '"]');
       }
     });
   };
