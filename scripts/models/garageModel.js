@@ -45,8 +45,11 @@
       });
     }).done(function() {
       console.log(garage.allParkedCars);
-      var listItem = renderCar(garage.allParkedCars[0]);
-      $('#car').append(listItem);
+      garage.allParkedCars.forEach(function(car) {
+        console.log('balls');
+      }
+      // var listItem = renderCar(garage.allParkedCars[0]);
+      // $('#car').append(listItem);
       // $('#maintenance-list').append(listMaintenance);
 
     });
