@@ -45,6 +45,11 @@
     padding-bottom: 5%;
   }
 
+  #addToCalendar {
+    max-width: 75%;
+    display: flex;
+  }
+
   .videoWrapper {
   	position: relative;
   	padding-bottom: 56.25%; /* 16:9 */
@@ -59,6 +64,20 @@
   	position: absolute;
   	width: 100%;
   	height: 100%;
+  }
+
+  #maintenanceReminderButton {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+
+  #maintenanceReminderButton p {
+    color: white;
+  }
+
+  #garage h3 {
+    color: white;
+    text-align: left;
   }
 
 .clearfix::after {
@@ -134,12 +153,13 @@ ul#filters {
 
 #garage {
   /*background-color: rgba(255,255,0,0.3);*/
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   height: 75%;
   width: 75%;
+  margin-left: 15%;
 }
 
 #search {
