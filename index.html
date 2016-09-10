@@ -17,6 +17,10 @@
 
     <script id="car-template" type="text/x-handlebars-template">
       <article class="clearfix" data-content="{{content}}" id="{{content}}">
+      <article class="clearfix">
+        <header>
+          <h3>Your Vehicles:</h3>
+        </header>
         <section id="car-description">
           <li>
             <h4>{{year}} {{make}} {{model}}</h4>
@@ -39,7 +43,6 @@
       </article>
     </script>
   </head>
-
   <body>
 
     <header class="site-header clearfix">
@@ -49,18 +52,13 @@
           <p>A place for your everyday car maintenance needs</p>
         </section>
       </div>
-      <!-- <div id="title">
-        <h1 class="animated bounceInRight">How 2 Car</h1>
-
-        <p>A place for your everyday car maintenance.</p>
-      </div> -->
       <nav class="main-nav" id="display">
         <div class="icon-menu-outline"></div>
         <ul>
           <li class="tab"><a href="/" class="icon-home">How2Car</a></li>
           <li class="tab"><a href="/garage" class="icon-warehouse">Garage</a></li>
           <li class="tab"><a href="/search" class="icon-wrench">AddCar</a></li>
-          <li class="tab"><a href="resources" class="icon-calendar">Resources</a></li>
+          <li class="tab"><a href="resources" class="icon-book">Resources</a></li>
           <li class="tab"><a href="/" class="icon-user">Logout</a></li>
         </ul>
       </nav>
@@ -72,9 +70,6 @@
         login content
       </section> -->
       <section id="garage" class="tab-content">
-        <header>
-          <h3>Your Vehicles:</h3>
-        </header>
         <div class="car-specs">
         <div id="car"></div>           <!-- Populates Car/Cars -->
       </div>  <!-- Populates Maint DATA -->
@@ -89,7 +84,6 @@
         <p class="recurring">FREQ=MONTHLY;COUNT=10</p>
       </div>
       </section>
-
       <section id="search" class="tab-content">
         <div class="container">
         <div class="dropdown">Pick your car from the drop-down</div>
@@ -116,14 +110,40 @@
             </li>
           </ul>
         </div>
+        </section>
+        <section id="resource" class="tab-content">
+          <div id="introCopy">
+            <h1>Helpful Resources</h1>
+            <p>Owning a car is an important responsibility. Sometimes cars never breakdown, and sometimes they have perpetual issues. We understand that you have a busy life and don't have time to do extensive research on your car's maintenance schedule. That is why we went to the liberty of providing you with a handful of useful resources that you can learn from. <strong>Invest time and research into your car now, so that you don't have to invest money into it later.</strong></p>
+          </div>
+          <div id="articles">
+          <h2>Articles</h2>
+            <ol>
+              <li><a href="http://lifelanes.progressive.com/five-things-to-know-about-your-car/">5 Things Everyone Should Know About Their Car</a></li>
+              <li><a href="http://eliteautorepairtempe.com/10-things-all-car-owners-should-know/">10 Things All Car Owners Should Know</a></li>
+              <li><a href="http://www.advantageautorepairofparker.com/10-things">10 Things You Need to Know About Car Maintenance</a></li>
+            </ol>
+          </div>
+          <div id="videos">
+          <h2>Videos</h2>
+            <p>How to Change Your Oil</p>
+            <iframe src="https://www.youtube.com/embed/O1hF25Cowv8" frameborder="0" allowfullscreen></iframe>
+            <p>Simple Car Maintenance Prevents Expensive Repairs</p>
+            <iframe src="https://www.youtube.com/embed/GaKKSFEsAdI" frameborder="0" allowfullscreen></iframe>
+            <p>10 Commandments of Car Care: Car Maintenance Tips</p>
+            <iframe src="https://www.youtube.com/embed/s5HGWg-dhPM" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </section>
         <div id="button-container">
           <button id="push-to-garage"><a href="/addCar">Store In Garage</a></button>
         </div>
-      </section>
 
       <section id="results"></section>
         <div id="wrapper">
           <ol id="maintenance"></ol>
+        </div>
+        <div id="button-container">
+          <button id="push-to-garage"><a href="/addCar">Store In Garage</a></button>
         </div>
       </section>
       <div id="root" style="width: 320px; margin: 40px auto; padding: 10px"></div>
@@ -159,18 +179,18 @@
     <script src="scripts/models/garageModel.js"></script>
     <script src="scripts/models/loginModel.js"></script>
     <script src="scripts/models/searchModel.js"></script>
-    <script src="scripts/models/calendarModel.js"></script>
+    <script src="scripts/models/resourceModel.js"></script>
     <!-- View -->
     <script src="scripts/views/garageView.js"></script>
     <script src="scripts/views/loginView.js"></script>
     <script src="scripts/views/searchView.js"></script>
-    <script src="scripts/views/calendarView.js"></script>
+    <script src="scripts/views/resourceView.js"></script>
 
     <!-- Controller -->
     <script src="scripts/controllers/garageController.js"></script>
     <script src="scripts/controllers/loginController.js"></script>
     <script src="scripts/controllers/searchController.js"></script>
-    <script src="scripts/controllers/calendarController.js"></script>
+    <script src="scripts/controllers/resourceController.js"></script>
 
 
     <script src="scripts/routes.js"></script>

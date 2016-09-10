@@ -7,6 +7,7 @@
     $('#loginButton').hide();
     $('#addToCalendar').show();
     $('#garage').show();
+    $('button#push-to-garage').hide();
   };
 
   module.garageView = garageView;
