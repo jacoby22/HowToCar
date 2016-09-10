@@ -2,7 +2,15 @@
 
   var garage = {};
 
-  garage.savedCars = [];
+  function ParkedCar(data, car) {
+    this.make = car[0];
+    this.model = car[1];
+    this.year = car[2];
+    this.id = car[3];
+    this.maintenance = data;
+  }
+
+  garage.allParkedCars = [];
 
   var renderMaintenace = function(carData) {
     // console.log(carData);
@@ -16,27 +24,35 @@
     return garageTemplate(carData);
   };
 
-  garage.getCarMaintenance = function(callback, carId) {
-    $.get('/maintenance/actionrepository/findbymodelyearid', {modelyearid: carId})
+  garage.getCarMaintenance = function(callback, splitCar) {
+    $.get('/maintenance/actionrepository/findbymodelyearid', {modelyearid: splitCar[3]})
     .done(function(data) {
-      console.log(data);
-      console.log(carId);
+      garage.allParkedCars.push(new ParkedCar(data, splitCar));
     });
+    //   var listMaintenance = renderMaintenace(data);
+    //   var listItem = renderCar(garage.savedCars[0]);
+    //   $('#car').append(listItem);
+    //   $('#maintenance-list').append(listMaintenance);
   };
 
   garage.showCar = function(callback) {
     var userEmail = localStorage.getItem('currentUser');
     $.get('/getCars', {email: userEmail})
     .done(function(data) {
-      data.forEach(function(carId) {
-        garage.getCarMaintenance(callback, carId);
+      data.forEach(function(car) {
+        var splitCar = car.split('/');
+        garage.getCarMaintenance(callback, splitCar);
       });
-    });
+    }).done(function() {
+      console.log(garage.allParkedCars);
+      garage.allParkedCars.forEach(function(car) {
+        console.log('balls');
+      });
+      // var listItem = renderCar(garage.allParkedCars[0]);
+      // $('#car').append(listItem);
+      // $('#maintenance-list').append(listMaintenance);
 
-    // var listMaintenance = renderMaintenace(garage.savedCars[0][4][0]);
-    // var listItem = renderCar(garage.savedCars[0]);
-    // $('#car').append(listItem);
-    // $('#maintenance-list').append(listMaintenance);
+    });
   };
 
   // garage.showGarage = function() {

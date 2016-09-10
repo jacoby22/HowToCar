@@ -17,14 +17,11 @@
 
     <script id="car-template" type="text/x-handlebars-template">
       <article class="clearfix">
-        <header>
-          <h3>Your Vehicles:</h3>
-        </header>
         <section id="car-description">
           <li>
-            <h4>{{year}} {{make}} {{model}}</h4>
+            <h4>{{ParkedCar.year}} {{ParkedCar.make}} {{ParkedCar.model}}</h4>
             <p><h5>Car Picture Here ??</h5></p>
-            <p><h5>Car Id: {{id}}</h5></p>
+            <p><h5>Car Id: {{ParkedCar.id}}</h5></p>
           </li>
         </section>
       </article>
@@ -38,7 +35,7 @@
         <section id="car-maintenance">
           <li>
             <h4>Engine: {{engineCode}}</h4>
-            <p>ID: {{id}}</p>
+            <p>ID: {{carId}}</p>
             <p>Item: {{item}}</p>
             <p>Action: {{action}}</p>
             <p>Interval Milage: {{intervalMileage}}</p>
@@ -48,11 +45,22 @@
       </article>
     </script>
   </head>
+
   <body>
 
     <header class="clearfix">
       <div id="title">
         <h4 class="animated lightSpeedIn">How 2 Car</h4>
+<<<<<<< HEAD
+=======
+    </header>
+    <header class="site-header clearfix">
+      <div class="header-navi">
+        <section class="heading-group-h1">
+          <h1 class="animated bounceInRight">How 2 Car</h1>
+          <p>A place for your everyday car maintenance needs</p>
+        </section>
+>>>>>>> b72f1c39d6b92620ecaa8148e6034b955855000a
       </div>
       <nav class="main-nav" id="display">
         <div class="icon-menu-outline"></div>
@@ -72,6 +80,9 @@
         login content
       </section> -->
       <section id="garage" class="tab-content">
+        <header>
+          <h3>Your Vehicles:</h3>
+        </header>
         <div class="car-specs">
         <ol id="car"></ol>           <!-- Populates Car/Cars -->
 
@@ -88,6 +99,7 @@
         <p class="recurring">FREQ=MONTHLY;COUNT=10</p>
       </div>
       </section>
+
       <section id="search" class="tab-content">
         <div class="container">
         <div class="dropdown">Pick your car from the drop-down</div>
@@ -114,6 +126,7 @@
             </li>
           </ul>
         </div>
+<<<<<<< HEAD
         </section>
         <section id="resource" class="tab-content">
           <div id="introCopy">
@@ -137,13 +150,19 @@
             <p>10 Commandments of Car Care: Car Maintenance Tips</p>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/s5HGWg-dhPM" frameborder="0" allowfullscreen></iframe>
           </div>
+=======
+        <div id="button-container">
+          <button id="push-to-garage"><a href="/addCar">Store In Garage</a></button>
+        </div>
+      </section>
+
+        <section id="calendar" class="tab-content">
+          <iframe src="https://calendar.google.com/calendar/embed?src=codydavidhulsey%40gmail.com&ctz=America/Los_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+>>>>>>> b72f1c39d6b92620ecaa8148e6034b955855000a
         </section>
         <section id="results"></section>
         <div id="wrapper">
         <ol id="maintenance"></ol>
-        </div>
-        <div id="button-container">
-          <button id="push-to-garage"><a href="/addCar">Store In Garage</a></button>
         </div>
       </section>
       <div id="root" style="width: 320px; margin: 40px auto; padding: 10px"></div>

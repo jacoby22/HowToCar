@@ -64,7 +64,7 @@
           // searchTool.getCarMaintenance(searchView.showCarMaintenance);
           searchView.showCarPhoto();
         }
-        $('.push-to-garage').show();
+        $('#push-to-garage').show();
         console.log(searchView.currentCar);
       }
     });
@@ -72,7 +72,7 @@
 
   searchView.addCar = function() {
     var userEmail = localStorage.getItem('currentUser');
-    $.get('/addCar', {currentCar: searchView.currentCar.id, email: userEmail});
+    $.get('/addCar', {currentCar: searchView.currentCar, email: userEmail});
   };
   // searchView.handlePushToGarage = function() {
   //   var counter = 0;

@@ -56,11 +56,11 @@ app.get('/user', function (req, res) {
 });
 
 app.get('/addCar', function(req, res) {
-  var formattedId = '{' + req.query.currentCar + '}';
+  var formattedCar = '{' + req.query.currentCar.make + '/' + req.query.currentCar.model + '/' + req.query.currentCar.year + '/' + req.query.currentCar.id + '}';
   var client = new pg.Client(process.env.DATABASE_URL);
   client.connect(function(err) {
     if (err) throw err;
-    client.query('UPDATE garage SET cars = cars || $1 WHERE email=$2', [formattedId, req.query.email],function(err, result) {
+    client.query('UPDATE garage SET cars = cars || $1 WHERE email=$2', [formattedCar, req.query.email],function(err, result) {
       if (err) throw err;
       client.end(function(err) {
         if (err) throw err;
@@ -100,7 +100,7 @@ app.get('/vehicle/*', function(request, response) {
 app.get('/maintenance/actionrepository/findbymodelyearid/', function(request, response) {
   console.log('Routing Edmunds API request');
   var shit = request.query['modelyearid'];
-  var url = 'https://api.edmunds.com/v1/api' + request.params;
+  var url = 'https://api.edmunds.com/v1/api/maintenance/actionrepository/findbymodelyearid';
   (requestProxy({
     url: url,
     query: {
