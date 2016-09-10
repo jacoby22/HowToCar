@@ -10,6 +10,7 @@
   color: white;
   margin-left: 9%;
   background-color: rgba(0, 0, 0, 0.7);
+  padding-left: 5%;
 }
 
 #articles {
@@ -30,12 +31,29 @@
     font-size: 1.1em;
   }
 
-  iframe {
+  .videoWrapper {
+  	position: relative;
+  	padding-bottom: 56.25%; /* 16:9 */
+  	padding-top: 25px;
+  	height: 0;
+    margin-right: 6%;
+    margin-bottom: 10%;
+    margin-top: -5%;
+  }
+  .videoWrapper iframe {
+  	position: absolute;
+  	/*top: 0;
+  	left: 0;*/
+  	width: 100%;
+  	height: 100%;
+  }
+
+  /*iframe {
     padding: 0;
     padding-bottom: 2%;
     width: 65em;
     height: 30em;
-  }
+  }*/
 
 .clearfix::after {
   content: "";
