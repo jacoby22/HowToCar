@@ -3,15 +3,22 @@
 
 #resource {
   margin-top: 3%;
-  width: 80%;
+  width: 75%;
   justify-content: center;
   display: flex;
   flex-direction: column;
   color: white;
-  margin-left: 9%;
-  padding-left: 5%;
+  margin-left: 15%;
   background-color: rgba(0, 0, 0, 0.7);
-  padding-left: 5%;
+}
+
+#resource p {
+  max-width: 90%;
+}
+
+#bodyCopy {
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 #articles {
@@ -19,6 +26,11 @@
   display: flex;
   flex-direction: column;
   color: white;
+  }
+
+  #articles li a {
+    text-decoration: none;
+    color: white;
   }
 
   #videos {
@@ -45,8 +57,8 @@
 
   .videoWrapper iframe {
   	position: absolute;
-  	width: 100%;
-  	height: 100%;
+  	width: 80%;
+  	height: 80%;
   }
 
 .clearfix::after {
