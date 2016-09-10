@@ -14,7 +14,7 @@
     this.model = splitCar[1];
     this.year = splitCar[2];
     this.id = splitCar[3];
-    this.content = car;
+    this.content = car.replace('/', '_');
     this.maintenance = data.actionHolder;
   }
 
@@ -41,7 +41,7 @@
       console.log(currentCar);
       var listItem = renderCar(currentCar);
       $('#car').append(listItem);
-      console.log($('#' + currentCar.content));
+      console.log($());
       currentCar.maintenance.forEach(function(maintItem) {
         var maintElem = renderMaintenace(maintItem);
         $('#' + currentCar.content).append(maintElem);
