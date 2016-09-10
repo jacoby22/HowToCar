@@ -114,6 +114,7 @@ app.get('/maintenance/actionrepository/findbymodelyearid/', function(request, re
 app.get('/media/v2/*', function(request, response) {
   console.log('Routing Edmunds API photo request');
   console.log(request.originalUrl);
+  console.log('ayo');
   var url = 'https://api.edmunds.com/api' + request.originalUrl;
   (requestProxy({
     url: url,
