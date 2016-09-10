@@ -2,11 +2,12 @@
 ======================================================= */
 
 #resource {
-  width: 75%;
+  width: 80%;
   justify-content: center;
   display: flex;
   flex-direction: column;
   color: white;
+  margin-left: 9%;
 }
 
 /*#articles {
