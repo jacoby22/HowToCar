@@ -45,7 +45,7 @@
       });
     }).done(function() {
       console.log(garage.allParkedCars);
-      garage.allParkedCars.forEach(function(parkedCar, index, garage.allParkedCars) {
+      (garage.allParkedCars).forEach(function(parkedCar, index) {
         console.log('inside');
         console.log(garage.allParkedCars[index]);
         // var listItem = renderCar(car);
