@@ -63,7 +63,7 @@
       tempArray.push($(this).attr('name'));
       if ($(this)) {
         console.log('removing now');
-        $(this).parents("arictle[data-content='" + tempArray[0] + "']").remove();
+        $(this).parents('#' + tempArray[0]).remove();
       }
     });
   };
