@@ -303,14 +303,17 @@ ul#filters {
 
 #edmundsLegal {
   width: 100%;
-  height: 80px;
   clear:both;
   top:100%;
   justify-content: center;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  position: fixed;
 }
 
-#homeFooter {
+/*#homeFooter {
   display: flex;
   justify-content: center;
   text-align: center;
@@ -333,7 +336,7 @@ ul#filters {
   color: white;
   top:100%;
   background-color: rgba(0, 0, 0, 0.8);
-}
+}*/
 
 #searchGarage {
   display: flex;
