@@ -39,7 +39,6 @@
         $('#' + currentCar.content + ' .car-maintenance').append(maintElem);
       });
       garageView.setTeasers();
-    }).then(function() {
       garage.removeCar();
     });
   };
@@ -58,8 +57,10 @@
   };
 
   garage.removeCar = function() {
-    $('.button').on('click', function(e) {
-      console.log($(this).attr('name'));
+    var tempArray = [];
+    $('.button').on('click', function() {
+      tempArray.push($(this).attr('name'));
+      console.log(tempArray);
     });
   };
 
