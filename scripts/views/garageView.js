@@ -13,7 +13,7 @@
   garageView.setTeasers = function() {
     $('#car-maintenance').each(function() {
       $(this).children('li:gt(5)').hide();
-      console.log('working');
+      console.log($('#car-maintenance').length);
     });
   };
 
