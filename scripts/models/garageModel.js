@@ -8,6 +8,7 @@
     this.year = splitCar[2];
     this.id = splitCar[3];
     this.content = car.replace(/\//g, '_');
+    this.dataContent = car;
     this.maintenance = data.actionHolder;
   }
 
@@ -51,6 +52,12 @@
         var splitCar = car.split('/');
         garage.getCarMaintenance(callback, splitCar, car);
       });
+    });
+  };
+
+  garage.removeCar = function() {
+    $('#car-description button').on('click', function() {
+      console.log($(this).name);
     });
   };
 
