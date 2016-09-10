@@ -33,11 +33,13 @@
       var currentCar = garage.allParkedCars[(garage.allParkedCars.length) - 1];
       var listItem = renderCar(currentCar);
       $('#car').append(listItem);
-      currentCar.maintenance.forEach(function(maintItem) {
-        var maintElem = renderMaintenace(maintItem);
-        $('#' + currentCar.content + ' .car-maintenance').append(maintElem);
+      currentCar.maintenance.forEach(function(maintItem, idx) {
+        while (idx < 5) {
+          var maintElem = renderMaintenace(maintItem);
+          $('#' + currentCar.content + ' .car-maintenance').append(maintElem);
+        }
       });
-      garageView.setTeasers();
+      // garageView.setTeasers();
     });
   };
 
