@@ -26,7 +26,7 @@
 
   garage.getCarMaintenance = function(callback, splitCar) {
     $.get('/maintenance/actionrepository/findbymodelyearid', {modelyearid: splitCar[3]})
-    .done(function(data) {
+    .then(function(data) {
       garage.allParkedCars.push(new ParkedCar(data, splitCar));
     }).done(function() {
       console.log(garage.allParkedCars);
