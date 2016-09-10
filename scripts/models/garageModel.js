@@ -61,6 +61,10 @@
     $('.button').on('click', function() {
       tempArray.push($(this).attr('name'));
       console.log(tempArray);
+      if ($(this)) {
+        console.log('removing now');
+        $(this).remove();
+      }
     });
   };
 
