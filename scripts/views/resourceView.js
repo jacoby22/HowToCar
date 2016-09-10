@@ -8,9 +8,6 @@
     $('#search').hide();
     $('#resource').show();
     $('#loginButton').hide();
-    $('#homeFooter').hide();
-    $('#edmundsLegal').hide();
-    $('#generalFooter').show();
     $('#searchGarage').hide();
     $('button#push-to-garage').hide();
   };

@@ -5,9 +5,6 @@
     $('.tab-content').hide();
     $('#loginButton').show();
     $('#addToCalendar').hide();
-    $('#edmundsLegal').hide();
-    $('#homeFooter').show();
-    $('#generalFooter').hide();
     $('button#push-to-garage').hide();
   };
 
