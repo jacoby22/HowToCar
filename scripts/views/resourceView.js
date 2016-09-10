@@ -8,7 +8,9 @@
     $('#search').hide();
     $('#resource').show();
     $('#loginButton').hide();
+    $('#homeFooter').hide();
     $('#edmundsLegal').hide();
+    $('#generalFooter').show();
   };
 
   module.resourceView = resourceView;
