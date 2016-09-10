@@ -47,11 +47,12 @@
     garage.allParkedCars = [];
     var userEmail = localStorage.getItem('currentUser');
     $.get('/getCars', {email: userEmail})
-    .done(function(data) {
+    .then(function(data) {
       data.forEach(function(car) {
         var splitCar = car.split('/');
         garage.getCarMaintenance(callback, splitCar, car);
       });
+    }).then(function() {
       garage.removeCar();
     });
   };
