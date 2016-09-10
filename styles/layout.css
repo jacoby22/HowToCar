@@ -206,6 +206,10 @@ ul#filters {
   padding: 0;
 }
 
+#car h3 {
+  font-size: 1em;
+}
+
 #car-description {
   display: block;
   font-size: .75em;
