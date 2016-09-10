@@ -10,10 +10,10 @@
   var garage = {};
 
   function ParkedCar(data, splitCar, car) {
-    this.make = car[0];
-    this.model = car[1];
-    this.year = car[2];
-    this.id = car[3];
+    this.make = splitCar[0];
+    this.model = splitCar[1];
+    this.year = splitCar[2];
+    this.id = splitCar[3];
     this.content = car;
     this.maintenance = data;
   }
