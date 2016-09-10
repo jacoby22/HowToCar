@@ -11,7 +11,9 @@
   };
 
   garageView.setTeasers = function() {
-    $('.car-maintenance li').slice(5).hide();
+    $('.car-maintenance').forEach(function() {
+      $(this).children.slice(5).hide();
+    });
   };
 
   module.garageView = garageView;
