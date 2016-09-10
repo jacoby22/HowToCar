@@ -223,6 +223,7 @@ ul#filters {
 
 #car h2 {
   font-size: 1em;
+  padding-bottom: 1em;
 }
 
 #car-description {
@@ -234,6 +235,11 @@ ul#filters {
   margin-left: 10%;
   margin-right: 10%;
   padding: 0;
+}
+
+.car-button-remove {
+  display: flex;
+  justify-content: space-between;
 }
 
 .car-specs {
