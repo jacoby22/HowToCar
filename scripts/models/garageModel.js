@@ -43,9 +43,9 @@
         var splitCar = car.split('/');
         garage.getCarMaintenance(callback, splitCar);
       });
-    }).done(function() {
+    }).done(function(garage.allParkedCars) {
       console.log(garage.allParkedCars);
-      garage.allParkedCars.map(function(parkedCar) {
+      garage.allParkedCars.forEach(function(parkedCar) {
         console.log('inside');
         console.log(parkedCar);
         // var listItem = renderCar(car);
