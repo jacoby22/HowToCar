@@ -57,16 +57,17 @@
 
   garage.removeCar = function() {
     $('#car').on('click', '.button', function(event) {
-      console.log(event.target);
       var $article = ($(event.target).parents('article'));
-      console.log($article);
       $article.remove();
+      console.log(event.target.name);
+      var name = event.target.name;
       console.log($article.attr('data-content'));
+      garage.deleteFromDb(name);
     });
   };
 
-  garage.deleteFromDb = function(tempArray) {
-    $.get('/removeCar');
+  garage.deleteFromDb = function(carData) {
+    $.get('/removeCar', {name: carData});
   };
 
   module.garage = garage;
