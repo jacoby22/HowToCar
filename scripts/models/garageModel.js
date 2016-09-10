@@ -52,8 +52,9 @@
         var splitCar = car.split('/');
         garage.getCarMaintenance(callback, splitCar, car);
       });
+      console.log('first');
     }).then(function() {
-      console.log('in');
+      console.log('second?');
       garage.removeCar();
     });
   };
