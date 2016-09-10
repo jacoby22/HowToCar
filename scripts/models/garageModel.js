@@ -57,11 +57,20 @@
   };
 
   garage.removeCar = function() {
-    var tempArray = [];
+    var tempArray;
     $('.button').on('click', function() {
+      tempArray = [];
       tempArray.push($(this).attr('name'));
       console.log(tempArray);
+      if ($(this)) {
+        console.log('removing now');
+        $(this).remove();
+      }
     });
+  };
+
+  garage.deleteFromDb = function(tempArray) {
+    $.get('/removeCar');
   };
 
   module.garage = garage;
