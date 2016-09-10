@@ -60,10 +60,10 @@
     var tempArray;
     $('.x').on('click', 'button', function(event) {
       tempArray = [];
-      console.log($(this));
-      tempArray.push($(this).attr('data-content'));
-      // console.log(tempArray);
-      console.log(event.target);
+      // console.log($(this));
+      tempArray.push(event.target.name);
+      console.log(tempArray);
+      // console.log(event.target);
 
       // if ($(this)) {
       //   console.log($(this));
