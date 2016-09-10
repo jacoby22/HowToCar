@@ -46,7 +46,7 @@
       });
     }).done(function() {
       console.log(garage.allParkedCars);
-      testArray.forEach(function(car) {
+      allParkedCars.forEach(function(car) {
         console.log(car);
       });
       // var listItem = renderCar(garage.allParkedCars[0]);
