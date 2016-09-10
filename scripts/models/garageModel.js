@@ -28,9 +28,8 @@
     $.get('/maintenance/actionrepository/findbymodelyearid', {modelyearid: splitCar[3]})
     .then(function(data) {
       garage.allParkedCars.push(new ParkedCar(data, splitCar));
-    }).done(function() {
-      console.log(garage.allParkedCars);
-      console.log(garage.allParkedCars[0]);
+    }).then(function() {
+      console.log(garage.allParkedCars[(garage.allParkedCars.length) - 1]);
     });
     //   var listMaintenance = renderMaintenace(data);
     //   var listItem = renderCar(garage.savedCars[0]);
