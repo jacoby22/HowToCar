@@ -84,11 +84,11 @@ app.get('/getCars', function(req, res) {
 });
 
 app.get('/removeCar', function(req, res) {
-  formattedName = '{' + req.query.name + '}';
+  // formattedName = '{' + req.query.name + '}';
   var client = new pg.Client(process.env.DATABASE_URL);
   client.connect(function(err) {
     if (err) throw err;
-    client.query('UPDATE garage SET cars = array_replace(cars, $1)', [formattedName], function(err, result) {
+    client.query('UPDATE garage SET cars = array_replace(cars, $1)', [req.query.name], function(err, result) {
       if (err) throw err;
       client.end(function(err) {
         if (err) throw err;
