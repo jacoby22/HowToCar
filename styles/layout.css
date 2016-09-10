@@ -9,6 +9,7 @@
   flex-direction: column;
   color: white;
   margin-left: 9%;
+  padding-left: 5%;
   background-color: rgba(0, 0, 0, 0.7);
   padding-left: 5%;
 }
@@ -31,6 +32,7 @@
     font-size: 1.1em;
   }
 
+<<<<<<< HEAD
   .videoWrapper {
   	position: relative;
   	padding-bottom: 56.25%; /* 16:9 */
@@ -54,6 +56,8 @@
     width: 65em;
     height: 30em;
   }*/
+=======
+>>>>>>> f6f38649b44d03a6df40b163ca3df49694fe14cc
 
 .clearfix::after {
   content: "";
@@ -267,6 +271,7 @@ ul#filters {
   /*height: 80px;*/
   clear:both;
   color: white;
+  position: absolute;
   top:100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
 }
