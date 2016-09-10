@@ -10,6 +10,8 @@
     $('#generalFooter').hide();
     $('#search').show();
     $('#edmundsLegal').show();
+    $('button#push-to-garage').hide();
+
   };
 
   searchView.createMakeFilter = function() {

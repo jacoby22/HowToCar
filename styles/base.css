@@ -30,7 +30,11 @@ body {
 
 iframe {
   display: flex;
-  padding-top: 5%;
+  padding: 0;
+  padding-bottom: 2%;
+  width: 65em;
+  height: 30em;
+
 }
 
 ul {
@@ -41,12 +45,21 @@ ul {
   min-width: 100%;
 }
 
+ul a {
+  color: white;
+  text-decoration: none;
+}
+
 img {
   max-width: 100%;
 }
 
+button {
+  color: black;
+  text-decoration: none;
+}
+
 a {
-  color: white;
   text-decoration: none;
 }
 

@@ -6,6 +6,7 @@
     $('#loginButton').show();
     $('#addToCalendar').hide();
     $('#edmundsLegal').hide();
+    $('button#push-to-garage').hide();
   };
 
   module.loginView = loginView;
