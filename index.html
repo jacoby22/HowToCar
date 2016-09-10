@@ -24,12 +24,14 @@
           </li>
         </section>
         <section id="car-maintenance">
+          {{#times 5}}
           <ul>
-            <li><h4>Item: {{maintenance.actionHolder.[0].item}}</h4></li>
-            <li>Action: {{maintenance.actionHolder.[0].action}}</li>
-            <li>Change Every: {{maintenance.actionHolder.[0].intervalMileage}} miles</li>
-            <li>Description: {{maintenance.actionHolder.[0].itemDescription}}</li>
+            <li><h4>Item: {{maintenance.actionHolder.[this].item}}</h4></li>
+            <li>Action: {{maintenance.actionHolder.[this].action}}</li>
+            <li>Change Every: {{maintenance.actionHolder.[this].intervalMileage}} miles</li>
+            <li>Description: {{maintenance.actionHolder.[this].itemDescription}}</li>
           </ul>
+          {{/times}}
         </section>
       </article>
     </script>
@@ -89,9 +91,7 @@
           <h3>Your Vehicles:</h3>
         </header>
         <div class="car-specs">
-        <ol id="car"></ol>           <!-- Populates Car/Cars -->
-
-        <ol id="maintenance-list"></ol>
+        <div id="car"></div>           <!-- Populates Car/Cars -->
       </div>  <!-- Populates Maint DATA -->
       <div id="addToCalendar" class="addeventatc">
         Set a Reminder!
