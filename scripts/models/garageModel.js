@@ -61,7 +61,8 @@
     $('.button').on('click', function() {
       tempArray = [];
       tempArray.push($(this).attr('name'));
-      if ($(this).attr('name')) {
+      if ($(this)) {
+        console.log($(this));
         console.log('removing now');
         $(this).remove();
         // $(this).parents('*[data-content="' + tempArray[0] + '"]');
