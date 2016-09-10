@@ -30,6 +30,8 @@
       garage.allParkedCars.push(new ParkedCar(data, splitCar));
     }).then(function() {
       console.log(garage.allParkedCars[(garage.allParkedCars.length) - 1]);
+      var listItem = renderCar(garage.allParkedCars[(garage.allParkedCars.length) - 1]);
+      $('#car').append(listItem);
     });
     //   var listMaintenance = renderMaintenace(data);
     //   var listItem = renderCar(garage.savedCars[0]);
@@ -47,14 +49,6 @@
       });
     });
 
-      // for (var i = 0; i < garage.allParkedCars.length; i++) {
-      //   console.log(garage.allParkedCars[i]);
-      // }
-      // garage.allParkedCars.forEach(function(parkedCar) {
-      //   console.log(parkedCar);
-      // });
-      // var listItem = renderCar(garage.allParkedCars[0]);
-      // $('#car').append(listItem);
       // $('#maintenance-list').append(listMaintenance);
   };
 
