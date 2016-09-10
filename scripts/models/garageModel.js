@@ -42,6 +42,7 @@
 
   garage.showCar = function(callback) {
     $('#car').empty();
+    garage.allParkedCars = [];
     var userEmail = localStorage.getItem('currentUser');
     $.get('/getCars', {email: userEmail})
     .done(function(data) {
