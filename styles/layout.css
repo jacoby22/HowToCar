@@ -11,6 +11,7 @@
   margin-left: 9%;
   padding-left: 5%;
   background-color: rgba(0, 0, 0, 0.7);
+  padding-left: 5%;
 }
 
 #articles {
@@ -29,8 +30,24 @@
 
   #videos p {
     font-size: 1.1em;
+    padding-bottom: 5%;
   }
 
+  .videoWrapper {
+  	position: relative;
+  	padding-bottom: 56.25%; /* 16:9 */
+  	padding-top: 25px;
+  	height: 0;
+    margin-right: 6%;
+    margin-bottom: 10%;
+    margin-top: -5%;
+  }
+
+  .videoWrapper iframe {
+  	position: absolute;
+  	width: 100%;
+  	height: 100%;
+  }
 
 .clearfix::after {
   content: "";
@@ -245,7 +262,6 @@ ul#filters {
   /*height: 80px;*/
   clear:both;
   color: white;
-  position: absolute;
   top:100%;
   background-color: rgba(0, 0, 0, 0.8);
 }
