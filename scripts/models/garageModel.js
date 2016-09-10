@@ -10,7 +10,6 @@
     this.maintenance = data;
   }
 
-  var testArray = [1,2,3];
   garage.allParkedCars = [];
 
   var renderMaintenace = function(carData) {
@@ -46,9 +45,12 @@
       });
     }).done(function() {
       console.log(garage.allParkedCars);
-      garage.allParkedCars.forEach(function(car) {
-        console.log(garage.allParkedCars[car]);
-      });
+      for (var i = 0; i < garage.allParkedCars.length; i++) {
+        console.log(garage.allParkedCars[i]);
+      }
+      // garage.allParkedCars.forEach(function(parkedCar) {
+      //   console.log(parkedCar);
+      // });
       // var listItem = renderCar(garage.allParkedCars[0]);
       // $('#car').append(listItem);
       // $('#maintenance-list').append(listMaintenance);
