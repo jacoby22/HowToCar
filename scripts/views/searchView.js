@@ -59,11 +59,9 @@
           }
         });
         if (!$('.maintenance-Item')) {
-          // searchTool.getCarMaintenance(searchView.showCarMaintenance);
           searchView.showCarPhoto();
         } else {
           $('.maintenance-Item').remove();
-          // searchTool.getCarMaintenance(searchView.showCarMaintenance);
           searchView.showCarPhoto();
         }
         $('#push-to-garage').show();
@@ -75,38 +73,6 @@
     var userEmail = localStorage.getItem('currentUser');
     $.get('/addCar', {currentCar: searchView.currentCar, email: userEmail});
   };
-  // searchView.handlePushToGarage = function() {
-  //   var counter = 0;
-  //   $('#push-to-garage').on('click', function() {
-  //     if (garage.savedCars.length === 0) {
-  //       array1 = [searchView.currentCar.id, searchView.currentCar.make, searchView.currentCar.model, searchView.currentCar.year, searchView.searchedCarMaintenance];
-  //       garage.savedCars.push(array1);
-  //     } else {
-  //       array2 = [searchView.currentCar.id, searchView.currentCar.make, searchView.currentCar.model, searchView.currentCar.year, searchView.searchedCarMaintenance];
-  //       garage.savedCars.forEach(function(index) {
-  //         if(index[0] === searchView.currentCar.id) {
-  //           counter = 1;
-  //         }
-  //       });
-  //       if (counter === 0) {
-  //         garage.savedCars.push(array2);
-  //       }
-  //       counter = 0;
-  //     }
-  //     $('#push-to-garage').hide();
-  //   });
-  // };
-
-  // var renderCar = function(carData) {
-  //   var garageTemplate = Handlebars.compile($('#car-template').html());
-  //   return garageTemplate(carData);
-  // };
-  //
-  // searchView.showCar = function() {
-  //   var listItem = renderCar(searchView.currentCar);
-  //   console.log(searchView.CurrentCar);
-  //   $('#car').append(listItem);
-  // };
 
   var render = function(carData) {
     var garageTemplate2 = Handlebars.compile($('#maintenance-template').html());
@@ -178,7 +144,6 @@
       console.log('button-click -> ' + obj.id);
     });
   };
-
 
   module.searchView = searchView;
 })(window);
