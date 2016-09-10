@@ -39,7 +39,6 @@
         $('#' + currentCar.content + ' .car-maintenance').append(maintElem);
       });
       garageView.setTeasers();
-      garage.removeCar();
     });
   };
 
@@ -48,17 +47,22 @@
     garage.allParkedCars = [];
     var userEmail = localStorage.getItem('currentUser');
     $.get('/getCars', {email: userEmail})
-    .done(function(data) {
+    .then(function(data) {
       data.forEach(function(car) {
         var splitCar = car.split('/');
         garage.getCarMaintenance(callback, splitCar, car);
       });
+      console.log('first');
+    }).then(function() {
+      console.log('second?');
+      garage.removeCar();
     });
   };
 
   garage.removeCar = function() {
     var tempArray;
-    $('.x').on('click', 'button', function(event) {
+    console.log('third');
+    $('#car').on('click', '.button', function(event) {
       tempArray = [];
       tempArray.push(event.target.name);
       console.log(tempArray);
