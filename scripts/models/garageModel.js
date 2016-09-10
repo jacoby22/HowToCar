@@ -60,6 +60,7 @@
     var tempArray;
     $('.x').on('click', 'button', function() {
       tempArray = [];
+      console.log($(this));
       tempArray.push($(this).attr('data-content'));
       console.log(tempArray);
       if ($(this)) {
