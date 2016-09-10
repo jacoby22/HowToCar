@@ -57,7 +57,6 @@
 
   garage.removeCar = function() {
     $('#car').on('click', '.button', function(event) {
-      tempArray.push(event.target.name);
       console.log(event.target);
       console.log(event.target.parents('li'));
       if ($(this)) {
