@@ -40,6 +40,10 @@
       console.log(garage.allParkedCars[(garage.allParkedCars.length) - 1]);
       var listItem = renderCar(garage.allParkedCars[(garage.allParkedCars.length) - 1]);
       $('#car').append(listItem);
+      garage.allParkedCars[(garage.allParkedCars.length) - 1].maintenance.forEach(function(maintItem) {
+        var maintElem = renderMaintenace(maintItem);
+        $('#' + ((garage.allParkedCars.length) - 1).content).append(maintElem);
+      });
     });
     //   var listMaintenance = renderMaintenace(data);
     //   var listItem = renderCar(garage.savedCars[0]);

@@ -16,22 +16,12 @@
 
 
     <script id="car-template" type="text/x-handlebars-template">
-      <article class="clearfix" data-content="{{content}}">
+      <article class="clearfix" data-content="{{content}}" id="{{content}}">
         <section id="car-description">
           <li>
             <h4>{{year}} {{make}} {{model}}</h4>
             <!-- <p><h5>Car Picture Here ??</h5></p> -->
           </li>
-        </section>
-        <section id="car-maintenance">
-          {{#each maintenance}}
-          <ul>
-            <li><h4>Item: {{this}}.item</h4></li>
-            <!-- <li>Action: {{item.actionHolder.[{{this}}].action}}</li>
-            <li>Change Every: {{item.actionHolder.[{{this}}].intervalMileage}} miles</li>
-            <li>Description: {{item.actionHolder.[{{this}}].itemDescription}}</li> -->
-          </ul>
-          {{/each}}
         </section>
       </article>
     </script>
@@ -43,9 +33,7 @@
         </header>
         <section id="car-maintenance">
           <li>
-            <h4>Engine: {{engineCode}}</h4>
-            <p>ID: {{carId}}</p>
-            <p>Item: {{item}}</p>
+            <h4>Item: {{item}}</h4>
             <p>Action: {{action}}</p>
             <p>Interval Milage: {{intervalMileage}}</p>
             <p>Item Description: {{itemDescription}}</p>
