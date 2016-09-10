@@ -26,8 +26,15 @@
   color: white;
   }
 
+  #videos p {
+    font-size: 1.1em;
+  }
+
   iframe {
     padding: 0;
+    padding-bottom: 2%;
+    width: 65em;
+    height: 30em;
   }
 
 .clearfix::after {
