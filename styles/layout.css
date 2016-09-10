@@ -1,8 +1,29 @@
 /*  NAVIGATION LAYOUT
 ======================================================= */
+
 #resource {
-  width: 300px;
+  width: 75%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: white;
 }
+
+/*#articles {
+  width: 75%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  }
+
+#introCopy {
+  width: 75%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  }*/
 
 .clearfix::after {
   content: "";
