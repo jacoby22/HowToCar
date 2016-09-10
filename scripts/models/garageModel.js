@@ -61,7 +61,8 @@
 
   garage.removeCar = function() {
     var tempArray;
-    $('.x').on('click', 'button', function(event) {
+    console.log('third');
+    $('#car').on('click', '.button', function(event) {
       tempArray = [];
       tempArray.push(event.target.name);
       console.log(tempArray);
