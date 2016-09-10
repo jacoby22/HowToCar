@@ -57,8 +57,8 @@
   };
 
   garage.removeCar = function() {
+    var tempArray = [];
     $('.button').on('click', function() {
-      var tempArray = [];
       tempArray.push($(this).attr('name'));
       console.log(tempArray);
     });
