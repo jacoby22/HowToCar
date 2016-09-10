@@ -46,7 +46,7 @@
     }).done(function() {
       console.log(garage.allParkedCars);
 
-      console.log(garage.allParkedCars);
+      console.log(garage.allParkedCars[ParkedCar]);
       console.log(garage.allParkedCars[1]);
       console.log(garage.allParkedCars[2]);
 
