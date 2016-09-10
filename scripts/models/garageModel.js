@@ -53,14 +53,14 @@
         var splitCar = car.split('/');
         garage.getCarMaintenance(callback, splitCar, car);
       });
-    }).done(function() {
-      garage.removeCar();
     });
   };
 
   garage.removeCar = function() {
-    $('.button').on('click', function(e) {
-      console.log($(this).attr('name'));
+    $('.button').on('click', function() {
+      var tempArray = [];
+      tempArray.push($(this).attr('name'));
+      console.log(tempArray);
     });
   };
 
