@@ -7,11 +7,8 @@
   searchView.show = function() {
     $('.tab-content').hide();
     $('#loginButton').hide();
-    $('#generalFooter').hide();
     $('#search').show();
-    $('#edmundsLegal').show();
     $('button#push-to-garage').hide();
-    $('#homeFooter').hide()
     $('#searchGarage').show();
   };
 
