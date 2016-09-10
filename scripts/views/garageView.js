@@ -14,8 +14,6 @@
     $('#car-maintenance *:nth-of-type(n+5)').hide();
   };
 
-  garageView.setTeasers();
-
   module.garageView = garageView;
 
 })(window);
