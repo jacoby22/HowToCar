@@ -16,6 +16,7 @@
 
 
     <script id="car-template" type="text/x-handlebars-template">
+      <article class="clearfix" data-content="{{content}}" id="{{content}}">
       <article class="clearfix">
         <header>
           <h3>Your Vehicles:</h3>
@@ -23,8 +24,7 @@
         <section id="car-description">
           <li>
             <h4>{{year}} {{make}} {{model}}</h4>
-            <p><h5>Car Picture Here ??</h5></p>
-            <p><h5>Car Id: {{id}}</h5></p>
+            <!-- <p><h5>Car Picture Here ??</h5></p> -->
           </li>
         </section>
       </article>
@@ -32,14 +32,9 @@
 
     <script id="maintenance-template" type="text/x-handlebars-template">
       <article class="clearfix">
-        <header>
-          <h3>Maintenance</h3>
-        </header>
         <section id="car-maintenance">
           <li>
-            <h4>Engine: {{engineCode}}</h4>
-            <p>ID: {{id}}</p>
-            <p>Item: {{item}}</p>
+            <h4>Item: {{item}}</h4>
             <p>Action: {{action}}</p>
             <p>Interval Milage: {{intervalMileage}}</p>
             <p>Item Description: {{itemDescription}}</p>
@@ -76,9 +71,7 @@
       </section> -->
       <section id="garage" class="tab-content">
         <div class="car-specs">
-        <ol id="car"></ol>           <!-- Populates Car/Cars -->
-
-        <ol id="maintenance-list"></ol>
+        <div id="car"></div>           <!-- Populates Car/Cars -->
       </div>  <!-- Populates Maint DATA -->
       <div id="addToCalendar" class="addeventatc">
         Set a Reminder!

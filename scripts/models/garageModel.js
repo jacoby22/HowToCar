@@ -1,13 +1,21 @@
 (function(module) {
 
+  Handlebars.registerHelper('times', function(n, block) {
+    var accum = '';
+    for(var i = 0; i < n; ++i)
+      accum += block.fn(i);
+    return accum;
+  });
+
   var garage = {};
 
-  function ParkedCar(data, car) {
-    this.make = car[0];
-    this.model = car[1];
-    this.year = car[2];
-    this.id = car[3];
-    this.maintenance = data;
+  function ParkedCar(data, splitCar, car) {
+    this.make = splitCar[0];
+    this.model = splitCar[1];
+    this.year = splitCar[2];
+    this.id = splitCar[3];
+    this.content = car.replace(/\//g, '_');
+    this.maintenance = data.actionHolder;
   }
 
   garage.allParkedCars = [];
@@ -24,14 +32,20 @@
     return garageTemplate(carData);
   };
 
-  garage.getCarMaintenance = function(callback, splitCar) {
+  garage.getCarMaintenance = function(callback, splitCar, car) {
     $.get('/maintenance/actionrepository/findbymodelyearid', {modelyearid: splitCar[3]})
     .then(function(data) {
-      garage.allParkedCars.push(new ParkedCar(data, splitCar));
+      garage.allParkedCars.push(new ParkedCar(data, splitCar, car));
     }).then(function() {
-      console.log(garage.allParkedCars[(garage.allParkedCars.length) - 1]);
-      var listItem = renderCar(garage.allParkedCars[(garage.allParkedCars.length) - 1]);
+      var currentCar = garage.allParkedCars[(garage.allParkedCars.length) - 1];
+      console.log(currentCar);
+      var listItem = renderCar(currentCar);
       $('#car').append(listItem);
+      console.log($());
+      currentCar.maintenance.forEach(function(maintItem) {
+        var maintElem = renderMaintenace(maintItem);
+        $('#' + currentCar.content).append(maintElem);
+      });
     });
     //   var listMaintenance = renderMaintenace(data);
     //   var listItem = renderCar(garage.savedCars[0]);
@@ -45,7 +59,7 @@
     .done(function(data) {
       data.forEach(function(car) {
         var splitCar = car.split('/');
-        garage.getCarMaintenance(callback, splitCar);
+        garage.getCarMaintenance(callback, splitCar, car);
       });
     });
 
