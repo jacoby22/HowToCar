@@ -43,16 +43,15 @@
         var splitCar = car.split('/');
         garage.getCarMaintenance(callback, splitCar);
       });
-    }).then(function() {
+    }).done(function() {
       console.log(garage.allParkedCars);
-      console.log(garage.allParkedCars[0]['id']);
+      console.log(garage.allParkedCars[0][0]);
       console.log(garage.allParkedCars[1]);
-
       console.log(garage.allParkedCars[2]);
 
-      for (var i = 0; i < garage.allParkedCars.length; i++) {
-        console.log(garage.allParkedCars[i]);
-      }
+      // for (var i = 0; i < garage.allParkedCars.length; i++) {
+      //   console.log(garage.allParkedCars[i]);
+      // }
       // garage.allParkedCars.forEach(function(parkedCar) {
       //   console.log(parkedCar);
       // });
