@@ -39,7 +39,6 @@
           var maintElem = renderMaintenace(maintItem);
           $('#' + currentCar.content).append(maintElem);
         });
-      };
     });
   };
 
