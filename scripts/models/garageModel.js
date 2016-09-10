@@ -53,6 +53,7 @@
         garage.getCarMaintenance(callback, splitCar, car);
       });
     }).then(function() {
+      console.log('in');
       garage.removeCar();
     });
   };
