@@ -33,6 +33,8 @@
 
 ul#filters {
   display: block;
+  margin-top: -2%;
+  margin-bottom: -2%;
   /*max-width: 50%;*/
 }
 

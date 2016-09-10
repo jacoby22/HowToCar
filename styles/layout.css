@@ -134,6 +134,7 @@ ul#filters {
   display: block;
   justify-content: space-between;
   font-weight: bold;
+  margin-top: 3%;
   color: white;
   background-color: rgba(0, 0, 0, 0.7);
   overflow-y: scroll;
@@ -253,15 +254,40 @@ ul#filters {
   display: flex;
 }
 
+#homeFooter {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  font-size: .5em;
+  clear:both;
+  color: white;
+  top:100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 #generalFooter {
   display: flex;
   justify-content: center;
   text-align: center;
   width: 100%;
   font-size: .5em;
-  /*height: 80px;*/
   clear:both;
   color: white;
   top:100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#searchGarage {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  font-size: .5em;
+  clear:both;
+  color: white;
+  top:100%;
+  position: absolute;
   background-color: rgba(0, 0, 0, 0.8);
 }
