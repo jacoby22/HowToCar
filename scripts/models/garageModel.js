@@ -58,17 +58,19 @@
 
   garage.removeCar = function() {
     var tempArray;
-    $('.x').on('click', 'button', function() {
+    $('.x').on('click', 'button', function(event) {
       tempArray = [];
       console.log($(this));
       tempArray.push($(this).attr('data-content'));
-      console.log(tempArray);
-      if ($(this)) {
-        console.log($(this));
-        console.log('removing now');
-        $(this).remove();
-        // $(this).parents('*[data-content="' + tempArray[0] + '"]');
-      }
+      // console.log(tempArray);
+      console.log(event.target);
+
+      // if ($(this)) {
+      //   console.log($(this));
+      //   console.log('removing now');
+      //   $(this).remove();
+      //   // $(this).parents('*[data-content="' + tempArray[0] + '"]');
+      // }
     });
   };
 
